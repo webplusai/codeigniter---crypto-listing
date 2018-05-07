@@ -1,0 +1,44 @@
+<style>
+    .plink { color: #0FBE7C }
+    .plink:hover {color: #0FBE7C; text-decoration: underline}
+</style>
+
+
+<div class="header"></div>
+<div class="main">
+    <table>
+        <tr>
+            <td><h2>Manage Listings</h2></td>
+            <td><button class="btn btn-primary" onclick="location.href='submit_entry.html';" style="display:inline;margin: 6px 0px 0px 40px;">Add</button></td>
+        </tr>
+    </table>
+
+    <table class="tbl tbl_pointer">
+        <tr>
+            <th width="40"></th>
+            <th width="300">Name</th>
+            <th width="200">Submit Event Name</th>
+            <th width="200">Start</th>
+            <th>End</th><th>ICOrank</th>
+            <th>Status</th>
+        </tr>
+
+        {{ listingTable | raw }}
+    </table>
+</div>
+
+
+<script>
+    function editProject(id) {
+        window.location = baseUrl + "listing.html?id="+id;
+    }
+    function editProjectSubmission(sudId) {
+        window.location = baseUrl + "listing.html?subid="+sudId;
+    }
+    function editSubmission(subHash) {
+        window.location = baseUrl + "submission_entry.html?h="+subHash;
+    }
+    function paymentRedirect(subHash) {
+        window.location = baseUrl + "payment.html?h="+subHash;
+    }
+</script>

@@ -1,0 +1,89 @@
+body {
+  padding: 0 .5em;
+  font-family: Arial, sans-serif;
+  color: #024457;
+  background: #f2f2f2;
+  font-size: 14px;
+}
+
+
+.tbl {
+  margin: 1em 0;
+  width: 100%;
+  overflow: hidden;
+  background: #FFF;
+  color: #024457;
+  border: 1px solid #167F92;  
+  font-size: 1em;
+  border-collapse: collapse;    
+}
+
+.tbl tr {
+  border: 1px solid #D9E4E6;
+}
+
+.tbl tr:nth-child(odd) {
+  background-color: #EAF3F3;
+}
+
+.tbl th {
+  display: none;
+  border: 1px solid #FFF;
+  background-color: #167F92;
+  color: #FFF;
+  padding: 1em;
+  cursor: default;
+  text-align: left;
+}
+
+.tbl td {
+  border: 1px solid #D9E4E6;
+}
+
+.tbl th, .tbl td {
+  margin: .5em 1em;
+}
+
+.tbl th, .tbl td {
+    display: table-cell;
+    padding: .5em;
+}
+
+body {
+  padding: 0 .5em;
+  font-family: Arial, sans-serif;
+  color: #024457;
+  background: #f2f2f2;
+  font-size: 14px;  
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  color: #024457;   
+}
+h1 span {
+  color: #167F92;
+}
+
+input
+{
+  width: 100%;
+  font-size: 1em;
+}
+
+textarea
+{
+  width: 100%;
+  height: 100px;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+}
+
+select
+{
+  font-size: 1em;
+}  
+.btn_tab {
+  float: left;
+}

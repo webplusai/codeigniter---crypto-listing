@@ -1,0 +1,20 @@
+@media all and (max-width: 767px) {
+  .mobile-menu-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: calc(100vh - 50px);
+    flex-direction: column-reverse;
+    background-color: $color-7;
+    transform: translate(-100%, 0);
+    z-index: 2;
+    @include ak-transition();
+
+    & > div {
+      width: 100%;
+    }
+    &.opened {
+      transform: translate(0, 0);
+    }
+  }
+}

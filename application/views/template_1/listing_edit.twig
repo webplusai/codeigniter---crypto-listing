@@ -1,0 +1,518 @@
+<div class="loading" id="loadItem">Loading&#8230;</div>
+<div class="loading" id="loadAll">Loading&#8230;</div>
+
+<div class="header"></div>
+
+<table style="padding: 0px;margin: 0px;border-collapse: collapse;width: 100%;table-layout: fixed;">
+    <tr>
+        <td style="width: 20%" valign="top">
+            <table width="100%">
+                <tr>
+                    <td><h2>Edit Listing</h2></td>
+                    <td style="padding-top:8px; width: 60%">
+                        <div class="tab">
+                            <div class="btn_tab"><input type="button" class="tablinks" onclick="switchtab(event, 'Project')" value="Project">
+                                <i class="ierror err_project fa fa-exclamation-triangle" aria-hidden="true"></i></div>
+                            <div class="btn_tab"><input type="button" class="tablinks" onclick="switchtab(event, 'Links')" value="Links">
+                                <i class="ierror err_link fa fa-exclamation-triangle" aria-hidden="true"></i></div>
+                            <div class="btn_tab"><input type="button" class="tablinks" onclick="switchtab(event, 'Distribution')" value="Distribution">
+                                <i class="ierror err_distribution fa fa-exclamation-triangle" aria-hidden="true"></i></div>
+                            <div class="btn_tab"><input type="button" class="tablinks" onclick="switchtab(event, 'Team')" value="Team">
+                                <i class="ierror err_team fa fa-exclamation-triangle" aria-hidden="true"></i></div>
+                        </div>
+                    </td>
+                    <td align="right" style="padding-top:8px; width: 20%;">
+                        <input type="submit" id="save_all" style="vertical-align: top;width: 100px;height: 30px;" value="Save" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+{{ include('listing_project.twig') }}
+{{ include('listing_link.twig') }}
+{{ include('listing_distribution.twig') }}
+{{ include('listing_team.twig') }}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('body').on('keydown', 'input, select, textarea', function (e) {
+            var self = $(this)
+                    , form = self.parents('form:eq(0)')
+                    , focusable
+                    , next
+                    ;
+            if (e.keyCode == 13) {
+                focusable = form.find('input,a,select,button,textarea').filter(':visible');
+                next = focusable.eq(focusable.index(this) + 1);
+                if (next.length) {
+                    next.focus();
+                } else {
+                    form.submit();
+                }
+                return false;
+            }
+        });
+
+        var rates_table;
+        var distro_table;
+        var events_table;
+        var team_table;
+
+        flatpickr(".datefield", {enableTime: true, time_24hr: true, minuteIncrement: 30, wrap: true});
+
+        //---------------PROJECT----------------
+        $( "#ProjPlatform" ).change(function() {
+            var selected = $("#ProjPlatform option:selected");
+            var platforms = "";
+            selected.each(function () {
+                platforms = platforms + $(this).val()+ ',';
+            });
+            $("#hdplatforms").val(platforms.substring(0, platforms.length - 1));
+        });
+
+        $('#ProjPlatform').multiselect({
+            numberDisplayed: 10
+        });
+
+        $('#ProjPlatform').multiselect('select', [{{ platform }}]);
+
+        $( "#ProjAlgo" ).change(function() {
+            var selected = $("#ProjAlgo option:selected");
+            var hdalgo = "";
+            selected.each(function () {
+                hdalgo = hdalgo + $(this).val()+ ',';
+            });
+            $("#hdalgo").val(hdalgo.substring(0, hdalgo.length - 1));
+        });
+
+        $('#ProjAlgo').multiselect();
+        $('#ProjAlgo').multiselect('select', [{{ algo }}]);
+
+        if (parseInt($("#Project #ProjType").val()) != 2) {
+            $("#Project .mandatory-ProjPlatform").hide();
+            $("#ProjPlatformID .multiselect").addClass("disabled");
+        } else {
+            $("#Project .mandatory-ProjPlatform").show();
+        }
+
+        if (parseInt($("#Project #ProjType").val()) != 1) {
+            $("#Project .mandatory-ProjAlgo").hide();
+            $("#ProjAlgoID .multiselect").addClass("disabled");
+        } else {
+            $("#Project .mandatory-ProjAlgo").show();
+        }
+
+        $('#ProjType').change(function() {
+            if (parseInt($(this).val()) == 2) {
+                $("#Project .mandatory-ProjPlatform").show();
+                $("#ProjPlatformID .multiselect").removeClass("disabled");
+            } else {
+                $("#Project .mandatory-ProjPlatform").hide();
+                $("#ProjPlatformID .multiselect").addClass("disabled");
+            }
+
+            if (parseInt($(this).val()) == 1) {
+                $("#Project .mandatory-ProjAlgo").show();
+                $("#ProjAlgoID .multiselect").removeClass("disabled");
+            } else {
+                $("#Project .mandatory-ProjAlgo").hide();
+                $("#ProjAlgoID .multiselect").addClass("disabled");
+            }
+        });
+
+        $('#Project').on('click', '#save_project', function () {
+            $("#Project").find('.input-error').removeClass('input-error');
+            $(".err_project").hide();
+
+            var formSerialize = $("#Project #listing_project").serializeArray();
+            var formData = new FormData();
+            formData.append('action', 'listing_save_project');
+
+            formSerialize.forEach(function(item) {
+                formData.append(item.name, item.value);
+            });
+
+            var ProjImage = document.getElementById('ProjImage');
+            var fileProjImage = ProjImage.files[0];
+            formData.append('ProjImage', fileProjImage);
+
+            var ProjImageLarge = document.getElementById('ProjImageLarge');
+            var fileProjImageLarge = ProjImageLarge.files[0];
+            formData.append('ProjImageLarge', fileProjImageLarge);
+
+            $("#loadItem").show();
+            $.ajax({
+                url: 'ajax/listing_project',
+                data: formData,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                success: function(jsonData) {
+
+                    if (parseInt(jsonData.status) == 1) {
+                        $(".alert-project").html(jsonData.message);
+                        $(".alert-project").removeClass("alert-danger");
+                        $(".alert-project").addClass("alert-success");
+                        var data = jsonData.data;
+                        if (data.ProjImage) {
+                            $("#img-ProjImage").attr('src', 'data:image/png;base64,'+data.ProjImage);
+                        }
+                        if (data.ProjImageLarge) {
+                            $("#img-ProjImageLarge").attr('src', 'data:image/png;base64,'+data.ProjImageLarge);
+                        }
+                    } else {
+                        var errors = jsonData.error;
+                        var errorsHtml = '';
+                        for (var key in errors) {
+                            if (errors.hasOwnProperty(key)) {
+                                $("#"+key).addClass("input-error");
+                                errorsHtml += errors[key] + "<br>";
+                            }
+                        }
+                        $(".alert-project").html(errorsHtml);
+                        $(".alert-project").removeClass("alert-success");
+                        $(".alert-project").addClass("alert-danger");
+                        $(".err_project").show();
+                    }
+                    $(".alert-project").show();
+                    $("#loadItem").hide();
+                }
+            });
+        });
+
+
+        //---------------LINK----------------
+        $('#Links').on('click', '#save_link', function () {
+            $("#Links").find('.input-error').removeClass('input-error');
+            $(".err_link").hide();
+
+            var formSerialize = $("#Links #listing_link").serializeArray();
+            var formData = { action: 'listing_save_link' };
+            formSerialize.forEach(function(item) {
+                formData[item.name] = item.value;
+            });
+
+            formData.ProjID = $("#ProjID").val();
+            $("#loadItem").show();
+            $.ajax({
+                url: 'ajax/listing_link',
+                data: formData,
+                dataType: 'json',
+                type: 'POST',
+                success: function(jsonData) {
+                    if (parseInt(jsonData.status) == 1) {
+                        $(".alert-link").html(jsonData.message);
+                        $(".alert-link").removeClass("alert-danger");
+                        $(".alert-link").addClass("alert-success");
+                    } else {
+                        var errors = jsonData.error;
+                        var errorsHtml = '';
+                        for (var key in errors) {
+                            if (errors.hasOwnProperty(key)) {
+                                $("#"+key).addClass("input-error");
+                                errorsHtml += errors[key] + "<br>";
+                            }
+                        }
+                        $(".alert-link").html(errorsHtml);
+                        $(".alert-link").removeClass("alert-success");
+                        $(".alert-link").addClass("alert-danger");
+                        $(".err_link").show();
+                    }
+                    $(".alert-link").show();
+                    $("#loadItem").hide();
+                }
+            });
+        });
+
+        $('#Links').on('click', '#scrape_link', function () {
+            var lastID = $("#scrape-lastid").val();
+            var website = $("#Links1").val();
+            $("#Links1").removeClass('input-error');
+            if (!website) {
+                $("#Links1").addClass('input-error');
+                return false;
+            }
+
+            var formData = {
+                action: 'scrape_website',
+                website: website
+            }
+            $("#loadItem").show();
+            $.ajax({
+                url: 'ajax/scrape_website',
+                data: formData,
+                dataType: 'json',
+                type: 'POST',
+                success: function(jsonData) {
+                    var data = jsonData.data;
+                    for (var i = 0; i <= lastID; i ++) {
+                        if (data[i]) {
+                            var selector = i + 1;
+                            $("#Links"+selector).val(data[i]);
+                        }
+                    }
+                    $("#loadItem").hide();
+                }
+            });
+        });
+
+
+        //---------------Distribution----------------
+        distro_table = $('#tbl_distro').DataTable({
+            rowReorder: true,
+            paging: false,
+            info: false,
+            searching: false,
+            columnDefs: [{orderable: false, targets: '_all'}]
+        });
+
+        distro_table.on('row-reorder', function (e, diff, edit) {
+            for (var i = 0, ien = diff.length; i < ien; i++) {
+                var rowData = distro_table.row(diff[i].node).data();
+                sortfield = document.getElementById("tbl_distro_sort" + rowData[0]);
+                sortfield.value = diff[i].newData;
+            }
+
+            $('#tbl_distro tr .sortval').each(function () {
+                var Sort = $(this);
+                Sort.attr('id', "tbl_distro_sort" + Sort.val());
+            });
+
+        });
+
+        $('#tbl_distro tbody').on('click', 'img.icon-delete', function () {
+            distro_table
+                    .row($(this).parents('tr'))
+                    .remove()
+                    .draw();
+
+            if (distro_table.page.info().recordsTotal > 0) {
+                $.each($('#tbl_distro tr td:first-child'), function (index, val) {
+                    $(this).html(index + 1);
+                    $(this).parent().find('.sortval').val((index + 1));
+                    $(this).parent().find('.sortval').attr('id', "tbl_distro_sort" + (index + 1))
+                });
+            }
+
+            distro_table.rows().invalidate();
+
+            realorder = (distro_table.page.info().recordsTotal + 1).toString();
+            addsortorder = parseInt($("#highestTotalRow").val()) - 1;
+            $("#highestTotalRow").val(addsortorder);
+        });
+
+        $('#Distribution').on('click', '.adddistro', function () {
+            if ($("#aDistroDesc").val() != "") {
+                realorder = (distro_table.page.info().recordsTotal + 1).toString();
+                addsortorder = parseInt($("#highestTotalRow").val()) + 1;
+                distro_table.row.add($('<tr>' +
+                '<td style="cursor: all-scroll;" align="center">' + realorder + '</td>' +
+                '<td><input class="sortval" id="tbl_distro_sort' + addsortorder + '" type="hidden" value="' + realorder + '" name="' + addsortorder + '_DistroSortOrder">' +
+                '<input type="text" name="' + addsortorder + '_DistroDesc" id="' + addsortorder + '_DistroDesc" value="' + $("#aDistroDesc").val() + '"></td>' +
+                '<td><input type="text" name="' + addsortorder + '_DistroAmount" id="' + addsortorder + '_DistroAmount" value="' + $("#aDistroAmt").val() + '"></td>' +
+                '<td><input type="text" name="' + addsortorder + '_DistroPercent" id="' + addsortorder + '_DistroPercent" value="' + $("#aDistroPercent").val() + '"></td>' +
+                '<td><input type="text" name="' + addsortorder + '_DistroNote" id="' + addsortorder + '_DistroNote" value="' + $("#aDistroNote").val() + '"></td>' +
+                '<td align="center">{{ icon_del | raw }}</td></tr>')[0]).draw();
+
+                $("#highestTotalRow").val(addsortorder);
+                $("#aDistroDesc").val('');
+                $("#aDistroAmt").val('');
+            }
+        });
+
+        $('#Distribution').on('click', '#save_distribution', function () {
+            $("#Distribution").find('.input-error').removeClass('input-error');
+            $(".err_distribution").hide();
+
+            var formSerialize = $("#Distribution #listing_distribution").serializeArray();
+            var formData = { action: 'listing_save_distribution' };
+            formSerialize.forEach(function(item) {
+                formData[item.name] = item.value;
+            });
+
+            var totalSortOrder = $("#highestTotalRow").val();
+            formData.totalSortOrder = totalSortOrder;
+            formData.ProjID = $("#ProjID").val();
+
+            $("#loadItem").show();
+            $.ajax({
+                url: 'ajax/listing_distribution',
+                data: formData,
+                dataType: 'json',
+                type: 'POST',
+                success: function(jsonData) {
+                    if (parseInt(jsonData.status) == 1) {
+                        $(".alert-distribution").html(jsonData.message);
+                        $(".alert-distribution").removeClass("alert-danger");
+                        $(".alert-distribution").addClass("alert-success");
+                    } else {
+                        var errors = jsonData.error;
+                        var errorsHtml = '';
+                        for (var key in errors) {
+                            if (errors.hasOwnProperty(key)) {
+                                $("#"+key).addClass("input-error");
+                                errorsHtml += errors[key] + "<br>";
+                            }
+                        }
+                        $(".alert-distribution").html(errorsHtml);
+                        $(".alert-distribution").removeClass("alert-success");
+                        $(".alert-distribution").addClass("alert-danger");
+                        $(".err_distribution").show();
+                    }
+                    $(".alert-distribution").show();
+                    $("#loadItem").hide();
+                }
+            });
+        });
+
+        //---------------TEAM----------------
+        $('#Team').on('click', '#save_team', function () {
+            $("#Team").find('.input-error').removeClass('input-error');
+            $(".err_team").hide();
+
+            var formSerialize = $("#Team #listing_team").serializeArray();
+            var formData = new FormData();
+            var teamMember = 5;
+            formData.append('action', 'listing_save_team');
+            formData.append('ProjID', $("#ProjID").val());
+
+            formSerialize.forEach(function(item) {
+                formData.append(item.name, item.value);
+            });
+
+            for (var i = 1; i <= teamMember; i ++) {
+                var inputPicture = document.getElementById('inputPicture'+i);
+                var inputPictureImage = inputPicture.files[0];
+                formData.append('inputPicture'+i, inputPictureImage);
+
+                var inputPassport = document.getElementById('inputPassport'+i);
+                var inputPassportImage = inputPassport.files[0];
+                formData.append('inputPassport'+i, inputPassportImage);
+
+                if ($("#panelTeamMember"+i).is(":visible")) {
+                    formData.append('validation'+i, 1);
+                }
+            }
+
+            $("#loadItem").show();
+            $.ajax({
+                url: 'ajax/listing_team',
+                data: formData,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                success: function(jsonData) {
+                    if (parseInt(jsonData.status) == 1) {
+                        $(".alert-team").html(jsonData.message);
+                        $(".alert-team").removeClass("alert-danger");
+                        $(".alert-team").addClass("alert-success");
+                    } else {
+                        var errors = jsonData.error;
+                        var errorsHtml = '';
+                        for (var key in errors) {
+                            if (errors.hasOwnProperty(key)) {
+                                $("#"+key).addClass("input-error");
+                                errorsHtml += errors[key] + "<br>";
+                            }
+                        }
+                        $(".alert-team").html(errorsHtml);
+                        $(".alert-team").removeClass("alert-success");
+                        $(".alert-team").addClass("alert-danger");
+                        $(".err_team").show();
+                    }
+                    $(".alert-team").show();
+                    $("#loadItem").hide();
+                }
+            });
+        });
+
+        $( ".deleteMember" ).click(function() {
+            $( "#loadItem" ).show();
+            var team_member = $(this).attr('data-id');
+            $("#validation"+team_member).val(0);
+            var data = { team_member: team_member, action: 'listing_delete_member' };
+            data.ProjID = $("#ProjID").val();
+            if ($("#peopleID"+team_member).length) {
+                data.peopleID = $("#peopleID"+team_member).val();
+            }
+
+            $.ajax({
+                url: "ajax/listing_delete_member",
+                type: "POST",
+                data: data,
+                dataType:'json',
+                success: function(jsonData) {
+                    $( "#loadItem" ).hide();
+                    if (jsonData.status == 1) {
+
+                        $("#panelTeamMember"+team_member).hide();
+                        var currentMember = parseInt($("#currentMember").val());
+                        currentMember -= 1;
+                        $("#currentMember").val(currentMember);
+
+                        $("#panelTeamMember"+team_member+" textarea").val('');
+                        $("#panelTeamMember"+team_member).find(':input').each(function() {
+                            $(this).val('');
+                        });
+                        $("#panelTeamMember"+team_member).find('.teamlink').each(function() {
+                            $(this).empty();
+                        });
+                        $("#collapse"+team_member).removeClass('in');
+
+                        if (currentMember < 6) {
+                            $("#add_member").show();
+                        }
+
+                        $(".alert-team").html(jsonData.message);
+                        $(".alert-team").removeClass("alert-danger");
+                        $(".alert-team").addClass("alert-success");
+
+                    } else {
+                        alert('Something went wrong!');
+                    }
+                }
+            });
+        });
+
+        $( "#add_member" ).click(function() {
+            var currentMember = parseInt($("#currentMember").val());
+            $("#validation"+currentMember).val(1);
+            var isShow = 0;
+            for (var i = 1; i < currentMember; i ++) {
+                if (!$("#collapse"+i).hasClass("in")) {
+                    isShow = 1;
+                    $("#collapse"+i).addClass('in');
+                    $("#panelTeamMember"+i).show();
+                    currentMember += 1;
+                    $("#currentMember").val(currentMember);
+                    break;
+                }
+            }
+
+            if (isShow == 0) {
+                $("#collapse"+currentMember).addClass('in');
+                $("#panelTeamMember"+currentMember).show();
+                currentMember += 1;
+                $("#currentMember").val(currentMember);
+            }
+
+            if (currentMember > 5) {
+                $("#add_member").hide();
+            }
+        });
+
+        //---------------Save All---------------
+        $( "#save_all" ).click(function() {
+            $( "#loadAll" ).show();
+            $( "#Project #save_project" ).trigger( "click" );
+            $( "#Links #save_link" ).trigger( "click" );
+            $( "#Distribution #save_distribution" ).trigger( "click" );
+            $( "#Team #save_team" ).trigger( "click" );
+            $( "#loadAll" ).hide();
+        });
+
+    });
+</script>

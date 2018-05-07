@@ -1,0 +1,61 @@
+.brand-container {
+  padding-right: 45px;
+  border-right: 1px solid $color-3;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  .brand__logo {
+
+    .figure-1 {
+      fill: $color-2;
+    }
+    .figure-2 {
+      fill: $color-1;
+    }
+    .figure-1,
+    .figure-2 {
+      fill-rule: evenodd;
+    }
+  }
+  .brand__title {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 26px;
+    font-family: $font-family-sb;
+    color: $color-1;
+
+    .gray {
+      color: $color-2;
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .brand-container {
+    width: 100%;
+    padding: 12px 14px;
+    position: relative;
+    display: flex;
+    border-right: none;
+    z-index: 4;
+    background-color: $color-7;
+    box-shadow: $base-box-shadow;
+
+    .btn-mobile-menu {
+      display: flex;
+      margin: 0 0 0 auto;
+    }
+  }
+  .brand {
+    .brand__logo {
+      width: 26px;
+      height: 26px;
+    }
+    .brand__title {
+      font-size: 22px;
+    }
+  }
+}

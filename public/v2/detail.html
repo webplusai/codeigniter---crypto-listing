@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Coin Schedule</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="css/fonts.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="brand-container">
+                    <a href="#" class="brand">
+                        <svg id="BrandLogo" class="brand__logo" data-name="BrandLogo" xmlns="http://www.w3.org/2000/svg" width="31.125" height="31.125" viewBox="0 0 31.125 31.125">
+                            <path class="figure-1" d="M67.922,487.489a1.994,1.994,0,0,1,0,1.021l2.317,2.317a1,1,0,0,1-1.412,1.414L66.488,489.9a1.968,1.968,0,0,1-1.9-.49,2,2,0,0,1,0-2.825,1.962,1.962,0,0,1,1.9-.491l2.343-2.341a1,1,0,0,1,1.412,1.414Z" transform="translate(-50.438 -472.438)"/>
+                            <path class="figure-2" d="M77.056,494.814l4.5,4.5-4.243,4.243-4.5-4.5a13,13,0,0,1-13.63,0l-4.5,4.5-4.242-4.243,4.5-4.5a13,13,0,0,1,0-13.63l-4.5-4.5,4.242-4.243,4.5,4.5a13,13,0,0,1,13.63,0l4.5-4.5,4.243,4.243-4.5,4.5A13,13,0,0,1,77.056,494.814Zm-5.4-12.472a8,8,0,1,0,0,11.314A8,8,0,0,0,71.656,482.342Z" transform="translate(-50.438 -472.438)"/>
+                        </svg>
+                        <span class="brand__title"><span class="gray">Coin</span>Schedule</span>
+                    </a>
+                    <a href="#" class="btn-mobile-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 14">
+                            <path id="burger" class="icon-burger" d="M5521,476h24v2h-24v-2Zm0,6h24v2h-24v-2Zm0,6h24v2h-24v-2Z" transform="translate(-5521 -476)"/>
+                            <path id="close" class="icon-close" d="M5540.19,1518.78l-1.41,1.41-5.78-5.78-5.78,5.78-1.41-1.41,5.78-5.78-5.78-5.78,1.41-1.41,5.78,5.77,5.78-5.77,1.41,1.41-5.78,5.78Z" transform="translate(-5521 -1505.81)"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="mobile-menu-container">
+                    <div class="socials-menu-container">
+                        <ul class="socials-menu">
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                        <path id="blog" class="cls-1" d="M357,480v3.067A12.941,12.941,0,0,1,369.921,496H373A16.017,16.017,0,0,0,357,480Zm7.475,16h3.08A10.575,10.575,0,0,0,357,485.434V488.5A7.493,7.493,0,0,1,364.479,496Zm-5.352-.02A2.124,2.124,0,1,0,357,493.856,2.126,2.126,0,0,0,359.127,495.979Z" transform="translate(-357 -480)"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15" viewBox="0 0 18 15">
+                                        <path id="telegram" class="cls-1" d="M396.313,488.2l4.151,1.483,1.609,4.945a0.494,0.494,0,0,0,.774.223l2.315-1.805a0.718,0.718,0,0,1,.843-0.022l4.175,2.9a0.5,0.5,0,0,0,.767-0.283l3.058-14.073a0.482,0.482,0,0,0-.656-0.532l-17.043,6.289A0.462,0.462,0,0,0,396.313,488.2Zm5.5,0.694,8.116-4.782a0.138,0.138,0,0,1,.171.214l-6.7,5.956a1.313,1.313,0,0,0-.431.795l-0.229,1.617a0.212,0.212,0,0,1-.41.028l-0.875-2.949A0.766,0.766,0,0,1,401.813,488.89Z" transform="translate(-396 -481)"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                        <path id="slack" class="cls-1" d="M439.988,487.981l-1.176.405a1.444,1.444,0,0,1-.461.078,1.322,1.322,0,0,1-1.288-.912,0.57,0.57,0,0,1-.02-0.063,1.4,1.4,0,0,1,.9-1.7l1.481-.5Zm12.947,0.458-0.017-.058a1.366,1.366,0,0,0-1.32-.923,1.391,1.391,0,0,0-.448.076l-1.573.534-1.013-3.032h0l1.51-.518a1.369,1.369,0,0,0,.945-1.624L451,482.838a1.356,1.356,0,0,0-1.324-.931,1.462,1.462,0,0,0-.412.06l-1.555.523-0.516-1.542a1.4,1.4,0,0,0-.7-0.808,1.377,1.377,0,0,0-.629-0.147,1.4,1.4,0,0,0-1.33,1.786l0.02,0.063,0.514,1.539L446,486.155h0l0.94,2.81-2.977,1.014h0l-1.009-3.016h0c1.015-.35,1.878-0.646,2.625-0.9l-0.508-2.68-2.981,1.005-0.512-1.535a1.391,1.391,0,0,0-1.331-.954,1.425,1.425,0,0,0-.433.073,1.4,1.4,0,0,0-.894,1.711c0.007,0.022.012,0.043,0.018,0.064l0.514,1.531h0l0.867,2.593h0l1,3.007-1.5.511a1.4,1.4,0,0,0-.893,1.72,0.378,0.378,0,0,0,.019.063,1.321,1.321,0,0,0,1.293.9h0a1.578,1.578,0,0,0,.48-0.083l1.474-.507,0.523,1.563a1.389,1.389,0,0,0,1.331.953h0a1.392,1.392,0,0,0,1.326-1.785c0-.021-0.011-0.043-0.017-0.062l-0.527-1.576,2.974-1.024,0.531,1.591a1.393,1.393,0,0,0,2.651-.859l-0.01-.035-0.537-1.6,1.649-.567a1.892,1.892,0,0,0,.674-0.478A1.45,1.45,0,0,0,452.935,488.439Z" transform="translate(-436.969 -480)"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14">
+                                        <path id="twitter" class="cls-1" d="M481.666,495a10.2,10.2,0,0,0,10.508-10.053c0-.153,0-0.305-0.01-0.456a7.39,7.39,0,0,0,1.84-1.83,7.6,7.6,0,0,1-2.121.556,3.559,3.559,0,0,0,1.623-1.954,7.581,7.581,0,0,1-2.343.857,3.813,3.813,0,0,0-5.224-.153,3.439,3.439,0,0,0-1.067,3.376,10.653,10.653,0,0,1-7.613-3.693,3.447,3.447,0,0,0,1.144,4.718,3.8,3.8,0,0,1-1.676-.442v0.045a3.578,3.578,0,0,0,2.964,3.463,3.853,3.853,0,0,1-1.669.061,3.681,3.681,0,0,0,3.45,2.453,7.626,7.626,0,0,1-4.585,1.517,8.053,8.053,0,0,1-.879-0.053A10.8,10.8,0,0,0,481.666,495" transform="translate(-476 -481)"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17">
+                                        <path id="facebook" class="cls-1" d="M526.924,495.989v-7h2.731l0.445-4h-3.176v-0.948c0-1.029.026-2.05,1.465-2.05h1.458v-2.86a15.927,15.927,0,0,0-2.519-.141c-2.644,0-4.3,1.657-4.3,4.7v1.3h-2.923v4h2.923v7h3.895Z" transform="translate(-520.094 -479)"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15" viewBox="0 0 18 15">
+                                        <path id="reddit" class="cls-1" d="M574,487.339a2.04,2.04,0,0,0-3.419-1.491,10.3,10.3,0,0,0-5.144-1.511l1.1-3.342,2.889,0.677a1.674,1.674,0,1,0,.135-0.656l-3.471-.813-1.36,4.127a10.371,10.371,0,0,0-5.341,1.49,2.032,2.032,0,1,0-2.421,3.244c-0.541,3.189,3.235,5.941,7.993,5.941,4.737,0,8.5-2.728,8-5.9A2.013,2.013,0,0,0,574,487.339Zm-12.967,1.355a1.269,1.269,0,0,1,1.26-1.252,1.253,1.253,0,0,1,1.24,1.252,1.237,1.237,0,0,1-1.24,1.234A1.254,1.254,0,0,1,561.034,488.694Zm6.868,3.513a5.154,5.154,0,0,1-5.8,0,0.332,0.332,0,0,1,0-.473,0.339,0.339,0,0,1,.477,0,4.558,4.558,0,0,0,4.848,0,0.339,0.339,0,0,1,.477,0A0.334,0.334,0,0,1,567.9,492.207Zm-0.174-2.279a1.256,1.256,0,0,1-1.262-1.234,1.271,1.271,0,0,1,1.262-1.252,1.252,1.252,0,0,1,1.238,1.252A1.236,1.236,0,0,1,567.728,489.928Z" transform="translate(-556 -480)"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16">
+                                        <path id="linkedin" class="cls-1" d="M614,489.808V496h-3.643v-5.776c0-1.451-.528-2.441-1.846-2.441a1.992,1.992,0,0,0-1.871,1.313,2.467,2.467,0,0,0-.12.875V496h-3.643s0.048-9.783,0-10.8h3.643v1.531a0.35,0.35,0,0,0-.023.035h0.023v-0.035a3.629,3.629,0,0,1,3.284-1.783C612.2,484.95,614,486.492,614,489.808ZM599.061,480a1.873,1.873,0,1,0-.049,3.731h0.024A1.874,1.874,0,1,0,599.061,480Zm-1.848,16h3.645V485.2h-3.645V496Z" transform="translate(-597 -480)"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="main-menu-container">
+                        <ul class="main-menu primary-menu">
+                            <li class="active"><a href="#">ICOs</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Results</a></li>
+                            <li><a href="#">Stats</a></li>
+                        </ul>
+                        <ul class="main-menu secondary-menu">
+                            <li><a href="#">Submit</a></li>
+                            <li><a href="#">Advertise</a></li>
+                            <li><a href="#">Login</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-mobile-menu btn-tablet">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 14">
+                            <path id="burger" class="icon-burger" d="M5521,476h24v2h-24v-2Zm0,6h24v2h-24v-2Zm0,6h24v2h-24v-2Z" transform="translate(-5521 -476)"/>
+                            <path id="close" class="icon-close" d="M5540.19,1518.78l-1.41,1.41-5.78-5.78-5.78,5.78-1.41-1.41,5.78-5.78-5.78-5.78,1.41-1.41,5.78,5.77,5.78-5.77,1.41,1.41-5.78,5.78Z" transform="translate(-5521 -1505.81)"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="company-title-section">
+            <div class="container">
+                <div class="company-title-wrapper">
+                    <div class="cover-image-container"></div>
+                    <div class="company-title-container">
+                        <div class="company-info">
+                            <div class="logo-container">
+                                <img src="images/logo.png" alt="">
+                            </div>
+                            <div class="info-container">
+                                <h4>
+                                    indaHash (IDH)
+                                    <span class="icon-star"></span>
+                                </h4>
+                                <span class="rank-badge badge">
+                                    <span class="title">ICOrank</span>
+                                    <span class="counter">86</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="actions-bar">
+                            <a href="#" class="btn btn-like">
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16">
+                                    <path id="thup" class="btn-icon-path" d="M800,849h3V839h-3v10Zm17-9a2.5,2.5,0,0,0-2-2h-5l0.523-3.193V834.58a1.577,1.577,0,0,0-.3-0.825l-0.826-.749-4.954,4.947a1.258,1.258,0,0,0-.451,1.05v8.5a1.5,1.5,0,0,0,1.5,1.5h7.757a1.483,1.483,0,0,0,1.35-.9l2.253-6.322a1.276,1.276,0,0,0,.075-0.525L817,840h0Z" transform="translate(-800 -833)"/>
+                                </svg>
+                                <span>12 256</span>
+                            </a>
+                            <a href="#" class="btn btn-like">
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16">
+                                    <path id="thdown" class="btn-icon-path" d="M910,837h3v10h-3V837Zm17,9a2.5,2.5,0,0,1-2,2h-5l0.524,3.193v0.226a1.574,1.574,0,0,1-.3.824l-0.826.75-4.954-4.948a1.254,1.254,0,0,1-.452-1.05v-8.5a1.5,1.5,0,0,1,1.5-1.5h7.758a1.486,1.486,0,0,1,1.351.9l2.252,6.323a1.259,1.259,0,0,1,.076.524L927,846h0Z" transform="translate(-910 -837)"/>
+                                </svg>
+                                <span>4 256</span>
+                            </a>
+                            <a href="#" class="btn btn-like">
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16">
+                                    <path id="like" class="btn-icon-path" d="M1024.01,836a4.935,4.935,0,0,0-3.51,1.462l-0.5.5-0.51-.5a4.968,4.968,0,0,0-7.04,0,5,5,0,0,0,0,7.056l0.63,0.631,6.79,6.8a0.173,0.173,0,0,0,.13.054,0.167,0.167,0,0,0,.12-0.054l6.78-6.8,0.63-.631a4.99,4.99,0,0,0-3.52-8.518h0Z" transform="translate(-1011 -836)"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="btn btn-primary">
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                                    <path id="web" class="btn-icon-path" d="M1108.81,839.1h0a6.973,6.973,0,0,1-4.71,10.786c-0.07.013-.15,0.033-0.23,0.043v-0.02a6.986,6.986,0,1,1,2.08-13.241h0.01a7.061,7.061,0,0,1,.79.438c0.16,0.1.3,0.213,0.45,0.325,0.19,0.143.37,0.293,0.55,0.455,0.11,0.1.22,0.2,0.32,0.312a6.984,6.984,0,0,1,.67.814c0.02,0.03.05,0.056,0.07,0.086v0ZM1109,843a5.95,5.95,0,0,0-1.35-3.747l-0.16.015-0.32.5-0.22-.073-0.89-.8-0.13-.417-0.17-.444-0.56-.5-0.66-.128-0.02.3,0.65,0.63,0.32,0.372-0.36.186-0.29-.086-0.43-.18,0.01-.35-0.57-.233-0.19.821-0.57.13,0.06,0.458,0.74,0.143,0.13-.732,0.62,0.092,0.29,0.167h0.45l0.32,0.63,0.83,0.846-0.06.328-0.67-.085-1.16.586-0.84,1-0.11.444h-0.3l-0.56-.257-0.54.257,0.14,0.573,0.23-.272,0.42-.013-0.03.515,0.34,0.1,0.35,0.386,0.56-.157,0.64,0.1,0.75,0.2,0.37,0.044,0.63,0.715,1.22,0.716-0.79,1.5-0.83.386-0.16.418A5.968,5.968,0,0,0,1109,843Zm-5.27-5.925-0.56.057-0.2-.129a6.106,6.106,0,0,0-.87.088l0.03,0.047-0.96.251-0.08-.05a6.169,6.169,0,0,0-1.57.784l0.32-.044,0.57-.314,0.65,0.186,1.03-.057,0.35-.555,0.52,0.085,1.25-.118,0.13-.142A5.969,5.969,0,0,0,1103.73,837.073ZM1103,849a5.97,5.97,0,0,0,.85-0.086c0.09-.349.27-1.089,0.27-1.122s-0.32-1.132-.32-1.132l-0.51-.945,0.47-.977-0.47-.141-0.52-.527-1.17-.261-0.38-.81v0.481h-0.18l-1-1.362V841l-0.74-1.2-1.16.208h-0.32A5.969,5.969,0,0,0,1103,849Z" transform="translate(-1096 -836)"/>
+                                </svg>
+                                <span>Website</span>
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="11" height="13.062" viewBox="0 0 11 13.062">
+                                    <path id="wp" class="btn-icon-path" d="M1236,850h-9a1,1,0,0,1-1-1V838a1,1,0,0,1,1-1h5.89l0.06-.052L1233,837h0l4,4v8A1,1,0,0,1,1236,850Zm-3-11.586V841h2.58Zm3,3.585h-4v-4h-5v11h9v-7Zm-5-2h-3v-1h3v1Zm0,2h-3v-1h3v1Zm4,2h-7v-1h7v1Zm0,2h-7v-1h7v1Zm-3,2h-4v-1h4v1Z" transform="translate(-1226 -836.938)"/>
+                                </svg>
+                                <span>White Paper</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="container">
+                <div class="content-section">
+                    <div class="content-item">
+                        <p>The award winning app with a 130 person team, in 7 countries, connecting brands with 300 000 influencers. indaHash is now set to tokenize the influencer industry via indaHash Coin.</p>
+                        <ul class="characteristics-list">
+                            <li>
+                                <span class="title">Project Type</span>
+                                <span class="text">Token</span>
+                            </li>
+                            <li>
+                                <span class="title">Category</span>
+                                <span class="text">Commerce & Advertising</span>
+                            </li>
+                            <li>
+                                <span class="title">Platform</span>
+                                <span class="text"><img src="images/ethereum.png" alt="">Ethereum</span>
+                            </li>
+                            <li>
+                                <span class="title">Total Supply</span>
+                                <span class="text">400,000,000</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-item two-columns padding-b-40">
+                        <div class="timer-container start-date" data-date="February 10 2018 15:00">
+                            <h6>Start Date</h6>
+                            <span class="date-text">February 10 2018 15:00 UTC</span>
+                            <div class="timer expired">
+                                <div class="days">
+                                    <span class="counter">00</span>
+                                    <span class="description">Days</span>
+                                </div>
+                                <div class="hours">
+                                    <span class="counter">00</span>
+                                    <span class="description">Hours</span>
+                                </div>
+                                <div class="minutes">
+                                    <span class="counter">00</span>
+                                    <span class="description">Mins</span>
+                                </div>
+                                <div class="seconds">
+                                    <span class="counter">00</span>
+                                    <span class="description">Secs</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timer-container end-date" data-date="February 20 2018 15:00">
+                            <h6>End Date</h6>
+                            <span class="date-text">February 20 2018 15:00 UTC</span>
+                            <div class="timer">
+                                <div class="days">
+                                    <span class="counter">00</span>
+                                    <span class="description">Days</span>
+                                </div>
+                                <div class="hours">
+                                    <span class="counter">00</span>
+                                    <span class="description">Hours</span>
+                                </div>
+                                <div class="minutes">
+                                    <span class="counter">00</span>
+                                    <span class="description">Mins</span>
+                                </div>
+                                <div class="seconds">
+                                    <span class="counter">00</span>
+                                    <span class="description">Secs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <h6>Team</h6>
+                        <div class="team-list">
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-1.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">Barbara Soltysinska</span>
+                                    <span class="position">CEO</span>
+                                    <div class="links"><a href="#">Website</a><a href="#">Linkedin</a><a href="#">Facebook</a><a href="#">Twitter</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-2.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">Darek Zielinski</span>
+                                    <span class="position">COO - Chief Operations Officer</span>
+                                    <div class="links"><a href="#">Stack Exchange</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-3.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">Daniel Wroblewski</span>
+                                    <span class="position">Chief Software Architect</span>
+                                    <div class="links"><a href="#">Linkedin</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-4.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">Dmitry Khovratovich</span>
+                                    <span class="position">Blockchain Advisor</span>
+                                    <div class="links"><a href="#">Website</a><a href="#">Linkedin</a><a href="#">Facebook</a><a href="#">Twitter</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-5.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">Bok Khoo</span>
+                                    <span class="position">Blockchain Advisor</span>
+                                    <div class="links"><a href="#">Linkedin</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-6.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">Federico Dedeu</span>
+                                    <span class="position">Business Development Leader Emea - Africa</span>
+                                    <div class="links"><a href="#">Linkedin</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-7.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">Ashwin Chandoesing</span>
+                                    <span class="position">Business Development Director - Apac</span>
+                                    <div class="links"><a href="#">Linkedin</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-8.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">Joanna Pawluk</span>
+                                    <span class="position">CGO - Chief Growth Officer</span>
+                                    <div class="links"><a href="#">Linkedin</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-9.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">David Saunders</span>
+                                    <span class="position">Business Development Director - London</span>
+                                    <div class="links"><a href="#">Linkedin</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-10.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">Michal Sokolik</span>
+                                    <span class="position">IT Project Manager</span>
+                                    <div class="links"><a href="#">Linkedin</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-11.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">Amin Harb</span>
+                                    <span class="position">Business Development Director - Dubai</span>
+                                    <div class="links"><a href="#">Linkedin</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="avatar-container">
+                                    <img src="images/team/team-12.jpg" alt="">
+                                </div>
+                                <div class="description-container">
+                                    <span class="name">Marta Zarosa</span>
+                                    <span class="position">CBDO - Chief Business Development Officer</span>
+                                    <div class="links"><a href="#">Linkedin</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <h6>Details</h6>
+                        <p>80% of all coins are available during the Pre-ICO and ICO. A maximum of 20% of the total supply of coins will be used to engage influencers into the indaHash Coins promotion, grow app loyalty and gamification features</p>
+                        <p>Zero tokens will be distributed to the indaHash team, instead, we will be implementing a “buyback” program. This will highly reduce the probability of a day one exchange dump that happens to most new tokens that hit the market. Not more than 2% of all issued indaHash Coins will be used for bounty and/or promotional campaigns.</p>
+                        <p>Contributing rules <br> There are strict rules and precautions to follow while participating within the indaHash ICO.</p>
+                        <p>Send ETH from your personal Ethereum wallet (such as MyEtherWallet, Metamask,Parity, Mist or Ledger). <br> Set gas limit to 250 000. <br> Do not send ETH from exchanges like Coinbase, Poloniex etc. <br> Do not send ETH before the token distribution has begun. <br> IDH Coins will be sent immediately to the wallet from which the ETH arrived after reaching the minimum goal.</p>
+                        <div class="video-container">
+                            <video id="video" class="video" poster="images/video-placeholder.jpg" preload="auto">
+                                <source src="media/vsvideo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <a href="#" class="video-control play">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+                                    <path id="play" class="icon-path" d="M535,2325v16l14-8Z" transform="translate(-535 -2325)"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="slider-container">
+                            <div class="owl-carousel">
+                                <div><img src="images/slider-image.jpg" alt=""></div>
+                                <div><img src="images/slider-image.jpg" alt=""></div>
+                                <div><img src="images/slider-image.jpg" alt=""></div>
+                                <div><img src="images/slider-image.jpg" alt=""></div>
+                                <div><img src="images/slider-image.jpg" alt=""></div>
+                                <div><img src="images/slider-image.jpg" alt=""></div>
+                            </div>
+                            <div class="slider-controls-container">
+                                <a href="#" class="prev-slide slider-control">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="5" height="9" viewBox="0 0 5 9">
+                                        <path id="prev" data-name="prev" class="icon-path" d="M504.985,3153.31l-0.664.69L500,3149.5l4.324-4.5,0.664,0.69-3.663,3.81Z" transform="translate(-500 -3145)"/>
+                                    </svg>
+                                </a>
+                                <div class="slider-pagination">
+                                    <span class="current-page"></span>
+                                    <span class="divider">of</span>
+                                    <span class="total-pages"></span>
+                                </div>
+                                <a href="#" class="next-slide slider-control">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="5" height="9" viewBox="0 0 5 9">
+                                        <path id="next" data-name="next" class="icon-path" d="M575.674,3154l-0.665-.69,3.663-3.81-3.663-3.81,0.665-.69,4.324,4.5Z" transform="translate(-575 -3145)"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <h6>Links</h6>
+                        <div class="socials-list-container">
+                            <ul class="socials-list">
+                                <li>
+                                    <a href="#">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                                            <path id="facebook" class="icon-path" d="M52,1487H62a2,2,0,0,1,2,2v10a2,2,0,0,1-2,2H52a2,2,0,0,1-2-2v-10A2,2,0,0,1,52,1487Zm7,13.99v-5h1.668l0.3-2.01H58.993v-0.64c0-.67.017-1.33,0.878-1.33h0.876v-1.99a3.992,3.992,0,0,0-1.167-.09c-1.587,0-2.581,1.08-2.581,3.06v0.99h-2v2.01h2v5h1.994Z" transform="translate(-50 -1487)"/>
+                                        </svg>
+                                        <span>Facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                                            <path id="github" class="icon-path" d="M57,1527a7.09,7.09,0,0,1,7,7.18,7.166,7.166,0,0,1-4.783,6.81,0.355,0.355,0,0,1-.48-0.35c0-.24.008-1.01,0.008-1.97a1.753,1.753,0,0,0-.476-1.33c1.559-.17,3.2-0.78,3.2-3.54a2.794,2.794,0,0,0-.721-1.92,2.653,2.653,0,0,0-.068-1.9s-0.587-.2-1.924.73a6.514,6.514,0,0,0-3.5,0c-1.339-.93-1.927-0.73-1.927-0.73a2.64,2.64,0,0,0-.067,1.9,2.807,2.807,0,0,0-.721,1.92c0,2.75,1.633,3.37,3.189,3.55a1.535,1.535,0,0,0-.446.96,1.471,1.471,0,0,1-2.037-.6,1.471,1.471,0,0,0-1.072-.74s-0.684-.01-0.049.44a1.888,1.888,0,0,1,.779,1.05s0.41,1.28,2.357.84c0,0.6.01,1.17,0.01,1.34a0.358,0.358,0,0,1-.478.35A7.168,7.168,0,0,1,50,1534.18a7.09,7.09,0,0,1,7-7.18" transform="translate(-50 -1527)"/>
+                                        </svg>
+                                        <span>Github</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
+                                            <path class="icon-path" d="M61,1581a11,11,0,0,0-11-11v-2a13,13,0,0,1,13,13H61Zm-3,0H56a6,6,0,0,0-6-6v-2A8,8,0,0,1,58,1581Zm-6.5-3a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,51.5,1578Z" transform="translate(-50 -1568)"/>
+                                        </svg>
+                                        <span>Blog</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="socials-list">
+                                <li>
+                                    <a href="#">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="11" viewBox="0 0 15 11">
+                                            <path id="twitter" class="icon-path" d="M298.723,1500c5.659,0,8.756-4.23,8.756-7.9,0-.12,0-0.24-0.009-0.36a6.007,6.007,0,0,0,1.534-1.43,6.659,6.659,0,0,1-1.767.43,2.837,2.837,0,0,0,1.354-1.53,6.618,6.618,0,0,1-1.955.67,3.321,3.321,0,0,0-4.355-.12,2.612,2.612,0,0,0-.89,2.65,9.056,9.056,0,0,1-6.342-2.9,2.625,2.625,0,0,0,.952,3.71,3.2,3.2,0,0,1-1.4-.35v0.04a2.863,2.863,0,0,0,2.47,2.72,3.427,3.427,0,0,1-1.39.05,3.051,3.051,0,0,0,2.876,1.92,6.586,6.586,0,0,1-3.823,1.2c-0.246-.01-0.489-0.02-0.732-0.04a9.479,9.479,0,0,0,4.717,1.24" transform="translate(-294 -1489)"/>
+                                        </svg>
+                                        <span>Twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12">
+                                            <path id="reddit" class="icon-path" d="M307,1532.87a1.6,1.6,0,0,0-1.583-1.62,1.547,1.547,0,0,0-1.077.43,7.785,7.785,0,0,0-4-1.21l0.857-2.67,2.247,0.54a1.325,1.325,0,1,0,.1-0.53c-0.483-.11-2.216-0.53-2.7-0.65l-1.057,3.3a7.835,7.835,0,0,0-4.155,1.2,1.522,1.522,0,0,0-1.051-.41,1.606,1.606,0,0,0-1.585,1.62,1.624,1.624,0,0,0,.754,1.38c-0.422,2.55,2.515,4.75,6.217,4.75,3.685,0,6.612-2.18,6.223-4.72A1.605,1.605,0,0,0,307,1532.87Zm-10.083,1.09a1.006,1.006,0,0,1,.98-1.01,0.994,0.994,0,0,1,.964,1.01,0.972,0.972,0,0,1-.964.98A0.986,0.986,0,0,1,296.915,1533.96Zm5.341,2.81a3.942,3.942,0,0,1-4.514,0,0.276,0.276,0,0,1,0-.38,0.251,0.251,0,0,1,.372,0,3.454,3.454,0,0,0,3.771,0,0.25,0.25,0,0,1,.371,0A0.276,0.276,0,0,1,302.256,1536.77Zm-0.136-1.83a0.986,0.986,0,0,1-.981-0.98,1.006,1.006,0,0,1,.981-1.01,0.992,0.992,0,0,1,.964,1.01A0.973,0.973,0,0,1,302.12,1534.94Z" transform="translate(-293 -1527)"/>
+                                        </svg>
+                                        <span>Reddit</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="14.031" height="14" viewBox="0 0 14.031 14">
+                                            <path id="slack" class="icon-path" d="M297.613,1573.98c-0.334.12-.671,0.23-1.029,0.36a1.406,1.406,0,0,1-.405.07,1.162,1.162,0,0,1-1.126-.8,0.333,0.333,0,0,1-.016-0.06,1.22,1.22,0,0,1,.782-1.49l1.3-.44Zm11.33,0.4-0.016-.05a1.192,1.192,0,0,0-1.156-.8,1.3,1.3,0,0,0-.391.06l-1.376.47-0.888-2.65h0l1.323-.46a1.194,1.194,0,0,0,.827-1.42l-0.014-.05a1.175,1.175,0,0,0-1.157-.81,1.5,1.5,0,0,0-.363.05l-1.359.46-0.453-1.35a1.241,1.241,0,0,0-.613-0.71,1.317,1.317,0,0,0-.55-0.13,1.245,1.245,0,0,0-.381.07,1.227,1.227,0,0,0-.782,1.5l0.015,0.05,0.452,1.35,0.812,2.43h0l0.821,2.45-2.605.89h0l-0.882-2.64h0c0.889-.3,1.644-0.56,2.3-0.79l-0.442-2.34-2.608.88L299,1569.49a1.22,1.22,0,0,0-2.328.73c0.006,0.02.012,0.04,0.017,0.06l0.449,1.34h0l0.757,2.26h0l0.883,2.64-1.315.44a1.234,1.234,0,0,0-.785,1.51,0.358,0.358,0,0,0,.019.05,1.152,1.152,0,0,0,1.131.79h0a1.5,1.5,0,0,0,.42-0.07l1.292-.45,0.457,1.37a1.217,1.217,0,0,0,1.166.84h0a1.236,1.236,0,0,0,.377-0.07,1.222,1.222,0,0,0,.782-1.5c0-.01-0.01-0.03-0.016-0.05l-0.462-1.38,2.6-.89,0.466,1.39a1.23,1.23,0,0,0,1.543.77,1.231,1.231,0,0,0,.776-1.52l-0.01-.04-0.467-1.4,1.442-.5a1.63,1.63,0,0,0,.59-0.41A1.281,1.281,0,0,0,308.943,1574.38Z" transform="translate(-294.969 -1567)"/>
+                                        </svg>
+                                        <span>Slack</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="socials-list">
+                                <li>
+                                    <a href="#">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13">
+                                            <path id="linkedin" class="icon-path" d="M542.993,1500.01h-3l0-9.01h3v9.01Zm-1.494-10.02a1.49,1.49,0,1,1,1.5-1.49A1.5,1.5,0,0,1,541.5,1489.99Zm12.491,10.02H551v-4.9c0-1.35-.437-2.1-1.5-2.1-1.157,0-1.529.79-1.529,2.1v4.9h-2.987v-9.04h2.987v0.87a2.758,2.758,0,0,1,2.607-1.51c1.98,0,3.409,1.27,3.409,3.77v5.91Z" transform="translate(-540 -1487)"/>
+                                        </svg>
+                                        <span>LinkedIn</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="14.031" height="12" viewBox="0 0 14.031 12">
+                                            <path id="telegram" class="icon-path" d="M540.218,1534.74l3.236,1.19,1.253,3.94a0.377,0.377,0,0,0,.6.18l1.805-1.44a0.548,0.548,0,0,1,.655-0.02l3.253,2.32a0.383,0.383,0,0,0,.6-0.23L554,1529.45a0.383,0.383,0,0,0-.511-0.43l-13.278,5.02A0.372,0.372,0,0,0,540.218,1534.74Zm4.284,0.56,6.324-3.82a0.109,0.109,0,0,1,.135.17l-5.221,4.75a1.087,1.087,0,0,0-.334.64l-0.178,1.29a0.163,0.163,0,0,1-.317.02l-0.684-2.35A0.608,0.608,0,0,1,544.5,1535.3Z" transform="translate(-539.969 -1529)"/>
+                                        </svg>
+                                        <span>Telegram</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="13.969" height="14" viewBox="0 0 13.969 14">
+                                            <path id="instagram" class="icon-path" d="M544.988,1574.01a2.009,2.009,0,1,1,2.009,2,2,2,0,0,1-2.009-2m-1,0A3.012,3.012,0,1,0,547,1571a3,3,0,0,0-3.012,3.01M550,1570.5a0.5,0.5,0,1,0,.5-0.5,0.505,0.505,0,0,0-.5.5m-5.964,9.41a3.989,3.989,0,0,1-1.355-.25,2.37,2.37,0,0,1-1.384-1.38c-0.432-1.1-.288-6.35-0.249-7.2a3.109,3.109,0,0,1,.795-2.18c0.729-.72,1.671-1.08,8.083-0.79a3.172,3.172,0,0,1,2.192.79c0.729,0.73,1.09,1.67.795,8.04a3.9,3.9,0,0,1-.249,1.34c-0.662,1.69-2.178,1.92-8.628,1.63m0.079-12.8a3.85,3.85,0,0,0-4.044,4.04c-0.03.7-.218,6.02,0.324,7.41a3.53,3.53,0,0,0,2.033,2.03,5.069,5.069,0,0,0,1.687.32c6.191,0.28,8.485.13,9.453-2.35a5.115,5.115,0,0,0,.321-1.69c0.283-6.21-.045-7.56-1.124-8.64-0.855-.85-1.863-1.44-8.65-1.12" transform="translate(-540 -1567)"/>
+                                        </svg>
+                                        <span>Instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="socials-list">
+                                <li>
+                                    <a href="#">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="12" height="14" viewBox="0 0 12 14">
+                                            <path id="SE" class="icon-path" d="M786,1494h12v2H786v-2Zm0-3h12v2H786v-2Zm2-3h8a2,2,0,0,1,2,2H786A2,2,0,0,1,788,1488Zm8,11-3,3v-3h-5a2,2,0,0,1-2-2h12A2,2,0,0,1,796,1499Z" transform="translate(-786 -1488)"/>
+                                        </svg>
+                                        <span>Stack Ex</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <h6>Distribution</h6>
+                        <ul class="characteristics-list type-2">
+                            <li>
+                                <span class="title">Pre & Main ICO</span>
+                                <span class="text">320,000,000 IDH</span>
+                                <span class="text">80.00%</span>
+                            </li>
+                            <li>
+                                <span class="title">Influencers & market education activities</span>
+                                <span class="text">72,000,000 IDH</span>
+                                <span class="text">18.00%</span>
+                            </li>
+                            <li>
+                                <span class="title">Reward program</span>
+                                <span class="text">8,000,000 IDH</span>
+                                <span class="text">2.00%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-item two-columns">
+                        <h6>Rates and Bonuses</h6>
+                        <div class="column">
+                            <ul class="characteristics-list fullsize-list">
+                                <li>
+                                    <span class="title">First 24 Hours</span>
+                                    <span class="text">20% Bonus (1 ETH = 600 GLA)</span>
+                                </li>
+                                <li>
+                                    <span class="title">Week One</span>
+                                    <span class="text">5% Bonus (1 ETH = 525 GLA)</span>
+                                </li>
+                                <li>
+                                    <span class="title">Week Two</span>
+                                    <span class="text">3% Bonus (1 ETH = 515 GLA)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul class="characteristics-list fullsize-list">
+                                <li>
+                                    <span class="title">Week Three</span>
+                                    <span class="text">1% Bonus (1 ETH = 505 GLA)</span>
+                                </li>
+                                <li>
+                                    <span class="title">Week Four</span>
+                                    <span class="text">0% Bonus (1 ETH = 500 GLA)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-item padding-b-40">
+                        <h6>Featured Blog Posts</h6>
+                        <div class="posts-list">
+                            <div class="item">
+                                <span class="date">9 November 2017</span>
+                                <span class="title">The HQx Token: What It Is and Why You Want It</span>
+                                <p>If you have a business, you likely spend a lot of time every quarter trying to figure out the best way to utilize your marketing budget. You want to reach the most ...</p>
+                                <a href="#" class="link">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="29" height="9" viewBox="0 0 29 9">
+                                        <path id="readMore" data-name="readMore" class="icon-path" d="M74.674,4018l-0.665-.69,3.183-3.31H50v-1H77.191l-3.183-3.31,0.665-.69L79,4013.5Z" transform="translate(-50 -4009)"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <span class="date">6 November 2017</span>
+                                <span class="title">Evgeny Kaplin CEO of Modultrade: A New Blockchain Platform Opening Global Trade for Small Enterprises</span>
+                                <p>This is a guest post by ModulTrade. The information provided in this post is the responsibility of the writer.your marketing budget... </p>
+                                <a href="#" class="link">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="29" height="9" viewBox="0 0 29 9">
+                                        <path id="readMore" data-name="readMore" class="icon-path" d="M74.674,4018l-0.665-.69,3.183-3.31H50v-1H77.191l-3.183-3.31,0.665-.69L79,4013.5Z" transform="translate(-50 -4009)"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-item border-none margin-b-0">
+                        <h6>Milestones</h6>
+                        <ul class="characteristics-list type-3">
+                            <li>
+                                <span class="title">Jan 2018</span>
+                                <p class="text">Integration with the largest exchanges</p>
+                            </li>
+                            <li>
+                                <span class="title">Feb 2018</span>
+                                <p class="text">In-app expanded wallet integration for influencers</p>
+                            </li>
+                            <li>
+                                <span class="title">Mar 2018</span>
+                                <p class="text">indaHash Coin integration and launch in indaHash app for influencer</p>
+                            </li>
+                            <li>
+                                <span class="title">Apr 2018</span>
+                                <p class="text">Massive promotional and educational campaign launched for influencers in 15 major countries</p>
+                            </li>
+                            <li>
+                                <span class="title">May 2018</span>
+                                <p class="text">Integration with brand’s payments with indaHash Coins and Pay-With-Fame functionality and making partnerships with the most <br> recognizable brands and e-commerce companies</p>
+                            </li>
+                            <li>
+                                <span class="title">Jun 2018</span>
+                                <p class="text">Extended promotional and educational campaign launched for influencers in 30 major countries</p>
+                            </li>
+                            <li>
+                                <span class="title">Jun 2018</span>
+                                <p class="text">Extended promotional and educational campaign for local brands to use Pay-With-Fame</p>
+                            </li>
+                            <li>
+                                <span class="title">Jul 2018</span>
+                                <p class="text">Introduction of influencer tokenization program and reward system</p>
+                            </li>
+                            <li>
+                                <span class="title">Sep 2018</span>
+                                <p class="text">Extended promotional and educational campaign launched for influencers in 45 major countries</p>
+                            </li>
+                            <li>
+                                <span class="title">Oct 2018</span>
+                                <p class="text">Introduction of indaHash Score for brands based on influencer tokenization</p>
+                            </li>
+                            <li>
+                                <span class="title">Q4 2018</span>
+                                <p class="text">Pre-paid card distribution with indaHash Coins payments possible for influencer</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="comments-container">
+                        <div class="comments-privacy">
+                            <span class="title">Coinschedule Comment Policy</span>
+                            <p>Please read our <a href="#">Comment Policy</a> before commenting.</p>
+                        </div>
+                        <div class="comments-block">
+                            <div id="disqus_thread"></div>
+                            <script>
+                                /**
+                                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                                 */
+                                var disqus_config = function () {
+                                    this.page.url = 'http://forgamerinfo.com/project/coinschedule/';  // Replace PAGE_URL with your page's canonical URL variable
+                                    this.page.identifier = 3; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                };
+                                (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                                    var d = document, s = d.createElement('script');
+
+                                    s.src = 'https://EXAMPLE.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    (d.head || d.body).appendChild(s);
+                                })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="widget">
+                        <div class="widget__header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="11" viewBox="0 0 15 11">
+                                <path id="twitter" class="cls-1" d="M1124.72,1004c5.66,0,8.76-4.229,8.76-7.9,0-.12,0-0.24-0.01-0.358a5.933,5.933,0,0,0,1.53-1.438,6.62,6.62,0,0,1-1.76.437,2.863,2.863,0,0,0,1.35-1.536,6.537,6.537,0,0,1-1.95.674,3.328,3.328,0,0,0-4.36-.12,2.6,2.6,0,0,0-.89,2.652,9.083,9.083,0,0,1-6.34-2.9,2.619,2.619,0,0,0,.95,3.707,3.253,3.253,0,0,1-1.39-.348v0.035a2.863,2.863,0,0,0,2.47,2.722,3.414,3.414,0,0,1-1.39.048,3.036,3.036,0,0,0,2.87,1.923,6.586,6.586,0,0,1-3.82,1.2c-0.25,0-.49-0.02-0.73-0.04a9.439,9.439,0,0,0,4.71,1.24" transform="translate(-1120 -993)"/>
+                            </svg>
+                            <span>Twitter feed</span>
+                        </div>
+                        <div class="widget__body padding-0 scroll">
+                            <div class="feed-container"><a class="twitter-timeline" href="https://twitter.com/syncfab?ref_src=twsrc%5Etfw">Tweets by indaHash</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="widget__header">
+                            <span>Similar ICO’s</span>
+                        </div>
+                        <div class="widget__body">
+                            <div class="ico-list">
+                                <div class="item">
+                                    <div class="logo-container">
+                                        <img src="images/ico-1.png" alt="PerksCoin ICO">
+                                    </div>
+                                    <div class="info-container">
+                                        <a href="#" class="title">PerksCoin ICO</a>
+                                        <span class="description">19.74% done</span>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="logo-container">
+                                        <img src="images/ico-2.png" alt="Foreground DEAL">
+                                    </div>
+                                    <div class="info-container">
+                                        <a href="#" class="title">Foreground DEAL</a>
+                                        <span class="description">19.74% done</span>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="logo-container">
+                                        <img src="images/ico-3.png" alt="Prosense">
+                                    </div>
+                                    <div class="info-container">
+                                        <a href="#" class="title">Prosense</a>
+                                        <span class="description">19.74% done</span>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="logo-container">
+                                        <img src="images/ico-4.png" alt="TOKIA">
+                                    </div>
+                                    <div class="info-container">
+                                        <a href="#" class="title">TOKIA</a>
+                                        <span class="description">19.74% done</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-container">
+                        <img src="images/banner_ad.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="top-container">
+                <div class="container">
+                    <div class="menus-container">
+                        <div class="column">
+                            <h6>Website</h6>
+                            <ul class="menu">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Submit Entry</a></li>
+                                <li><a href="#">Advertise</a></li>
+                                <li><a href="#">Login</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h6>Tools</h6>
+                            <ul class="menu">
+                                <li><a href="#">Results</a></li>
+                                <li><a href="#">Stats</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h6>Media</h6>
+                            <ul class="menu">
+                                <li><a href="#">Press Mentions</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Telegram</a></li>
+                                <li><a href="#">Slack</a></li>
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">Reddit</a></li>
+                                <li><a href="#">LinkedIn</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h6>Legal</h6>
+                            <ul class="menu">
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Disclaimer</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <h6>About Coinschedule</h6>
+                        <p>Founded in 2016, Coinschedule's mission is to make it easy for users to find the best ICOs to join. We strive to provide useful and transparent information on ICOs, helping users find projects that have a great potential for success.</p>
+                        <p>At the same time, we offer a marketing platform for ICO projects to present themselves to potential users. We have steadily increased the quantity and the quality of information required from ICO projects and we will continue to do so to help this new industry flourish.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-container">
+                <div class="container">
+                    <span class="copyright">Copyright © 2017 Coinschedule</span>
+                    <img class="dmca-image" src="images/dmca-protected.png" alt="">
+                </div>
+            </div>
+        </footer>
+
+        <div class="mobile-actions-panel">
+            <ul class="actions-list">
+                <li>
+                    <a class="active" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14">
+                            <path id="thup_small" data-name="thup small" class="icon-path" d="M5264,1128h3v-9.97h-3V1128Zm16-8.3a2.233,2.233,0,0,0-1.85-1.71h-4.62l0.49-2.45v-0.19a1.273,1.273,0,0,0-.28-0.7l-0.76-.64-4.58,3.94a1.051,1.051,0,0,0-.41.9v7.87a1.339,1.339,0,0,0,1.38,1.28h7.17a1.369,1.369,0,0,0,1.24-.77l2.08-6.07a1.012,1.012,0,0,0,.07-0.45l0.07-1.01h0Z" transform="translate(-5264 -1114)"/>
+                        </svg>
+                        <span>2 589</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14">
+                            <path id="thdown_small" data-name="thdown small" class="icon-path" d="M5328,1116h3v9.97h-3V1116Zm16,8.3a2.246,2.246,0,0,1-1.85,1.71h-4.62l0.49,2.44v0.2a1.273,1.273,0,0,1-.28.7l-0.76.64-4.58-3.94a1.076,1.076,0,0,1-.41-0.9v-7.87a1.332,1.332,0,0,1,1.38-1.28h7.17a1.369,1.369,0,0,1,1.24.77l2.08,6.07a1.012,1.012,0,0,1,.07.45l0.07,1.01h0Z" transform="translate(-5328 -1116)"/>
+                        </svg>
+                        <span>1 300</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14">
+                            <path id="Favs_small" data-name="Favs small" class="icon-path" d="M5403.57,1115a4.411,4.411,0,0,0-3.13,1.28l-0.44.44-0.45-.44a4.467,4.467,0,0,0-6.26,0,4.316,4.316,0,0,0,0,6.17l0.56,0.55,6.03,5.95a0.166,0.166,0,0,0,.12.05,0.161,0.161,0,0,0,.11-0.05l6.03-5.95,0.55-.55a4.316,4.316,0,0,0,0-6.17,4.388,4.388,0,0,0-3.12-1.28h0Z" transform="translate(-5392 -1115)"/>
+                        </svg>
+                        <span>like</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                            <path id="web" class="icon-path" d="M5469.81,1118.1h0a6.976,6.976,0,0,1-4.71,10.79c-0.07.01-.15,0.03-0.23,0.04v-0.02a6.255,6.255,0,0,1-.87.09,7,7,0,1,1,2.95-13.33h0.01a7.367,7.367,0,0,1,.78.43c0.16,0.1.31,0.22,0.46,0.33,0.19,0.15.37,0.29,0.55,0.46,0.11,0.1.22,0.2,0.32,0.31a6.551,6.551,0,0,1,.67.81c0.02,0.03.05,0.06,0.07,0.09h0Zm0.19,3.9a5.948,5.948,0,0,0-1.35-3.75l-0.16.02-0.32.5-0.22-.07-0.89-.8-0.13-.42-0.17-.45-0.56-.5-0.66-.13-0.02.31,0.65,0.63,0.31,0.37-0.35.18-0.29-.08-0.43-.18,0.01-.35-0.57-.24-0.19.83-0.57.13,0.06,0.45,0.74,0.15,0.13-.73,0.62,0.09,0.29,0.16h0.45l0.32,0.63,0.83,0.85-0.06.33-0.67-.09-1.16.59-0.84,1-0.11.45h-0.3l-0.56-.26-0.54.26,0.14,0.57,0.23-.27,0.42-.02-0.03.52,0.34,0.1,0.35,0.38,0.56-.15,0.64,0.1,0.75,0.2,0.37,0.04,0.63,0.72,1.22,0.71-0.79,1.51-0.83.38-0.16.42A5.952,5.952,0,0,0,5470,1122Zm-5.27-5.93-0.56.06-0.2-.13a6.255,6.255,0,0,0-.87.09l0.03,0.05-0.96.25-0.08-.05a6.06,6.06,0,0,0-1.57.78l0.32-.04,0.57-.32,0.65,0.19,1.03-.06,0.35-.55,0.52,0.08,1.25-.12,0.13-.14C5465.14,1116.12,5464.94,1116.1,5464.73,1116.07ZM5464,1128a5.972,5.972,0,0,0,.85-0.09c0.09-.35.27-1.09,0.27-1.12s-0.32-1.13-.32-1.13l-0.51-.95,0.47-.97-0.47-.14-0.52-.53-1.17-.26-0.38-.81v0.48h-0.18l-1-1.36V1120l-0.74-1.2-1.16.21h-0.32A5.97,5.97,0,0,0,5464,1128Z" transform="translate(-5457 -1115)"/>
+                        </svg>
+                        <span>website</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="13.06" viewBox="0 0 11 13.06">
+                            <path id="wp" class="icon-path" d="M5532,1128h-9a1,1,0,0,1-1-1v-11a1,1,0,0,1,1-1h5.89l0.06-.05L5529,1115h0l4,4v8A1,1,0,0,1,5532,1128Zm-3-11.59V1119h2.58Zm3,3.59h-4v-4h-5v11h9v-7Zm-5-2h-3v-1h3v1Zm0,2h-3v-1h3v1Zm4,2h-7v-1h7v1Zm0,2h-7v-1h7v1Zm-3,2h-4v-1h4v1Z" transform="translate(-5522 -1114.94)"/>
+                        </svg>
+                        <span>Paper</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/core.js"></script>
+
+</body>
+</html>

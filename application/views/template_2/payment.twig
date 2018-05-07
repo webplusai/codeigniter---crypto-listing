@@ -1,0 +1,11 @@
+<div class="header"></div>
+<div class="main">
+    <section>
+        <iframe frameBorder="0" scrolling="no" style="overflow: hidden; height: 450px;width: 100%;" src="https://pay.coinschedule.com/pay_request.php?h={{ submission['SubHashCode'] }}"></iframe>
+
+        <div class="col-md-8 col-md-offset-5 div-payment">
+            <a href="{{ base_url ~ 'submission_entry?h=' ~ submission['SubHashCode'] }}" style="margin-left: 60px;" class="btn btn-back btn-payment btn-secondary">BACK</a>
+            <a href="{{ base_url ~ 'listings.html' }}" style="margin-left: 10px;" class="btn btn-back btn-payment btn-secondary">VIEW MY LISTINGS</a>
+        </div>
+    </section>
+</div>

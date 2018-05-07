@@ -1,0 +1,66 @@
+.timer-container {
+
+  h6 {
+    margin-bottom: 15px !important;
+  }
+
+  .date-text {
+    font: {
+      family: $font-family-r;
+      size: 13px;
+    };
+    color: $color-1;
+  }
+  .timer {
+    margin-top: 15px;
+    display: flex;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      margin-right: 3px;
+    }
+
+    .counter {
+      display: flex;
+      width: 50px;
+      height: 50px;
+      background-color: #38c595;
+      border-radius: 3px;
+      justify-content: center;
+      align-items: center;
+
+      font: {
+        family: $font-family-r;
+        size: 25px;
+      };
+      color: $color-7;
+    }
+    .description {
+      margin-top: 10px;
+      text-align: center;
+      font: {
+        family: $font-family-r;
+        size: 10px;
+      };
+      color: $color-1;
+      text-transform: uppercase;
+    }
+
+    &.expired {
+      .counter {
+        background-color: #ee8d6f;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1040px) {
+  .timer-container {
+    margin-top: 30px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

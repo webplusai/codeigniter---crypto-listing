@@ -1,0 +1,282 @@
+<div class="header"></div>
+<div class="main">
+    <section>
+        {% if deletedProject %}
+            {% if projectDetail['ProjDelisted'] == 0 %}
+                <script>window.location.replace(baseUrl);</script>
+            {% endif %}
+
+            <div class="project-heading">
+                <h3 class="inline" style="padding: 30px;">The project '{{ projTitle }}' has been delisted</h3>
+            </div>
+        {% else %}
+            {{ reviveBanner | raw }}
+            <div class="project-heading">
+                {% if projImg != '' %}
+                <img class="project-logo inline" src="{{ projImg }}" height="48" width="48" alt="{{ projName | raw }} Logo">
+                {% endif %}
+                <h1 class="inline">{{ projTitle }}{{ projSponsoredbadge | raw }}</h1>
+                <div class="project-desc">
+                    {{ projectDetail['ProjDesc'] }}
+                </div>
+            </div>
+
+            <div class="projectinfo">
+                <div class="infoitem">
+                    <div class="infolabel inline">Project Type</div>
+                    <div class="infovalue inline">{{ projectDetail['ProjTypeName'] }}</div>
+                </div>
+
+                {% if projectDetail['ProjType'] == 2 %}
+                <div class="infoitem">
+                    <div class="infolabel inline">Platform</div>
+                    <div class="infovalue inline">{{ projectPlatform | raw }}</div>
+                </div>
+                {% endif %}
+
+                <div class="infoitem">
+                    <div class="infolabel inline">Website</div>
+                    <div class="infovalue inline">
+                        {% if projWebsite != '' %}
+                        <a class="projectLink" data-id="{{ projectDetail['ProjID'] }}" href="{{ projWebsite }}" target="_blank">Open <img src="{{ config['icon_open_window'] }}" class="inline" alt="Open Website"></a>
+                        {% else %}
+                        N/A
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if projectDetail['ProjCatName'] != '' %}
+                <div class="infoitem">
+                    <div class="infolabel inline">Category</div>
+                    <div class="infovalue inline">{{ projectDetail['ProjCatName'] }}</div>
+                </div>
+                {% endif %}
+
+                {% if projectDetail['ProjLocation'] != '' %}
+                <div class="infoitem">
+                    <div class="infolabel inline">Location</div>
+                    <div class="infovalue inline">{{ projectDetail['ProjLocation'] }}</div>
+                </div>
+                {% endif %}
+
+                {% if projTotalsupp %}
+                <div class="infoitem">
+                    <div class="infolabel inline">Total Supply</div>
+                    <div class="infovalue inline">{{ projTotalsupp | raw }}</div>
+                </div>
+                {% endif %}
+
+                {% if whitePaperLink %}
+                <div class="infoitem">
+                    <div class="infolabel inline">Whitepaper</div>
+                    <div class="infovalue inline">
+                        <a class="projectLink" data-id="{{ projectDetail['ProjID'] }}" href="{{ whitePaperLink }}" target="_blank" rel="nofollow">View <img src="{{ config['icon_open_window'] }}" class="inline" alt="View Whitepaper"></a>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if bitcoinTalkLink %}
+                <div class="infoitem">
+                    <div class="infolabel inline">Bitcoin Talk</div>
+                    <div class="infovalue inline">
+                        <a class="projectLink" data-id="{{ projectDetail['ProjID'] }}" href="{{ bitcoinTalkLink }}" target="_blank" rel="nofollow">Open <img src="{{ config['icon_open_window'] }}" class="inline" alt="Open Bitcoin Talk"></a>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if projectDetail['preMinedValue'] != '' %}
+                <div class="infoitem">
+                    <div class="infolabel inline">Pre-mined</div>
+                    <div class="infovalue inline">
+                        {{ projectDetail['preMinedValue'] | raw }}
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if projectDetail['ProjType'] == 1 and projectDetail['ProjAlgo'] != '' %}
+                    <div class="infoitem">
+                        <div class="infolabel inline">Algorithm</div>
+                        <div class="infovalue inline">
+                            {{ projectDetail['ProjAlgo'] }}
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="crowdfund">
+                    <h2>{{ projectDetail['EventName'] }}</h2>
+                    <div class="infoitem">
+                        <div class="infolabel inline">Start Date</div>
+                        <div class="infovalue date inline">{{ start }}</div>
+                        <div id="startclock" {% if isMobile %} style="font-weight: bold;" {% endif %}>
+                            <div>
+                                <span class="days">{{ startDays }}</span>
+                                <div class="smalltext">Days</div>
+                            </div>
+                            <div>
+                                <span class="hours">{{ startHours }}</span>
+                                <div class="smalltext">Hours</div>
+                            </div>
+                            <div>
+                                <span class="minutes">{{ startMins }}</span>
+                                <div class="smalltext">Mins</div>
+                            </div>
+                            <div>
+                                <span class="seconds">{{ startSecs }}</span>
+                                <div class="smalltext">Secs</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoitem">
+                        <div class="infolabel inline">End Date</div>
+                        <div class="infovalue date inline">{{ end }}</div>
+                        <div id="endclock" style="margin-bottom: 25px; {% if isMobile %} font-weight: bold; {% endif %}">
+                            <div>
+                                <span class="days">- -</span>
+                                <div class="smalltext">Days</div>
+                            </div>
+                            <div>
+                                <span class="hours">- -</span>
+                                <div class="smalltext">Hours</div>
+                            </div>
+                            <div>
+                                <span class="minutes">- -</span>
+                                <div class="smalltext">Mins</div>
+                            </div>
+                            <div>
+                                <span class="seconds">- -</span>
+                                <div class="smalltext">Secs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% if projectDetail['ProjSponsored'] %}
+
+                {% if crowdFundDesc %}
+                <div class="crowdfund-details">
+                    <div class="infoitem">
+                        <div class="infolabel">Details</div>
+                    </div>
+                    <div class="infodetails">{{ crowdFundDesc | raw }}</div>
+                </div>
+                {% endif %}
+
+                {% if htmlRates %}
+                <div class="crowdfund-rates">
+                    <div class="infoitem">
+                        <div class="infolabel">Rates and Bonuses</div>
+                    </div>
+                    <div class="infodetails">
+                        <table class="ratestable">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{ htmlRates | raw }}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if htmlDistros %}
+                <div class="crowdfund-distro">
+                    <div class="infoitem">
+                        <div class="infolabel">Distribution</div>
+                    </div>
+                    <div class="infodetails">
+                        <table class="distrotable">
+                            <thead>
+                                <tr>
+                                    <th style="width: 300px;"></th><th style="width: 200px;"></th><th></th><th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{ htmlDistros | raw }}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endif %}
+            {% endif %}
+
+            {% if projectDetail['ProjSponsored'] or projectDetail['ProjPackage'] == 1 or projectDetail['ProjHighlighted'] == 1  %}
+                {% if htmlLinks %}
+                <div class="project-links">
+                    <h2>Links</h2>
+                    <div class="infoitem">
+                        {{ htmlLinks | raw }}
+                    </div>
+                </div>
+                {% endif %}
+            {% endif %}
+
+            {% if projectDetail['ProjSponsored'] %}
+                {% if htmlPeople %}
+                <div class="project-team">
+                    <h2>Team</h2>
+                    <div class="infoitem">
+                        <table class="teamtable">
+                            <thead>
+                                <tr>
+                                    <th style="width: 300px;">Name</th><th style="width: 400px;">Position</th><th>Links</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{ htmlPeople | raw }}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if htmlEvent %}
+                <div class="project-events">
+                    <h2>Upcoming Events and Milestones</h2>
+                    <div class="infoitem">
+                        <table class="eventstable">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px;"></th><th style="width: 100px;">Date</th><th>Event</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{ htmlEvent | raw }}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endif %}
+            {% endif %}
+            </div>
+            {% if isInitializeClock %}
+            <script>
+                document.getElementById('id_common').addEventListener('load', function () {
+                    $(document).ready(function () {
+                        var startdate = new Date(Date.UTC({{ timerDate }}));
+                        var enddate = new Date(new Date('{{ scriptEndDate }}'));
+                        initializeClock('{{ initializeClock }}', startdate,enddate);
+                    });
+                });
+            </script>
+            {% endif %}
+        {% endif %}
+
+        <div class="project-comments" id="disqus_thread"></div>
+        <script>
+            var disqus_config = function () {
+                this.page.url = '{{ head['canonical'] }}'
+                this.page.identifier = '{{ projectDetail['ProjID'] }}'
+            };
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = '//coinschedule.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+</div>

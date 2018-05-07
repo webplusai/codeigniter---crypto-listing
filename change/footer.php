@@ -1,0 +1,1 @@
+<div style="padding: 14px 16px;border-top: 1px solid #D9E4E6;border-bottom: 1px solid #D9E4E6;">&copy; <?php echo date("Y"); ?> Coinschedule </div>

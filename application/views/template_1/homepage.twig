@@ -1,0 +1,169 @@
+<div class="header">
+    {{ reviveBanner | raw }}
+    <div class="heading" style="background-image: url('/public/images/img/titlecoins.jpg');color: #fff;padding: 2px 0px 2px;">
+        <h1>The Best Cryptocurrency Token Sales and ICO List</h1>
+        <h2>Listing Cryptocurrency ICOs, Token Sales, Blockchain Events and ICO Stats</h2>
+    </div>
+</div>
+
+<div class="main">
+    {% if isPlatinumSection == true %}
+        <section>
+            <a target="_blank" href="{{ platUrl }}">
+                <div class="platinum">
+
+                    <div class="inline plateventimage" style="width:150px;">
+                        <img src="{{ base_url }}public/images/img/plat.png" alt="Platinum Level Event">
+                    </div>&nbsp;
+
+                    <div class="inline">
+                        <table style="margin:auto;">
+                            <tr>
+                                <td>
+                                    <img class="plateventlogo" src="{{ base_url }}public/uploads/plat/{{ platinumProject['ProjID'] }}.png" alt="Platinum Project {{ platinumProject['EventName'] }} Logo">
+                                </td>
+                                <td style="text-align:center;">
+                                    <h4><b>{{ platinumProject['EventName'] }}</b></h4>
+                                    {{ startFormat }}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    &nbsp;<div id="{{ startClockID }}" class="clock inline">
+                        <div>
+                            <span class="days">- -</span>
+                            <div class="smalltext">Days</div>
+                        </div>
+                        <div>
+                            <span class="hours">- -</span>
+                            <div class="smalltext">Hours</div>
+                        </div>
+                        <div>
+                            <span class="minutes">- -</span>
+                            <div class="smalltext">Mins</div>
+                        </div>
+                        <div>
+                            <span class="seconds">- -</span>
+                            <div class="smalltext">Secs</div>
+                        </div>
+                    </div>
+                    <div class="stretch"></div>
+
+                </div>
+            </a>
+        </section>
+
+        {% if isInitializeClock == true %}
+        <script>
+            document.getElementById('id_common').addEventListener('load', function () {
+                $(document).ready(function () {
+                    var startdate = new Date(Date.UTC({{ timerDate }}));
+                    var enddate = new Date(new Date('{{ endDateJS }}Z'));
+                    initializeClock('{{ startClockID }}', startdate,enddate);
+                });
+            });
+        </script>
+        {% endif %}
+    {% endif %}
+
+    <section>
+        <div id="filtertoggle" class="filtertoggle">
+            <h4><img class="inline" width="16" height="16" id="filterimg" src="{{ filterIcon }}" alt="Filter Toggle Icon"> Filter</h4>
+        </div>
+        <div id="filter" class="filter" {% if isOpenFilter %} style="display: block;" {% endif %}>
+            <form action="{{ base_url }}apply-filter" method="post">
+                <div class="filterbox filterplatform">
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Filter By Platform</b>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr style="margin: 2px;">
+                    {{ filterPanel | raw }}
+                </div>
+
+                <div class="filterbox filtercategory">
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Filter By Category</b>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr style="margin: 2px;">
+                    {{ filterPanelCategory | raw }}
+                </div>
+                <input type="submit" class="apply" value="Apply Filter">
+            </form>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-heading">Live Token Sales & ICOs</h2><div class="liveview">View: <select onchange="location='{{ base_url }}?live_view=' + this.options[this.selectedIndex].value;">{{ htmlLiveView | raw }}</select></div>
+        {{ liveICOSection | raw }}
+    </section>
+    <div class="divider"></div>
+
+    <section>
+        <h2 class="section-heading">Upcoming Token Sales & ICOs</h2>
+        <div class="upcoming list-table">
+            <div class="list-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name<div>Name</div></th>
+                        <th>Category<div>Category</div></th>
+                        <th>Start Date<div>Start Date</div></th>
+                        <th>Starts In<div>Starts In</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {{ upComingProject | raw }}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <div class="divider"></div>
+
+    <section>
+        <span id="blog"></span>
+        <h2 class="section-heading">From the Coinschedule Blog</h2>
+        <div class="fromblog">
+            {{ blogSection | raw }}
+        </div>
+    </section>
+    <div class="divider"></div>
+
+    <section>
+        <span id="events"></span>
+        <h2 class="section-heading">Conferences & Events</h2>
+        <div style="margin-bottom: 20px;">Nothing replaces meeting people in person. The events on this page have been selected because they represent the most important opportunities to meet the movers and shakers of the cryptocurrency and blockchain industry.</div>
+        <div class="events list-table">
+            <div class="list-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Event<div>Event</div></th>
+                        <th>Date<div>Date</div></th>
+                        <th>Location<div>Location</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {{ eventSection | raw }}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <div class="divider"></div>
+
+    <div class="pressmentions">
+        {{ pressMentionSection | raw }}
+    </div>
+
+
+</div>

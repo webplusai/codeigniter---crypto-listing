@@ -1,0 +1,1267 @@
+<style>
+    [lang|=en], body {
+        font-family: Arial,sans-serif;
+        font-size: 14px;
+        line-height: 1.42857142857143;
+        background-color: #FFF;
+        color: #172B4D;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: -.005em;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        text-decoration-skip: ink;
+    }
+    body, div, fieldset, form, h1, h2, h3, h4, h5, h6, html, img, p, pre, span {
+        margin: 0;
+        padding: 0;
+    }
+    div {
+        display: block;
+    }
+    .bb-content-container-body {
+        border-radius: 5px;
+        overflow: auto;
+    }
+    .bb-content-container-body.has-header {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+    .snippet-source .file-markup {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.71428571em;
+        font-style: inherit;
+        font-weight: 500;
+        letter-spacing: -.01em;
+        line-height: 1.16666667;
+        margin-top: 32px;
+        padding-top: 60px;
+        color: #172B4D;
+    }
+    a {
+        color: #0052CC;
+        text-decoration: none;
+    }
+    h2 {
+        font-size: 1.42857143em;
+        font-style: inherit;
+        font-weight: 500;
+        letter-spacing: -.008em;
+        line-height: 1.2;
+        margin-top: 30px;
+        padding-top: 60px;
+        color: #172B4D;
+    }
+    p {
+        word-wrap: break-word;
+        margin: 12px 0 0 0;
+    }
+    h5 {
+        color: #5E6C84;
+        font-size: .85714286em;
+        font-weight: 600;
+        line-height: 1.33333333;
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+    pre {
+        font-family: SFMono-Medium,"SF Mono","Segoe UI Mono","Roboto Mono","Ubuntu Mono",Menlo,Courier,monospace;
+        font-size: .85714286em;
+        background: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        overflow-x: auto;
+        padding: 5px 10px;
+        word-wrap: normal;
+    }
+    .codehilite {
+        margin-top: 10px;
+    }
+    .codehilite .hll { background-color: #ffffcc }
+    .codehilite .c { color: #999988; font-style: italic } /* Comment */
+    .codehilite .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+    .codehilite .k { font-weight: bold } /* Keyword */
+    .codehilite .o { font-weight: bold } /* Operator */
+    .codehilite .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+    .codehilite .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+    .codehilite .c1 { color: #999988; font-style: italic } /* Comment.Single */
+    .codehilite .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+    .codehilite .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+    .codehilite .ge { font-style: italic } /* Generic.Emph */
+    .codehilite .gr { color: #aa0000 } /* Generic.Error */
+    .codehilite .gh { color: #999999 } /* Generic.Heading */
+    .codehilite .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+    .codehilite .go { color: #888888 } /* Generic.Output */
+    .codehilite .gp { color: #555555 } /* Generic.Prompt */
+    .codehilite .gs { font-weight: bold } /* Generic.Strong */
+    .codehilite .gu { color: #aaaaaa } /* Generic.Subheading */
+    .codehilite .gt { color: #aa0000 } /* Generic.Traceback */
+    .codehilite .kc { font-weight: bold } /* Keyword.Constant */
+    .codehilite .kd { font-weight: bold } /* Keyword.Declaration */
+    .codehilite .kn { font-weight: bold } /* Keyword.Namespace */
+    .codehilite .kp { font-weight: bold } /* Keyword.Pseudo */
+    .codehilite .kr { font-weight: bold } /* Keyword.Reserved */
+    .codehilite .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+    .codehilite .m { color: #009999 } /* Literal.Number */
+    .codehilite .s { color: #bb8844 } /* Literal.String */
+    .codehilite .na { color: #008080 } /* Name.Attribute */
+    .codehilite .nb { color: #999999 } /* Name.Builtin */
+    .codehilite .nc { color: #445588; font-weight: bold } /* Name.Class */
+    .codehilite .no { color: #008080 } /* Name.Constant */
+    .codehilite .ni { color: #800080 } /* Name.Entity */
+    .codehilite .ne { color: #990000; font-weight: bold } /* Name.Exception */
+    .codehilite .nf { color: #990000; font-weight: bold } /* Name.Function */
+    .codehilite .nn { color: #555555 } /* Name.Namespace */
+    .codehilite .nt { color: #000080 } /* Name.Tag */
+    .codehilite .nv { color: #008080 } /* Name.Variable */
+    .codehilite .ow { font-weight: bold } /* Operator.Word */
+    .codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+    .codehilite .mf { color: #009999 } /* Literal.Number.Float */
+    .codehilite .mh { color: #009999 } /* Literal.Number.Hex */
+    .codehilite .mi { color: #009999 } /* Literal.Number.Integer */
+    .codehilite .mo { color: #009999 } /* Literal.Number.Oct */
+    .codehilite .sb { color: #bb8844 } /* Literal.String.Backtick */
+    .codehilite .sc { color: #bb8844 } /* Literal.String.Char */
+    .codehilite .sd { color: #bb8844 } /* Literal.String.Doc */
+    .codehilite .s2 { color: #bb8844 } /* Literal.String.Double */
+    .codehilite .se { color: #bb8844 } /* Literal.String.Escape */
+    .codehilite .sh { color: #bb8844 } /* Literal.String.Heredoc */
+    .codehilite .si { color: #bb8844 } /* Literal.String.Interpol */
+    .codehilite .sx { color: #bb8844 } /* Literal.String.Other */
+    .codehilite .sr { color: #808000 } /* Literal.String.Regex */
+    .codehilite .s1 { color: #bb8844 } /* Literal.String.Single */
+    .codehilite .ss { color: #bb8844 } /* Literal.String.Symbol */
+    .codehilite .bp { color: #999999 } /* Name.Builtin.Pseudo */
+    .codehilite .vc { color: #008080 } /* Name.Variable.Class */
+    .codehilite .vg { color: #008080 } /* Name.Variable.Global */
+    .codehilite .vi { color: #008080 } /* Name.Variable.Instance */
+    .codehilite .il { color: #009999 } /* Literal.Number.Integer.Long */
+    .codehilite .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+    .codehilite .ellip { color: #a61717; } /* Error */
+
+    .apidoc-navbar .logo {
+        float: left;
+        margin: 0.4em 1em 0 0.9em;
+    }
+    .apidoc-navbar .header {
+        font-size: 1.71428571em;
+        font-style: inherit;
+        font-weight: 500;
+        letter-spacing: -.01em;
+        line-height: 1.16666667;
+        color: #172B4D;
+    }
+    .apidoc-navbar a {
+        float: left;
+        display: block;
+        color: #26323d;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    .apidoc-navbar a:hover {
+        background: #f3f3f3;
+        color: black;
+    }
+    .apidoc-navbar .logo img {
+        width:45px;
+        height:45px;
+    }
+    .apidoc-navbar .navright {
+        float: right;
+    }
+    .apidoc-navbar a.button{
+        display:inline-block;
+        padding: 0.05em 1em;
+        margin: 0.7em;
+        border:0.1em solid rgba(255,255,255,0);
+        border-radius:0.3em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family: 'Raleway',sans-serif;
+        font-weight:300;
+        color:#FFFFFF;
+        text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+        text-align:center;
+        transition: all 0.1s;
+        background-color:#0052CC
+    }
+    .apidoc-navbar a.button:hover{
+        border-color: rgba(255,255,255,1);
+    }
+</style>
+
+<div class="header"></div>
+<div class="main">
+    <section>
+
+
+        <div class="apidoc-main">
+            <div class="bb-content-container bb-row">
+                <div class="bb-content-container-body snippet-source has-header">
+                    <div class="readme file file-markup wiki-content">
+                        <div class="apidoc-navbar">
+                            <a class="navright button" href="https://goo.gl/forms/XTtXMZOMG5zYOYKB2">Request API Access</a>
+                        </div>
+
+                        <h1 id="markdown-header-coinschedule-api-v2" style="padding-top:0px; margin-top:0px">CoinSchedule API v2</h1>
+                        <ul>
+                            <li><a href="#markdown-header-introduction" rel="nofollow">Introduction</a></li>
+                            <li><a href="#markdown-header-overview" rel="nofollow">Overview</a></li>
+                            <li><a href="#markdown-header-authentication" rel="nofollow">Authentication</a><ul>
+                                    <li><a href="#markdown-header-php" rel="nofollow">PHP</a></li>
+                                    <li><a href="#markdown-header-nodejs" rel="nofollow">Node.js</a></li>
+                                    <li><a href="#markdown-header-python" rel="nofollow">Python</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#markdown-header-error-codes" rel="nofollow">Error Codes</a></li>
+                            <li><a href="#markdown-header-rate-limit" rel="nofollow">Rate limit</a></li>
+                            <li><a href="#markdown-header-ended-crowdfunds" rel="nofollow"><strong>Ended Crowdfunds</strong></a><ul>
+                                    <li><a href="#markdown-header-get-list-all-ended-crowdfunds" rel="nofollow"><strong>GET</strong> List all ended crowdfunds</a></li>
+                                    <li><a href="#markdown-header-get-list-all-ended-crowdfunds-filtered-by-categories" rel="nofollow"><strong>GET</strong> List all ended crowdfunds filtered by categories</a></li>
+                                    <li><a href="#markdown-header-get-list-all-ended-crowdfunds-filtered-by-platforms" rel="nofollow"><strong>GET</strong> List all ended crowdfunds filtered by platforms</a></li>
+                                    <li><a href="#markdown-header-get-list-all-ended-crowdfunds-filtered-by-package" rel="nofollow"><strong>GET</strong> List all ended crowdfunds filtered by package</a></li>
+                                    <li><a href="#markdown-header-get-list-all-ended-crowdfunds-filtered-by-categories-and-platforms" rel="nofollow"><strong>GET</strong> List all ended crowdfunds filtered by categories and platforms</a></li>
+                                    <li><a href="#markdown-header-get-list-all-ended-crowdfunds-filtered-by-categories-and-package" rel="nofollow"><strong>GET</strong> List all ended crowdfunds filtered by categories and package</a></li>
+                                    <li><a href="#markdown-header-get-list-all-ended-crowdfunds-filtered-by-platforms-and-package" rel="nofollow"><strong>GET</strong> List all ended crowdfunds filtered by platforms and package</a></li>
+                                    <li><a href="#markdown-header-get-list-all-ended-crowdfunds-filtered-by-categories-and-platforms-and-package" rel="nofollow"><strong>GET</strong> List all ended crowdfunds filtered by categories and platforms and package</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#markdown-header-live-crowdfunds" rel="nofollow"><strong>Live Crowdfunds</strong></a><ul>
+                                    <li><a href="#markdown-header-get-list-all-live-crowdfunds" rel="nofollow"><strong>GET</strong> List all live crowdfunds</a></li>
+                                    <li><a href="#markdown-header-get-list-all-live-crowdfunds-filtered-by-categories" rel="nofollow"><strong>GET</strong> List all live crowdfunds filtered by categories</a></li>
+                                    <li><a href="#markdown-header-get-list-all-live-crowdfunds-filtered-by-platforms" rel="nofollow"><strong>GET</strong> List all live crowdfunds filtered by platforms</a></li>
+                                    <li><a href="#markdown-header-get-list-all-live-crowdfunds-filtered-by-package" rel="nofollow"><strong>GET</strong> List all live crowdfunds filtered by package</a></li>
+                                    <li><a href="#markdown-header-get-list-all-live-crowdfunds-filtered-by-categories-and-platforms" rel="nofollow"><strong>GET</strong> List all live crowdfunds filtered by categories and platforms</a></li>
+                                    <li><a href="#markdown-header-get-list-all-live-crowdfunds-filtered-by-categories-and-package" rel="nofollow"><strong>GET</strong> List all live crowdfunds filtered by categories and package</a></li>
+                                    <li><a href="#markdown-header-get-list-all-live-crowdfunds-filtered-by-platforms-and-package" rel="nofollow"><strong>GET</strong> List all live crowdfunds filtered by platforms and package</a></li>
+                                    <li><a href="#markdown-header-get-list-all-live-crowdfunds-filtered-by-categories-and-platforms-and-package" rel="nofollow"><strong>GET</strong> List all live crowdfunds filtered by categories and platforms and package</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#markdown-header-upcoming-crowdfunds" rel="nofollow"><strong>Upcoming Crowdfunds</strong></a><ul>
+                                    <li><a href="#markdown-header-get-list-all-upcoming-crowdfunds" rel="nofollow"><strong>GET</strong> List all upcoming crowdfunds</a></li>
+                                    <li><a href="#markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-categories" rel="nofollow"><strong>GET</strong> List all upcoming crowdfunds filtered by categories</a></li>
+                                    <li><a href="#markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-platforms" rel="nofollow"><strong>GET</strong> List all upcoming crowdfunds filtered by platforms</a></li>
+                                    <li><a href="#markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-package" rel="nofollow"><strong>GET</strong> List all upcoming crowdfunds filtered by package</a></li>
+                                    <li><a href="#markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-categories-and-platforms" rel="nofollow"><strong>GET</strong> List all upcoming crowdfunds filtered by categories and platforms</a></li>
+                                    <li><a href="#markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-categories-and-package" rel="nofollow"><strong>GET</strong> List all upcoming crowdfunds filtered by categories and package</a></li>
+                                    <li><a href="#markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-platforms-and-package" rel="nofollow"><strong>GET</strong> List all upcoming crowdfunds filtered by platforms and package</a></li>
+                                    <li><a href="#markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-categories-and-platforms-and-package" rel="nofollow"><strong>GET</strong> List all upcoming crowdfunds filtered by categories and platforms and package</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#markdown-header-crowdfund-details" rel="nofollow"><strong>Crowdfund Details</strong></a><ul>
+                                    <li><a href="#markdown-header-get-list-crowdfund-details-by-project-id" rel="nofollow"><strong>GET</strong> List crowdfund details by project ID</a></li>
+                                    <li><a href="#markdown-header-get-list-crowdfund-details-by-event-id" rel="nofollow"><strong>GET</strong> List crowdfund details by event ID</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#markdown-header-filters" rel="nofollow"><strong>Filters</strong></a><ul>
+                                    <li><a href="#markdown-header-get-list-category-filters" rel="nofollow"><strong>GET</strong> List category filters</a></li>
+                                    <li><a href="#markdown-header-get-list-platform-filters" rel="nofollow"><strong>GET</strong> List platform filters</a></li>
+                                    <li><a href="#markdown-header-get-list-package-filters" rel="nofollow"><strong>GET</strong> List package filters</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h2 id="markdown-header-introduction">Introduction</h2>
+                        <p>Welcome to the Coinschedule API! You can use our API to get information on the projects listed in Coinschedule.</p>
+                        <p>If you need to you may still access the <a href="https://developers.coinschedule.com/">documentation for api v1</a></p>
+                        <h2 id="markdown-header-overview">Overview</h2>
+                        <p>Important! Before you start you need to request an API key using the <a href="https://goo.gl/forms/XTtXMZOMG5zYOYKB2" rel="nofollow">API Access Form</a>.</p>
+                        <h2 id="markdown-header-authentication">Authentication</h2>
+                        <p>Coinschedule uses API keys for authentication. If you haven't already, you can request an API key on our <a href="https://goo.gl/forms/XTtXMZOMG5zYOYKB2" rel="nofollow">API Access Form</a>. Your API key must be included in the Authentication-Info header of every request!</p>
+                        <p>Here are a few examples of how to do this in </p>
+                        <p>(in the following examples replace {{apikey}} with the api key value supplied by CoinSchedule)</p>
+                        <h5 id="markdown-header-php" style="padding-top:62px; margin-top:34px">PHP</h5>
+                        <div class="codehilite language-php">
+<pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"https://api.coinschedule.com/v2/crowdfunds/upcoming/pack/gold"</span><span class="p">,</span>
+    <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+    <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+    <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"GET"</span><span class="p">,</span>
+    <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s2">"Authentication-Info: Basic {{apikey}}"</span><span class="p">,</span>
+        <span class="s2">"Cache-Control: no-cache"</span>
+        <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+            </pre></div>
+                        <h5 id="markdown-header-nodejs" style="padding-top:62px; margin-top:34px">Node.js</h5>
+                        <div class="codehilite language-javascript"><pre><span></span><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">method</span><span class="o">:</span> <span class="s1">'GET'</span><span class="p">,</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="s1">'https://api.coinschedule.com/v2/crowdfunds/upcoming/pack/gold'</span><span class="p">,</span>
+  <span class="nx">headers</span><span class="o">:</span>
+   <span class="p">{</span> <span class="s1">'Cache-Control'</span><span class="o">:</span> <span class="s1">'no-cache'</span><span class="p">,</span>
+     <span class="s1">'Authentication-Info'</span><span class="o">:</span> <span class="s1">'Basic {{apikey}}'</span> <span class="p">}</span> <span class="p">};</span>
+
+<span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+            </pre></div>
+                        <h5 id="markdown-header-python" style="padding-top:62px; margin-top:34px">python</h5>
+                        <div class="codehilite language-python"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://api.coinschedule.com/v2/crowdfunds/upcoming/pack/gold"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'Authentication-Info'</span><span class="p">:</span> <span class="s2">"Basic {{apikey}}"</span><span class="p">,</span>
+    <span class="s1">'Cache-Control'</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+        <span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+            </pre></div>
+                        <h2 id="markdown-header-error-codes">Error Codes</h2>
+                        <p>Coinschedule API endpoints return errors from 2xx to 5xx, in the JSON response status and a message in the response body with the nature of the error.</p>
+                        <h2 id="markdown-header-rate-limit">Rate limit</h2>
+                        <p>60 requests per minute</p>
+                        <h1 id="markdown-header-ended-crowdfunds">Ended Crowdfunds</h1>
+                        <h2 id="markdown-header-get-list-all-ended-crowdfunds">GET List all ended crowdfunds</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/ended</code></p>
+                        <h5 id="markdown-header-headers">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code>
+                            <strong>Note</strong> replace {{apikey}} with the api key value supplied by CoinSchedule</p>
+                        <h5 id="markdown-header-sample-request">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url https://api.coinschedule.com/v2/crowdfunds/ended/ \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"ended crowdfunds found"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1260</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"ATLANT"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"Invest. Rent. Trade. World’s Real Estate Blockchain Platform\r\n\r\n"</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Real Estate"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+            <span class="nt">"ProjTopOfUpcoming"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">"ProjImageURL"</span><span class="p">:</span> <span class="s2">"https://api.coinschedule.com/logos/1260.png"</span><span class="p">,</span>
+            <span class="nt">"ProjImageLargeURL"</span><span class="p">:</span> <span class="s2">"https://api.coinschedule.com/logos/1260_large.png"</span><span class="p">,</span>
+            <span class="nt">"ProjURL"</span><span class="p">:</span> <span class="s2">"https://www.coinschedule.com/projects/1260/atlant.html"</span><span class="p">,</span>
+            <span class="nt">"EventID"</span><span class="p">:</span> <span class="mi">429</span><span class="p">,</span>
+            <span class="nt">"EventName"</span><span class="p">:</span> <span class="s2">"ATLANT pre-ICO"</span><span class="p">,</span>
+            <span class="nt">"EventStartDate"</span><span class="p">:</span> <span class="s2">"2017-08-01 00:30:00"</span><span class="p">,</span>
+            <span class="nt">"EventEndDate"</span><span class="p">:</span> <span class="s2">"2017-08-19 00:00:00"</span><span class="p">,</span>
+            <span class="nt">"EventURL"</span><span class="p">:</span> <span class="s2">"https://www.coinschedule.com/icos/e429/atlant-pre-ico.html"</span><span class="p">,</span>
+            <span class="nt">"Percent"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="nt">"Status"</span><span class="p">:</span> <span class="s2">"Ended"</span><span class="p">,</span>
+            <span class="nt">"StatusID"</span><span class="p">:</span> <span class="mi">3</span>
+        <span class="p">},</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-ended-crowdfunds-filtered-by-categories">GET List all ended crowdfunds filtered by categories</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/ended/cat/1,2</code></p>
+                        <h5 id="markdown-header-headers_1">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_1">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/ended/cat/1,2' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_1">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"ended crowdfunds found for required categories"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1269</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"VeChain"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"VeChain http://vechain.com is a blockchain-based supply chain management solution\r\nWe currently have several big clients both in China and Europe working with us on different use cases for our blockchain platform. Some of our clients:\r\nD.I.G. \r\nK&amp;N \r\nC.I.Q.\r\nRENAULT"</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Supply &amp; Logistics"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Standard Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-ended-crowdfunds-filtered-by-platforms">GET List all ended crowdfunds filtered by platforms</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/ended/plat/2,3</code></p>
+                        <h5 id="markdown-header-headers_2">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_2">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/ended/plat/2,3' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_2">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"ended crowdfunds found for required platforms"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1260</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"ATLANT"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"Invest. Rent. Trade. World’s Real Estate Blockchain Platform\r\n\r\n"</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Real Estate"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-ended-crowdfunds-filtered-by-package">GET List all ended crowdfunds filtered by package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/ended/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_3">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_3">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/ended/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_3">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found of required package type"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1093</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Ethereum Movie Venture"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"EMV is a decentralised movie-investment platform designed for investing in the independent movie industry"</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-ended-crowdfunds-filtered-by-categories-and-platforms">GET List all ended crowdfunds filtered by categories and platforms</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/ended/cat/1,2/plat/2,3</code></p>
+                        <h5 id="markdown-header-headers_4">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_4">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/ended/cat/1,2/plat/2,3' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_4">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"ended crowdfunds found for required categories and platforms"</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1270</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Wabi"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"WaBi connects digital and physical worlds, solves fakes in China. We are building sales of baby food with anti-counterfeiting protection through baby stores in China. Technology is commercially deployed with hundreds of paying users."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Supply &amp; Logistics"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Standard Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-ended-crowdfunds-filtered-by-categories-and-package">GET List all ended crowdfunds filtered by categories and package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/ended/cat/1,2/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_5">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_5">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/ended/cat/1,2/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_5">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found for required categories and package"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1226</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"IMMLA"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"MMLA (International MultiModal Logistic Application) is the first multimodal logistics service with a decentralised system of transportation, document workflow and payments."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Supply &amp; Logistics"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-ended-crowdfunds-filtered-by-platforms-and-package">GET List all ended crowdfunds filtered by platforms and package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/ended/plat/2,3/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_6">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_6">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/ended/plat/2,3/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_6">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found for required platforms and package"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1093</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Ethereum Movie Venture"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"EMV is a decentralised movie-investment platform designed for investing in the independent movie industry"</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-ended-crowdfunds-filtered-by-categories-and-platforms-and-package">GET List all ended crowdfunds filtered by categories and platforms and package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/ended/cat/1,2/plat/2,3/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_7">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_7">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/ended/cat/1,2/plat/2,3/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_7">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found for required categories, platforms and package"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1226</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"IMMLA"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"MMLA (International MultiModal Logistic Application) is the first multimodal logistics service with a decentralised system of transportation, document workflow and payments."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Supply &amp; Logistics"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h1 id="markdown-header-live-crowdfunds">Live Crowdfunds</h1>
+                        <h2 id="markdown-header-get-list-all-live-crowdfunds">GET List all live crowdfunds</h2>
+                        <p><code>https://api.coinschedule.com/v2/live</code></p>
+                        <h5 id="markdown-header-headers_8">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_8">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url https://api.coinschedule.com/v2/crowdfunds/live/ \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_8">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"live crowdfunds found"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">2118</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"FireLotto"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"We built a completely transparent and fully decentralized platform for organizing and conducting a lottery using the blockchain technology and ETH smart contracts for collecting and distributing funds, drawing winning numbers in a random fashion, and paying lottery tickets sales commission to token holders."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Gambling &amp; Betting"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Silver Listing"</span><span class="p">,</span>
+            <span class="nt">"ProjTopOfUpcoming"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">"ProjImageURL"</span><span class="p">:</span> <span class="s2">"https://api.coinschedule.com/logos/2118.png"</span><span class="p">,</span>
+            <span class="nt">"ProjImageLargeURL"</span><span class="p">:</span> <span class="s2">"https://api.coinschedule.com/logos/2118_large.png"</span><span class="p">,</span>
+            <span class="nt">"ProjURL"</span><span class="p">:</span> <span class="s2">"https://www.coinschedule.com/projects/2118/firelotto.html"</span><span class="p">,</span>
+            <span class="nt">"EventID"</span><span class="p">:</span> <span class="mi">1881</span><span class="p">,</span>
+            <span class="nt">"EventName"</span><span class="p">:</span> <span class="s2">"FireLotto Pre-Sale"</span><span class="p">,</span>
+            <span class="nt">"EventStartDate"</span><span class="p">:</span> <span class="s2">"2018-01-01 00:00:00"</span><span class="p">,</span>
+            <span class="nt">"EventEndDate"</span><span class="p">:</span> <span class="s2">"2018-02-15 00:00:00"</span><span class="p">,</span>
+            <span class="nt">"EventURL"</span><span class="p">:</span> <span class="s2">"https://www.coinschedule.com/icos/e1881/firelotto-pre-sale.html"</span><span class="p">,</span>
+            <span class="nt">"Percent"</span><span class="p">:</span> <span class="mf">99.1022890946502</span><span class="p">,</span>
+            <span class="nt">"Status"</span><span class="p">:</span> <span class="s2">"Live"</span><span class="p">,</span>
+            <span class="nt">"StatusID"</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="p">},</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-live-crowdfunds-filtered-by-categories">GET List all live crowdfunds filtered by categories</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/live/cat/1,2</code></p>
+                        <h5 id="markdown-header-headers_9">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_9">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/live/cat/1,2' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_9">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"live crowdfunds found for required categories"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1991</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"HOQU"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"HOQU is a decentralized affiliate platform that combines the performance-marketing model with blockchain technology."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Commerce &amp; Advertising"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-live-crowdfunds-filtered-by-platforms">GET List all live crowdfunds filtered by platforms</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/live/plat/2,3</code></p>
+                        <h5 id="markdown-header-headers_10">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_10">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/live/plat/2,3' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_10">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"live crowdfunds found for required platforms"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">2118</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"FireLotto"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"We built a completely transparent and fully decentralized platform for organizing and conducting a lottery using the blockchain technology and ETH smart contracts for collecting and distributing funds, drawing winning numbers in a random fashion, and paying lottery tickets sales commission to token holders."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Gambling &amp; Betting"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-live-crowdfunds-filtered-by-package">GET List all live crowdfunds filtered by package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/live/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_11">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_11">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/live/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_11">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found of required package type"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1745</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Lucyd"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"Our mission is to make truly user-friendly smartglasses, and a blockchain-based AR app ecosystem. Lucyd owns a portfolio of 13 unique, AR patents that will allow for the development of an interactive AR display that appears like a normal pair of glasses."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Gaming &amp; VR"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-live-crowdfunds-filtered-by-categories-and-platforms">GET List all live crowdfunds filtered by categories and platforms</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/live/cat/1,2/plat/2,3</code></p>
+                        <h5 id="markdown-header-headers_12">Headers</h5>
+                        <p><code>Authentication-Info  Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_12">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/live/cat/1,2/plat/2,3' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_12">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"live crowdfunds found for required categories and platforms"</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1991</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"HOQU"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"HOQU is a decentralized affiliate platform that combines the performance-marketing model with blockchain technology."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Commerce &amp; Advertising"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-live-crowdfunds-filtered-by-categories-and-package">GET List all live crowdfunds filtered by categories and package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/live/cat/1,2/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_13">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_13">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/live/cat/1,2/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_13">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found for required categories and package"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1991</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"HOQU"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"HOQU is a decentralized affiliate platform that combines the performance-marketing model with blockchain technology."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Commerce &amp; Advertising"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-live-crowdfunds-filtered-by-platforms-and-package">GET List all live crowdfunds filtered by platforms and package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/live/plat/2,3/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_14">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_14">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/live/plat/2,3/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_14">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found for required platforms and package"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1745</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Lucyd"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"Our mission is to make truly user-friendly smartglasses, and a blockchain-based AR app ecosystem. Lucyd owns a portfolio of 13 unique, AR patents that will allow for the development of an interactive AR display that appears like a normal pair of glasses."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Gaming &amp; VR"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-live-crowdfunds-filtered-by-categories-and-platforms-and-package">GET List all live crowdfunds filtered by categories and platforms and package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/live/cat/1,2/plat/2,3/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_15">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_15">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/live/cat/1,2/plat/2,3/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_15">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found for required categories, platforms and package"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1991</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"HOQU"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"HOQU is a decentralized affiliate platform that combines the performance-marketing model with blockchain technology."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Commerce &amp; Advertising"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h1 id="markdown-header-upcoming-crowdfunds">Upcoming Crowdfunds</h1>
+                        <h2 id="markdown-header-get-list-all-upcoming-crowdfunds">GET List all upcoming crowdfunds</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/upcoming</code></p>
+                        <h5 id="markdown-header-headers_16">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_16">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url https://api.coinschedule.com/v2/crowdfunds/upcoming/ \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_16">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"upcoming crowdfunds found"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">2161</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Ethearnal Reputation Token"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"Ethearnal is peer-to-peer (P2P) freelance system, in which employers and freelancers meet, enter into trustless smart contracts with reputation and money in escrow, and take advantage of a decentralized system of moderators, if needed. We collide reputation and economic initiatives into one by tokenizing reputation and giving it value. Thus, all parties, moderators included, have strong and aligned initiatives to act honestly, since everyone has something of value at stake, as well as something to gain if the desired outcome is achieved."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Identity &amp; Reputation"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+            <span class="nt">"ProjTopOfUpcoming"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"ProjImageURL"</span><span class="p">:</span> <span class="s2">"https://api.coinschedule.com/logos/2161.png"</span><span class="p">,</span>
+            <span class="nt">"ProjImageLargeURL"</span><span class="p">:</span> <span class="s2">"https://api.coinschedule.com/logos/2161_large.png"</span><span class="p">,</span>
+            <span class="nt">"ProjURL"</span><span class="p">:</span> <span class="s2">"https://www.coinschedule.com/projects/2161/ethearnal-reputation-token.html"</span><span class="p">,</span>
+            <span class="nt">"EventID"</span><span class="p">:</span> <span class="mi">1946</span><span class="p">,</span>
+            <span class="nt">"EventName"</span><span class="p">:</span> <span class="s2">"Ethearnal ICO"</span><span class="p">,</span>
+            <span class="nt">"EventStartDate"</span><span class="p">:</span> <span class="s2">"2018-02-28 12:00:00"</span><span class="p">,</span>
+            <span class="nt">"EventEndDate"</span><span class="p">:</span> <span class="s2">"2018-03-31 12:00:00"</span><span class="p">,</span>
+            <span class="nt">"EventURL"</span><span class="p">:</span> <span class="s2">"https://www.coinschedule.com/icos/e1946/ethearnal-ico.html"</span><span class="p">,</span>
+            <span class="nt">"Percent"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">"Status"</span><span class="p">:</span> <span class="s2">"Upcoming"</span><span class="p">,</span>
+            <span class="nt">"StatusID"</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-categories">GET List all upcoming crowdfunds filtered by categories</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/upcoming/cat/1,2</code></p>
+                        <h5 id="markdown-header-headers_17">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_17">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/upcoming/cat/1,2' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_17">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"upcoming crowdfunds found for required categories"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">2087</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Thrive"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"Thrive is a Blockchain Based Marketplace to buy and sell Advertising at very low fees. People get paid for data sharing and for reviewing the quality of each website in the ecosystem. You are finally taking back the control of the internet."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Commerce &amp; Advertising"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-platforms">GET List all upcoming crowdfunds filtered by platforms</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/upcoming/plat/2,3</code></p>
+                        <h5 id="markdown-header-headers_18">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_18">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/upcoming/plat/2,3' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_18">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"upcoming crowdfunds found for required platforms"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">2161</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Ethearnal Reputation Token"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"Ethearnal is peer-to-peer (P2P) freelance system, in which employers and freelancers meet, enter into trustless smart contracts with reputation and money in escrow, and take advantage of a decentralized system of moderators, if needed. We collide reputation and economic initiatives into one by tokenizing reputation and giving it value. Thus, all parties, moderators included, have strong and aligned initiatives to act honestly, since everyone has something of value at stake, as well as something to gain if the desired outcome is achieved."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Identity &amp; Reputation"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Silver Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-package">GET List all upcoming crowdfunds filtered by package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/upcoming/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_19">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_19">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/upcoming/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_19">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found of required package type"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">2161</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Ethearnal Reputation Token"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"Ethearnal is peer-to-peer (P2P) freelance system, in which employers and freelancers meet, enter into trustless smart contracts with reputation and money in escrow, and take advantage of a decentralized system of moderators, if needed. We collide reputation and economic initiatives into one by tokenizing reputation and giving it value. Thus, all parties, moderators included, have strong and aligned initiatives to act honestly, since everyone has something of value at stake, as well as something to gain if the desired outcome is achieved."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Identity &amp; Reputation"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-categories-and-platforms">GET List all upcoming crowdfunds filtered by categories and platforms</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/upcoming/cat/1,2/plat/2,3</code></p>
+                        <h5 id="markdown-header-headers_20">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_20">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/upcoming/cat/1,2/plat/2,3' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_20">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"upcoming crowdfunds found for required categories and platforms"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">2087</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Thrive"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"Thrive is a Blockchain Based Marketplace to buy and sell Advertising at very low fees. People get paid for data sharing and for reviewing the quality of each website in the ecosystem. You are finally taking back the control of the internet."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Commerce &amp; Advertising"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Standard Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-categories-and-package">GET List all upcoming crowdfunds filtered by categories and package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/upcoming/cat/1,2/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_21">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_21">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/upcoming/cat/1,2/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_21">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found for required categories and package"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">2220</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"TV-TWO"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"TV-TWO is bringing trustless transactions and crypto wallets to 700 million Smart TVs around the globe. We tokenize reach on the Big Screen and facilitate a direct value exchange between users, advertisers, and content creators through payment channels."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Commerce &amp; Advertising"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-platforms-and-package">GET List all upcoming crowdfunds filtered by platforms and package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/upcoming/plat/2,3/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_22">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_22">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/upcoming/plat/2,3/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_22">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found for required platforms and package"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">2161</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Ethearnal Reputation Token"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"Ethearnal is peer-to-peer (P2P) freelance system, in which employers and freelancers meet, enter into trustless smart contracts with reputation and money in escrow, and take advantage of a decentralized system of moderators, if needed. We collide reputation and economic initiatives into one by tokenizing reputation and giving it value. Thus, all parties, moderators included, have strong and aligned initiatives to act honestly, since everyone has something of value at stake, as well as something to gain if the desired outcome is achieved."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Identity &amp; Reputation"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-all-upcoming-crowdfunds-filtered-by-categories-and-platforms-and-package">GET List all upcoming crowdfunds filtered by categories and platforms and package</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/upcoming/cat/1,2/plat/2,3/pack/gold</code></p>
+                        <h5 id="markdown-header-headers_23">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_23">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/upcoming/cat/1,2/plat/2,3/pack/gold' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_23">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"crowdfunds found for required categories, platforms and package"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="s2">"1,2"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="s2">"2,3"</span><span class="p">,</span>
+    <span class="nt">"package"</span><span class="p">:</span> <span class="s2">"gold"</span><span class="p">,</span>
+    <span class="nt">"crowdfunds"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">2220</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"TV-TWO"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"TV-TWO is bringing trustless transactions and crypto wallets to 700 million Smart TVs around the globe. We tokenize reach on the Big Screen and facilitate a direct value exchange between users, advertisers, and content creators through payment channels."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Commerce &amp; Advertising"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Ethereum"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Gold Listing"</span><span class="p">,</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h1 id="markdown-header-crowdfund-details">Crowdfund Details</h1>
+                        <h2 id="markdown-header-get-list-crowdfund-details-by-project-id">GET List crowdfund details by project ID</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/project/1331</code></p>
+                        <h5 id="markdown-header-headers_24">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_24">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/project/1331' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_24">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"project found"</span><span class="p">,</span>
+    <span class="nt">"project"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1331</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"300cubits"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"300cubits is a blockchain initiative relieving the $23B pain points of the $150B container shipping industry through creation of a crypto currency called TEU and integration of industry process with Ethereum blockchain."</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Supply &amp; Logistics"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Standard Listing"</span><span class="p">,</span>
+            <span class="nt">"ProjTopOfUpcoming"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">"ProjImageURL"</span><span class="p">:</span> <span class="s2">"https://api.coinschedule.com/logos/1331.png"</span><span class="p">,</span>
+            <span class="nt">"ProjImageLargeURL"</span><span class="p">:</span> <span class="s2">"https://api.coinschedule.com/logos/1331_large.png"</span><span class="p">,</span>
+            <span class="nt">"ProjURL"</span><span class="p">:</span> <span class="s2">"https://www.coinschedule.com/projects/1331/300cubits.html"</span><span class="p">,</span>
+            <span class="nt">"Events"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">"EventID"</span><span class="p">:</span> <span class="mi">561</span><span class="p">,</span>
+                    <span class="nt">"EventName"</span><span class="p">:</span> <span class="s2">"300cubits Pre-ICO"</span><span class="p">,</span>
+                    <span class="nt">"EventStartDate"</span><span class="p">:</span> <span class="s2">"2018-03-15 02:00:00"</span><span class="p">,</span>
+                    <span class="nt">"EventEndDate"</span><span class="p">:</span> <span class="s2">"2018-04-12 02:00:00"</span><span class="p">,</span>
+                    <span class="nt">"EventURL"</span><span class="p">:</span> <span class="s2">"https://www.coinschedule.com/icos/e561/300cubits-pre-ico.html"</span><span class="p">,</span>
+                    <span class="nt">"Percent"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="nt">"Status"</span><span class="p">:</span> <span class="s2">"Upcoming"</span><span class="p">,</span>
+                    <span class="nt">"StatusID"</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="nt">"EventID"</span><span class="p">:</span> <span class="mi">2114</span><span class="p">,</span>
+                    <span class="nt">"EventName"</span><span class="p">:</span> <span class="s2">"300cubits ICO"</span><span class="p">,</span>
+                    <span class="nt">"EventStartDate"</span><span class="p">:</span> <span class="s2">"2018-03-15 02:00:00"</span><span class="p">,</span>
+                    <span class="nt">"EventEndDate"</span><span class="p">:</span> <span class="s2">"2018-04-12 02:00:00"</span><span class="p">,</span>
+                    <span class="nt">"EventURL"</span><span class="p">:</span> <span class="s2">"https://www.coinschedule.com/icos/e2114/300cubits-ico.html"</span><span class="p">,</span>
+                    <span class="nt">"Percent"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="nt">"Status"</span><span class="p">:</span> <span class="s2">"Upcoming"</span><span class="p">,</span>
+                    <span class="nt">"StatusID"</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-crowdfund-details-by-event-id">GET List crowdfund details by event ID</h2>
+                        <p><code>https://api.coinschedule.com/v2/crowdfunds/event/386</code></p>
+                        <h5 id="markdown-header-headers_25">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_25">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url 'https://api.coinschedule.com/v2/crowdfunds/event/386' \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_25">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"event found"</span><span class="p">,</span>
+    <span class="nt">"event"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjID"</span><span class="p">:</span> <span class="mi">1233</span><span class="p">,</span>
+            <span class="nt">"ProjName"</span><span class="p">:</span> <span class="s2">"Moosecoin"</span><span class="p">,</span>
+            <span class="nt">"ProjDesc"</span><span class="p">:</span> <span class="s2">"We are creating a decentralised organisation for musicians to cover for every aspect of a musicians' career; from start to finish. We would like to be the most used blockchain platform facilitating new musicians and all ecosystem partners around them. \r\n"</span><span class="p">,</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Art &amp; Music"</span><span class="p">,</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Standard Listing"</span><span class="p">,</span>
+            <span class="nt">"ProjTopOfUpcoming"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">"ProjImageURL"</span><span class="p">:</span> <span class="s2">"https://api.coinschedule.com/logos/1233.png"</span><span class="p">,</span>
+            <span class="nt">"ProjImageLargeURL"</span><span class="p">:</span> <span class="s2">"https://api.coinschedule.com/logos/1233_large.png"</span><span class="p">,</span>
+            <span class="nt">"ProjURL"</span><span class="p">:</span> <span class="s2">"https://www.coinschedule.com/projects/1233/moosecoin.html"</span><span class="p">,</span>
+            <span class="nt">"EventID"</span><span class="p">:</span> <span class="mi">386</span><span class="p">,</span>
+            <span class="nt">"EventName"</span><span class="p">:</span> <span class="s2">"Moosecoin ICO"</span><span class="p">,</span>
+            <span class="nt">"EventStartDate"</span><span class="p">:</span> <span class="s2">"2017-07-30 23:59:00"</span><span class="p">,</span>
+            <span class="nt">"EventEndDate"</span><span class="p">:</span> <span class="s2">"2018-03-28 20:40:00"</span><span class="p">,</span>
+            <span class="nt">"EventURL"</span><span class="p">:</span> <span class="s2">"https://www.coinschedule.com/icos/e386/moosecoin-ico.html"</span><span class="p">,</span>
+            <span class="nt">"Percent"</span><span class="p">:</span> <span class="mf">82.5920474607481</span><span class="p">,</span>
+            <span class="nt">"Status"</span><span class="p">:</span> <span class="s2">"Live"</span><span class="p">,</span>
+            <span class="nt">"StatusID"</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+            </pre></div>
+                        <h1 id="markdown-header-filters">Filters</h1>
+                        <h2 id="markdown-header-get-list-category-filters">GET List category filters</h2>
+                        <p><code>https://api.coinschedule.com/v2/filters/categories</code></p>
+                        <h5 id="markdown-header-headers_26">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_26">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url https://api.coinschedule.com/v2/filters/categories \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_26">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"categories found"</span><span class="p">,</span>
+    <span class="nt">"categories"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Art &amp; Music"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Commerce &amp; Advertising"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Commodities"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjCatID"</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+            <span class="nt">"ProjCatName"</span><span class="p">:</span> <span class="s2">"Communications"</span>
+        <span class="p">},</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-platform-filters">GET List platform filters</h2>
+                        <p><code>https://api.coinschedule.com/v2/filters/platforms</code></p>
+                        <h5 id="markdown-header-headers_27">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_27">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url https://api.coinschedule.com/v2/filters/platforms \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_27">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"platforms found"</span><span class="p">,</span>
+    <span class="nt">"platforms"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Bitcoin"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"18"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"BitShares"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjPlatID"</span><span class="p">:</span> <span class="s2">"60"</span><span class="p">,</span>
+            <span class="nt">"ProjPlatName"</span><span class="p">:</span> <span class="s2">"Burst"</span>
+        <span class="p">},</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                        <h2 id="markdown-header-get-list-package-filters">GET List package filters</h2>
+                        <p><code>https://api.coinschedule.com/v2/filters/package</code></p>
+                        <h5 id="markdown-header-headers_28">Headers</h5>
+                        <p><code>Authentication-Info Basic {{apikey}}</code></p>
+                        <h5 id="markdown-header-sample-request_28">Sample Request</h5>
+                        <div class="codehilite"><pre><span></span><span class="x">curl --request GET \</span>
+<span class="x">  --url https://api.coinschedule.com/v2/filters/package \</span>
+<span class="x">  --header 'Authentication-Info: Basic </span><span class="cp">{{</span><span class="nv">apikey</span><span class="cp">}}</span><span class="x">'</span>
+            </pre></div>
+                        <h5 id="markdown-header-sample-response_28">Sample Response</h5>
+                        <div class="codehilite language-json"><pre><span></span><span class="p">{</span>
+    <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"packages found"</span><span class="p">,</span>
+    <span class="nt">"packages"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"PackageCode"</span><span class="p">:</span> <span class="s2">"standard"</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Standard Listing"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">"PackageCode"</span><span class="p">:</span> <span class="s2">"plus"</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Plus Listing"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"ProjPackageID"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">"PackageCode"</span><span class="p">:</span> <span class="s2">"silver"</span><span class="p">,</span>
+            <span class="nt">"PackageName"</span><span class="p">:</span> <span class="s2">"Silver Listing"</span>
+        <span class="p">},</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+        <span class="ellip">.</span>
+            </pre></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

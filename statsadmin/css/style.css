@@ -1,0 +1,195 @@
+body
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(53,152,220);
+    overflow:hidden;
+}
+.form_body_signin
+{
+    background-color: white;
+    height: 450px;
+    width: 320px;
+    position: absolute;
+    margin: auto;
+    border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+.form_header
+{
+    text-align: center;
+}
+#form_button
+{
+    width: 100%;
+    background-color: rgb(53,152,220);
+}
+#email,#password
+{
+    width: 100%;
+    text-align: center;
+}
+#signup{
+
+    color: rgb(53, 152, 220);
+    /*color: white;*/
+    margin-top: 8px;
+    margin-left: 110px;
+    text-align: center;
+    width: 100%;
+}
+.form_body_signup
+{
+    background-color: white;
+    height: 550px;
+    width: 320px;
+    position: absolute;
+    margin: auto;
+    border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+.form_input
+{
+    margin-bottom: 5px;
+}
+.login_remember_me
+{
+    margin-left: -10px;
+}
+.navbar_div
+{
+    width: 300px;
+    height: 100%;
+    float: left;
+    background-color: #2E3C54;
+}
+.content_div
+{
+    float: right;
+    width: calc(100% - 300px);
+    height: 100%;
+    overflow: scroll
+}
+.dashboard_body{
+    /*background-color:lightgrey;*/
+    *padding: 0px;
+    *margin: 0px;
+    background-color: rgb(245,245,246);
+}
+.side_navbar
+{
+    margin-top: 50px;
+    overflow: hidden;
+    background-color: rgb(255,255,255);
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+}
+.collection-content{
+    color: rebeccapurple;
+}
+.main_heading{
+    color: #ffffff;
+    background-color: #2E3C54;
+    border: 0px;
+}
+#inside_heading{
+    color: #ffffff;
+    background-color: #179DBA;
+    border: 0px;
+}
+.collapsible
+{
+    margin: 0px;
+    border: 0px;
+}
+.collection a.collection-item
+{
+    background-color: #2E3C54;
+}
+.collapsible-body
+{
+    border: 0px; !important;
+}
+.nav-wrapper
+{
+    background-color: rgb(255,255,255) !important;
+}
+
+.responsive-img.circle
+{
+
+    height: 40px !important;
+    width: 40px !important;
+}
+.logout_arrow
+{
+    position: relative;
+    /*margin-right: 70px;*/
+    color: black;
+}
+.profile_pic
+{
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+.name
+{
+    float: left;
+}
+.element.style
+{
+    margin-left:0px !important;
+    padding-top: 37px!important;
+    padding-left: 5px !important;
+}
+.h6
+{
+    margin: 0px;
+}
+.dropdown_menu
+{
+    padding-top: 15px;
+    /*float: right;*/
+    /*position: relative;*/
+}
+.dropdown_menu_contents
+{
+    padding-left: 15px;
+    /*position: absolute;*/
+    /*top: 0px;*/
+    /*right: 0px;*/
+    /*left: 0px;*/
+}
+.nav_header{
+    /*position: relative;*/
+    margin: auto;
+    padding: 13px 50px;
+    height: 68px;
+    background-color: rgb(23,157,186);
+}
+.content_header
+{
+    margin-top: 0px;
+    height: 68px;
+    background-color:white;
+}
+#content_heading
+{
+    margin: 0px !important;
+    padding-top: 25px;
+    padding-left: 15px;
+}

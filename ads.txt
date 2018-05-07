@@ -1,0 +1,98 @@
+#Last updated 12-12-17
+#ads.txt to be placed in the root level of the domain
+#example: yourdomain.com/ads.txt
+
+#Google AdX
+google.com, pub-3605257360853185, RESELLER, f08c47fec0942fa0
+
+#AppNexus
+appnexus.com, 7125, RESELLER
+
+#IndexExchange
+indexexchange.com, 184310, RESELLER
+
+#OpenX
+openx.com, 537138407, DIRECT, 6a698e2ec38604c6
+openx.com, 537138408, DIRECT, 6a698e2ec38604c6
+openx.com, 539181723, DIRECT, 6a698e2ec38604c6
+openx.com, 537152342, DIRECT, 6a698e2ec38604c6
+openx.com, 539618221, DIRECT, 6a698e2ec38604c6
+
+#DEFY Media
+appnexus.com, 1613, RESELLER
+appnexus.com, 3326, RESELLER
+google.com, pub-1409765517756851, RESELLER
+google.com, pub-4075894099602271, RESELLER
+freewheel.tv, 146081, RESELLER
+rubiconproject.com, 8861, RESELLER, 0bfd66d529a55807
+
+#RhythmOne
+rhythmone.com,1058760868,RESELLER,a670c89d4a324e47
+1rx.io,1058760868,RESELLER,a670c89d4a324e47
+
+#DistrictM
+districtm.io, 100387, DIRECT
+appnexus.com, 1908, RESELLER
+districtm.io, 100393, DIRECT
+appnexus.com, 7944, RESELLER
+
+#Rubicon Project
+rubiconproject.com, 10203, DIRECT, 0bfd66d529a55807
+
+#Sonobi
+sonobi.com, 2bb2aa4678, DIRECT
+
+#sovrn
+sovrn.com, 239429, DIRECT, fafdf38b16bf6b2b
+lijit.com, 239429, DIRECT, fafdf38b16bf6b2b
+
+#PulsePoint
+contextweb.com, 560313, DIRECT, 89ff185a4c4e857c
+
+#conversant
+conversantmedia.com, 40794, DIRECT
+appnexus.com, 4052, RESELLER
+
+#aol
+adtech.com, 10563, RESELLER
+aolcloud.net, 10563, RESELLER
+
+#gumgum
+gumgum.com, 12907, DIRECT, ffdef49475d318a9
+
+#amazon
+amazon-adsystem.com, 3437, DIRECT
+amazon-adsystem.com, 600, DIRECT
+
+#sharethrough
+sharethrough.com, c3cac6b7, DIRECT, d53b998a7bd4ecd2
+
+
+#bRealTime
+EMXDGT.com, 152, RESELLER, 1e1d41537f7cad7f
+Appnexus.com, 1356, RESELLER, f5ab79cb980f11d1
+
+#33across
+33across.com, 33, DIRECT
+google.com, pub-9557089510405422, RESELLER, f08c47fec0942fa0
+appnexus.com, 1001, RESELLER
+appnexus.com, 3135, RESELLER
+spotxchange.com, 139883, RESELLER, 7842df1d2fe2db34
+spotx.tv, 139883, RESELLER, 7842df1d2fe2db34
+openx.com, 537120563, RESELLER, 6a698e2ec38604c6
+amazon.com, 3411, RESELLER
+lkqd.com, 293, RESELLER
+lkqd.net, 293, RESELLER
+adtech.com, 9993, RESELLER
+aolcloud.net, 9993, RESELLER
+rubiconproject.com, 16414, RESELLER
+criteo.com, 3450, RESELLER
+indexexchange.com, 185506, RESELLER
+
+# START SublimeSkinz Network 2017-10-16 15:15
+smartadserver.com, 1827, RESELLER
+improvedigital.com, 335, RESELLER
+appnexus.com, 3538, RESELLER
+appnexus.com, 3539, RESELLER
+appnexus.com, 3540, RESELLER
+# END SublimeSkinz Network

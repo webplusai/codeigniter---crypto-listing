@@ -1,0 +1,103 @@
+.characteristics-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    width: 50%;
+    flex: 1 1 50%;
+    display: flex;
+    margin-top: 24px;
+
+    span {
+      display: flex;
+      flex: none;
+      align-items: flex-start;
+      line-height: 16px;
+    }
+    p {
+      margin-bottom: 0;
+    }
+    img {
+      display: inline-block;
+      height: 16px;
+      line-height: 16px;
+      margin-right: 5px;
+    }
+
+    .title {
+      width: 130px;
+      font: {
+        family: $font-family-m;
+        size: 13px;
+      };
+      color: $color-1;
+    }
+    .text {
+      font: {
+        family: $font-family-r;
+        size: 13px;
+      };
+      color: $color-1;
+      align-self: center;
+    }
+  }
+
+  &.fullsize-list {
+
+    li {
+      width: 100%;
+      flex: 1 1 100%;
+    }
+  }
+  &.type-2 {
+    width: 100%;
+
+    li {
+      width: 100%;
+      flex: 1 1 100%;
+
+      .title {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+      .text {
+        display: inline-block;
+        width: 245px;
+        flex: 1 1 245px;
+        text-align: right;
+      }
+    }
+  }
+  &.type-3 {
+    li {
+      width: 100%;
+      flex: 1 1 100%;
+
+      .title {
+        position: relative;
+
+        &:after {
+          content: '-';
+          font: {
+            family: $font-family-r;
+            size: 13px;
+          };
+          color: $color-4;
+          @include ak-position-abs-t-r(0, 30px);
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1040px) {
+  .characteristics-list {
+    li {
+      width: 100%;
+      flex: 1 1 100%;
+    }
+  }
+}

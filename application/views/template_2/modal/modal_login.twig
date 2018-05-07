@@ -1,0 +1,60 @@
+<div id="modal-login">
+
+    <style>
+        #modal-login { display: none }
+        #modal-login .btn-link-1 { margin: 0px 0px 15px 0px; font-size: 14px; font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; }
+        #modal-login .btn-link-1.btn-link-1-facebook { width: 49%; float: left; }
+        #modal-login .btn-link-1.btn-link-1-google-plus { width: 49%; float: left; margin-left: 2%; }
+        #modal-login .btn-link-1 { padding: 17px 18px; }
+        #modal-login .form-group { margin-bottom: 10px; }
+        #modal-login form { margin-bottom: 5px; }
+        #modal-login .forgot { float: right }
+        .social-login { margin-top: 20px; }
+        @media screen and (max-width: 1000px) {
+            #modal-login .btn-link-1.btn-link-1-facebook { width: 100%; margin-bottom: 5px !important; }
+            #modal-login .btn-link-1.btn-link-1-google-plus { width: 100%; margin-left: 0%; margin-bottom: 10px !important; }
+            #modal-login .forgot {
+                float: left;
+                margin-top: 5px;
+                margin-bottom: 10px;
+            }
+        }
+        @media (max-width: 767px) {
+            #modal-login .btn-link-1.btn-link-1-facebook { width: 100%; margin-bottom: 5px !important; }
+            #modal-login .btn-link-1.btn-link-1-google-plus { width: 100%; margin-left: 0%; margin-bottom: 10px !important; }
+            #modal-login .forgot {
+                float: left;
+                margin-top: 5px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+
+    <div class="social-login">
+        <div class="social-login-buttons">
+            <a class="btn btn-link-1 btn-link-1-facebook" href="{{ base_url }}login/facebook">Sign In with Facebook</a>
+            <a class="btn btn-link-1 btn-link-1-google-plus" href="{{ base_url }}login/google">Sign In with Google+</a>
+        </div>
+    </div>
+
+    <form method="post" action="{{ base_url }}login.html">
+        <div class="form-group">
+            <input type="email" name="tx_email" class="form-control" placeholder="Your Email" value="{{ formData['tx_email'] }}"/>
+        </div>
+        <div class="form-group">
+            <input type="password" name="tx_password" class="form-control" placeholder="Your Password"/>
+        </div>
+        <div class="form-group"></div>
+        <input type="hidden" name="redirect" value="{{ head['canonical'] }}">
+        <input type="hidden" name="type" id="ptype" value="">
+        <input type="hidden" name="ftype" id="ftype" value="">
+        <input type="hidden" name="id" id="pid" value="">
+        <button name="submit" value="1" type="submit">Log In</button>
+        <div class="form-group"></div>
+        <div class="form-group">
+            <a href="{{ base_url }}register.html">New user? Register here...</a>
+            <a class="forgot" href="{{ base_url }}forgot_password.html">Forgot password</a>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "coinschedule-189314",
+  "private_key_id": "ec3a1042dd2b7e582ec85b46804fdfdbf8a9e7dd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQClQ+6yaeA+d5sI\nitAM/4Le7HI4NtHgHKuCbSnTw4xNGX7K9luZqUKyC1GqgEOV8gNP9J89Kp8Dkz8E\ntbZMcgF8D9tFc8rH7vqllaMPi72ky7+WOpaMtnKGGdC+4Ws2UiAIAqOs/JZfjP/s\nPhTgP2433MZV6ZK2BZHegeMBYpCmz6Jm5canu+6nLDsRnB0fDxn4lqBGaoK4cAAp\n9TZnTs0UvK8ZjmAmdhjKhaLj+xRkW/UhBcMgUkwZwEfKSXqfnBywiQav0ZeDMJiU\nJUGeTvfOj/xRtf09ibNM9GFewSzYpxcgVhaHUQVGS/sMAKHMSYyrrAWJQ3VqRhnu\n613PcTc9AgMBAAECggEAAYkzprBPZKnwFZoXuiXJbLwViTPMwdcyX1aA6ykverbm\nrjZG0UBmFFDirHKq5ps9O4YmHF4YmQCz5ENnBD5WLm5RD3kYhoSjGj5z7U28rLzb\ncUyqgg8MJZwl3sZmb2t76uckFSrCvjECE4smonWc7ac3tqwqBu11y4LP0PevVmsu\nDRdfLtXB7/9ke8mWXDYl4xRz0zytcIGZnkiJthRbRRtTV0GTLX6BCXuGvRmux8UP\nu0ePqHW/DNAFZ9XEuWafWpCBYtaQYlfoSYbPNRsHEuq5FEpfSt2r9N+TInfYf/NO\n5TAYHNh7D5/E7yCdIZKNHXrejUHxAqChuFUNWhJ8dwKBgQDg6xI6DnkOPy+x2s4h\nakOUPRLlg2gv5hOhUhVUfA8xUWdPf+P+vmt1J2DreI4sPkKDlLlQh7gz1EsxJDK/\n8LjaKgJ1SIth+ahD/ZTSsZSKbictw/NinHtr1PjxvrixoEVfKX6QZ55/Q/C6aUef\nyxrcqfw7zk4XppVWmUjWBK3BswKBgQC8GoWqgF1p/ysS2T7iEN/aaeuPFQdBf/P1\nxIlwWfTus4UM1Bw/dOhu9QBN+3X008ZPX20MEi7gfrZBLARr1777dzHGTatVe132\nD4hyt+s3yXI9kbYrmC7HW2ald6Si6b4dEqXgVzMWjGjv7pRCRPWiHHgCvSllSdre\nmFLRiiFLTwKBgD/mKPB7iiLlCqzRx/wwT3C/BS5VbfUlvW/4fPzangpZ4Srx35lR\nCgBnpp5fSq0BJy5ww1FArbFz38TfTte/ERVSGA6wBIFaR1bBpVVShCvr7Y+P+waK\nBHp3MB6mG5zDNtI5XK6z8ZCggbTEEkgwkLoeRP3Mt9z6Q7UtqUa8X40HAoGAPEqL\n+WB3kJf3KG11mGQsPAejNxNYZggrG+VI4DgVJ8Vmqfv6qeRA8/+Xf2dQIY8Xiy1c\n+HeDivVSWYVQTXizgEpuK8+NUTLfpRTJeWu1+wWYll9z8nku1TtYpUS6AnXFN/BY\nNpX8jAepQu5Hmw4bZUCWvtn+wLZxbtOICB2sGkUCgYAB+RA8kIZbTOYTRfvLw4Ei\nkrylI6i2igNLaL39lBq5nM4CYI/SnEQi6PKFod09zTvexK30gpQukk2YWOhqtt3C\nBagYuGUrMrFTWcvb0XShgxm6RFy1tGnPjuutRuw0GvtqJ1bGZVim5G+tUNj5wsV9\nUFZhaeVzHJQVyV2djGnsUQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "google-analytics@coinschedule-189314.iam.gserviceaccount.com",
+  "client_id": "110028001342130569675",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/google-analytics%40coinschedule-189314.iam.gserviceaccount.com"
+}

@@ -1,0 +1,130 @@
+.footer {
+  margin-top: 45px;
+  background-color: $color-1;
+
+  .top-container {
+    padding: 60px 0;
+  }
+  .bottom-container {
+    padding: 30px 0;
+    border-top: 1px solid rgba($color-7, .15);
+
+    .container {
+      align-items: center;
+    }
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .menus-container {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+
+    & > div {
+      width: calc(100% / 4);
+      flex: 1 1 calc(100% / 4);
+    }
+
+    .menu {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      li {
+        margin-bottom: 20px;
+
+        a {
+          color: rgba($color-7, .65);
+          text-decoration: none;
+          @include ak-transition();
+
+          &:hover {
+            color: $color-8;
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .description {
+    width: 310px;
+    flex: 0 0 310px;
+  }
+  .copyright {
+    font: {
+      family: $font-family-r;
+      size: 12px;
+    };
+    color: rgba($color-7, .65);
+  }
+  .dmca-image {
+    margin: 0 0 0 auto;
+  }
+
+  h6 {
+    font: {
+      family: $font-family-m;
+      size: 15px;
+    };
+    color: $color-7;
+    margin: 0 0 35px;
+  }
+  p {
+    font: {
+      family: $font-family-r;
+      size: 13px;
+    };
+    line-height: 20px;
+    color: rgba($color-7, .65);
+  }
+}
+
+@media all and (max-width: 991px) {
+  .footer {
+    .description {
+      width: 100%;
+      flex: 1 1 100%;
+      margin-top: 30px;
+    }
+  }
+}
+
+@media all and (max-width: 575px) {
+  .footer {
+    .menus-container {
+      & > div {
+        margin-bottom: 30px;
+        width: 50%;
+        flex: 1 1 50%;
+      }
+    }
+    .bottom-container {
+      .container {
+        justify-content: center;
+      }
+      .copyright {
+        margin-bottom: 15px;
+      }
+      .dmca-image {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 321px) {
+  .footer {
+    .menus-container {
+
+      & > div {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+  }
+}

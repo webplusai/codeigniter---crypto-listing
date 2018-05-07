@@ -1,0 +1,38 @@
+<div class="header"></div>
+<div class="main">
+    <section style="text-align:center;">
+        <h1>Log In</h1>
+        <div class="social-login">
+            <div class="social-login-buttons" style="display: inline-block; margin-top: 20px;">
+                <a class="btn btn-link-1 btn-link-1-facebook" href="{{ base_url }}login/facebook">Sign In with Facebook</a>
+                <a class="btn btn-link-1 btn-link-1-google-plus" href="{{ base_url }}login/google">Sign In with Google+</a>
+            </div>
+        </div>
+
+        <form method="post" action="{{ base_url }}login.html">
+            {% if not isValid %}
+            <div class="form-group">
+                <div class="alert alert-danger">
+                    <span class="glyphicon glyphicon-info-sign"></span> Incorrect Credentials, Try again...
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="form-group">
+                <input type="email" name="tx_email" class="form-control" placeholder="Your Email" value="{{ formData['tx_email'] }}"/>
+            </div>
+            <div class="form-group">
+                <input type="password" name="tx_password" class="form-control" placeholder="Your Password"/>
+            </div>
+            <div class="form-group"><hr /></div>
+            <input type="hidden" name="redirect" value="{{ redirect }}">
+            {{ htmlHiddenForm | raw }}
+            <button class="login-button" name="submit" value="1" type="submit">Log In</button>
+            <div class="form-group"><hr /></div>
+            <div class="form-group">
+                <a style="float: left;" href="{{ base_url }}register.html">New user? Register here...</a>
+                <a style="float: right;" href="{{ base_url }}forgot_password.html">Forgot password</a>
+            </div>
+        </form>
+    </section>
+</div>

@@ -1,0 +1,129 @@
+.main-menu-container {
+  display: flex;
+  margin: 0 0 0 auto;
+}
+.main-menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0;
+
+  &.secondary-menu {
+    margin: 0 0 0 25px;
+  }
+
+  li {
+    display: inline-block;
+    position: relative;
+    margin-right: 25px;
+    padding: 22px 0;
+
+    a {
+      font: {
+        size: 14px;
+        family: $font-family-m;
+      };
+      color: $color-1;
+      text-decoration: none;
+      @include ak-transition();
+
+      &:hover {
+        color: $color-8;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      content: '';
+      width: 0;
+      height: 4px;
+      background-color: $color-8;
+      @include ak-transition();
+    }
+    &.active:after {
+      width: 100%;
+    }
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1199px) {
+  .main-menu-container {
+    width: 100%;
+    padding: 0 15px;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    background-color: $color-7;
+    box-shadow: $base-box-shadow;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-60px);
+    @include ak-transition();
+
+    &.opened {
+      z-index: 3;
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .main-menu {
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 0 20px;
+
+      &:last-child {
+        margin-right: 20px;
+      }
+    }
+
+    &.secondary-menu {
+      margin-left: auto;
+    }
+  }
+}
+@media all and (max-width: 767px) {
+  .main-menu-container {
+    flex-wrap: wrap;
+  }
+  .main-menu {
+    width: 100%;
+    margin: 10px 0;
+
+    li {
+      width: 100%;
+      padding: 12px 15px;
+
+      &.active {
+
+        a {
+          color: #33b13d;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    &.secondary-menu {
+      margin: 0;
+
+      li {
+        a {
+          font-family: $font-family-r;
+        }
+      }
+    }
+  }
+}

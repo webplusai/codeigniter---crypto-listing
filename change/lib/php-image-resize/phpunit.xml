@@ -1,0 +1,15 @@
+<phpunit colors="true">
+    <testsuites>
+        <testsuite name="php-image-resize tests">
+            <directory>test</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+      <whitelist processUncoveredFilesFromWhitelist="true">
+        <directory suffix=".php">lib</directory>
+      </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-text" target="php://stdout"/>
+    </logging>
+</phpunit>

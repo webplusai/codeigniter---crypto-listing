@@ -1,0 +1,308 @@
+[
+    {
+        "name": "cakephp/utility",
+        "version": "3.4.11",
+        "version_normalized": "3.4.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakephp/utility.git",
+            "reference": "c2ad317160691acfcf801a78428abf386aef4a7e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakephp/utility/zipball/c2ad317160691acfcf801a78428abf386aef4a7e",
+            "reference": "c2ad317160691acfcf801a78428abf386aef4a7e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0"
+        },
+        "suggest": {
+            "ext-intl": "To use Text::transliterate() or Text::slug()",
+            "lib-ICU": "To use Text::transliterate() or Text::slug()"
+        },
+        "time": "2017-06-25T21:50:48+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cake\\Utility\\": "."
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "CakePHP Community",
+                "homepage": "https://github.com/cakephp/utility/graphs/contributors"
+            }
+        ],
+        "description": "CakePHP Utility classes such as Inflector, String, Hash, and Security",
+        "homepage": "https://cakephp.org",
+        "keywords": [
+            "cakephp",
+            "hash",
+            "inflector",
+            "security",
+            "string",
+            "utility"
+        ]
+    },
+    {
+        "name": "cakephp/core",
+        "version": "3.4.11",
+        "version_normalized": "3.4.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakephp/core.git",
+            "reference": "8e4fe35c9ce4b6f2095c969cde01ba527cf654bf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakephp/core/zipball/8e4fe35c9ce4b6f2095c969cde01ba527cf654bf",
+            "reference": "8e4fe35c9ce4b6f2095c969cde01ba527cf654bf",
+            "shasum": ""
+        },
+        "require": {
+            "cakephp/utility": "^3.0.0",
+            "php": ">=5.6.0"
+        },
+        "time": "2017-06-20T22:05:58+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cake\\Core\\": "."
+            },
+            "files": [
+                "functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "CakePHP Community",
+                "homepage": "https://github.com/cakephp/core/graphs/contributors"
+            }
+        ],
+        "description": "CakePHP Framework Core classes",
+        "homepage": "https://cakephp.org",
+        "keywords": [
+            "cakephp",
+            "core",
+            "framework"
+        ]
+    },
+    {
+        "name": "cakephp/datasource",
+        "version": "3.4.11",
+        "version_normalized": "3.4.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakephp/datasource.git",
+            "reference": "86cb91436e0fb7b838eee66b2833da27e163f0cc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakephp/datasource/zipball/86cb91436e0fb7b838eee66b2833da27e163f0cc",
+            "reference": "86cb91436e0fb7b838eee66b2833da27e163f0cc",
+            "shasum": ""
+        },
+        "require": {
+            "cakephp/core": "^3.0.0",
+            "php": ">=5.6.0"
+        },
+        "suggest": {
+            "cakephp/collection": "Require this if you decide to use ResultSetInterface",
+            "cakephp/utility": "Require this if you decide to use EntityTrait"
+        },
+        "time": "2017-07-06T01:40:05+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cake\\Datasource\\": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "CakePHP Community",
+                "homepage": "https://github.com/cakephp/datasource/graphs/contributors"
+            }
+        ],
+        "description": "Provides connection managing and traits for Entities and Queries that can be reused for different datastores",
+        "homepage": "https://cakephp.org",
+        "keywords": [
+            "cakephp",
+            "connection management",
+            "datasource",
+            "entity",
+            "query"
+        ]
+    },
+    {
+        "name": "cakephp/database",
+        "version": "3.4.11",
+        "version_normalized": "3.4.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakephp/database.git",
+            "reference": "1840830c0285a9ea3e7971efd6b8147a4b0e1ba4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakephp/database/zipball/1840830c0285a9ea3e7971efd6b8147a4b0e1ba4",
+            "reference": "1840830c0285a9ea3e7971efd6b8147a4b0e1ba4",
+            "shasum": ""
+        },
+        "require": {
+            "cakephp/core": "^3.0.0",
+            "cakephp/datasource": "^3.0.0",
+            "php": ">=5.6.0"
+        },
+        "suggest": {
+            "cakephp/cache": "Require this if you decide to use the schema caching feature",
+            "cakephp/log": "Require this if you want to use the built-in query logger"
+        },
+        "time": "2017-07-12T01:05:19+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cake\\Database\\": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "CakePHP Community",
+                "homepage": "https://github.com/cakephp/database/graphs/contributors"
+            }
+        ],
+        "description": "Flexible and powerful Database abstraction library with a familiar PDO-like API",
+        "homepage": "https://cakephp.org",
+        "keywords": [
+            "abstraction",
+            "cakephp",
+            "database",
+            "database abstraction",
+            "pdo"
+        ]
+    },
+    {
+        "name": "psr/http-message",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-message.git",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-08-06T14:39:51+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Message\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP messages",
+        "homepage": "https://github.com/php-fig/http-message",
+        "keywords": [
+            "http",
+            "http-message",
+            "psr",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "cakephp/validation",
+        "version": "3.4.12",
+        "version_normalized": "3.4.12.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakephp/validation.git",
+            "reference": "82af916ab14805a77c349dba82c8d8b8bfab9aaf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakephp/validation/zipball/82af916ab14805a77c349dba82c8d8b8bfab9aaf",
+            "reference": "82af916ab14805a77c349dba82c8d8b8bfab9aaf",
+            "shasum": ""
+        },
+        "require": {
+            "cakephp/utility": "^3.0.0",
+            "php": ">=5.6.0",
+            "psr/http-message": "^1.0.0"
+        },
+        "suggest": {
+            "cakephp/i18n": "If you want to use Validation::localizedTime()"
+        },
+        "time": "2017-07-08T14:35:25+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cake\\Validation\\": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "CakePHP Community",
+                "homepage": "https://github.com/cakephp/validation/graphs/contributors"
+            }
+        ],
+        "description": "CakePHP Validation library",
+        "homepage": "https://cakephp.org",
+        "keywords": [
+            "cakephp",
+            "data validation",
+            "validation"
+        ]
+    }
+]

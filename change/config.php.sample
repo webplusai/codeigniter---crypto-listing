@@ -1,0 +1,17 @@
+<?php
+// database
+define('DB_HOST', 'localhost');
+define('DB_DATABASE', 'coinschedule_site');
+define('DB_USERNAME', 'coinschedule_site');
+define('DB_PASSWORD', '43Pds4sJLj+JCKR');
+define('DB_ENCODING', 'utf8');
+define('DB_TIMEZONE', '+0:00');
+
+// redis
+define('REDIS_SOCKET', 'tcp');
+define('REDIS_HOST', '127.0.0.1');
+define('REDIS_PORT', 6379);
+define('REDIS_PASSWORD', 'dHsQxd54bVGubL6h5T');
+
+define('BASE_URL', 'https://dev.coinschedule.com/');
+define('FCPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);

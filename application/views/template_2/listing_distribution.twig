@@ -1,0 +1,35 @@
+
+<div id="Distribution" class="tabcontent" style="margin-bottom: 20px;">
+    <div style="display: none; margin-bottom: 0px; margin-top: 15px;" class="alert alert-distribution" role="alert"></div>
+
+    <table class="tbl" width="100%">
+        <tr>
+            <td width="54" align="center"><a href="#" class="adddistro">Add</a></td>
+            <td><input type="text" id="aDistroDesc" placeholder="Description"></td>
+            <td width="120"><input type="text" id="aDistroAmt" placeholder="Amount"></td>
+            <td width="60"><input type="text" id="aDistroPercent" placeholder="Percent"></td>
+            <td><input type="text" id="aDistroNote" placeholder="Note"></td>
+            <td width="45" align="center"><a href="#" class="adddistro">{{ icon_add | raw }}</a></td>
+        </tr>
+    </table>
+
+    <form method="post" id="listing_distribution">
+        <table class="tbl" id="tbl_distro">
+            <thead>
+            <tr>
+                <th width="40" style="text-align: center">Sort</th>
+                <th>Distribution Description</th>
+                <th width="120">Amount</th>
+                <th width="60">Percent</th>
+                <th>Note</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {{ htmlDistribution | raw }}
+            </tbody>
+        </table>
+        <input type="hidden" id="highestTotalRow" value="{{ highestTotalRow }}" />
+        <a style="display: none" type="submit" class="btn btn-primary btn-primary-old" id="save_distribution">Save Distribution</a>
+    </form>
+</div>

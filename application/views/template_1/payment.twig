@@ -1,0 +1,28 @@
+<div class="header"></div>
+<div class="main">
+    <section>
+        <h1>Payment</h1>
+        <div class="col-md-8 col-md-offset-2" style="text-align: center">
+            <div class="form-group">
+                <p>Please send <strong>BTC {{ listingFee }}</strong> to the following address: <strong>{{ paymentAddress }}</strong></p>
+            </div>
+
+            {% if isPaid %}
+            <div class="col-md-8 col-md-offset-2">
+                <p><i style="color: #5cb85c;font-size: 20px;" class="fa fa-check" aria-hidden="true"></i> Payment received, thank you! Check your email for further instructions. If you didn't receive an email after 5 minutes, check your spam box</p>
+            </div>
+
+            {% else %}
+            <div class="col-md-4 col-md-offset-4">
+                <img style="margin-left: -10px" src="https://chart.googleapis.com/chart?chs=240x240&cht=qr&chl=bitcoin:{{ paymentAddress }}?amount={{ listingFee }}">
+            </div>
+            <p>Once the fee is paid, your listing will go live automatically. </p>
+            <p><strong>You will be able to upgrade your listing from your dashboard once the payment for the Basic Listing is confirmed</strong></p>
+            {% endif %}
+        </div>
+
+        <div class="col-md-8 col-md-offset-5">
+            <a href="{{ base_url ~ 'submission_entry?h=' ~ submission['SubHashCode'] }}" style="margin-left: 60px;" class="btn btn-back">BACK</a>
+        </div>
+    </section>
+</div>

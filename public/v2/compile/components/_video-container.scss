@@ -1,0 +1,48 @@
+.video-container {
+  position: relative;
+  height: 550px;
+  overflow: hidden;
+  background-color: #dc0037;
+
+  .video {
+    min-width: 100%;
+    min-height: 100%;
+    @include ak-position-abs-vh-center;
+  }
+  .video-control {
+    display: flex;
+    width: 80px;
+    height: 50px;
+    background-color: $color-7;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 1px 20px rgba($color-1, .12);
+    @include ak-position-abs-vh-center;
+    @include ak-transition();
+
+    .icon {
+      margin: auto;
+
+      .icon-path {
+        fill: $color-1;
+        @include ak-transition();
+      }
+    }
+
+    &:hover {
+      background-color: $color-8;
+
+      .icon {
+        .icon-path {
+          fill: $color-7;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .video-container {
+    height: 300px;
+  }
+}

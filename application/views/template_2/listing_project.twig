@@ -1,0 +1,161 @@
+<div style="margin-bottom: 20px" id="Project" class="tabcontent defaulttab">
+    <div style="display: none; margin-bottom: 0px; margin-top: 15px;" class="alert alert-project" role="alert"></div>
+    <form method="post" id="listing_project">
+        <table class="tbl" style="table-layout: fixed;">
+            <tbody>
+            <tr>
+                <th width="150">Field</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Type <span class="mandatory-ProjType" style="color:#F00">*</span></td>
+                <td>
+                    <select id="ProjType" name="ProjType" class="" onchange="">
+                        {{ htmlProjectType | raw }}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Platform <span class="mandatory-ProjPlatform" style="color:#F00">*</span></td>
+                <td>
+                        <select id="ProjPlatform" name="ProjPlatform">
+                            {{ htmlPlatform | raw }}
+                        </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Algorithm <span class="mandatory-ProjAlgo" style="color: rgb(255, 0, 0); display: none;">*</span>
+                </td>
+                <td>
+                    <input id="ProjAlgo" type="text" name="ProjAlgo" maxlength="20" style="width: 100px;" value="{{ project['ProjAlgo'] }}">
+                    <span class="help-block-right">Maximum 20 characters</span>
+                    <span class="help-block">Only available for projects of type "blockchain"</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Name <span class="mandatory-ProjName" style="color:#F00">*</span></td>
+                <td>
+                    <input id="ProjName" type="text" value="{{ project['ProjName'] }}" name="ProjName" disabled>
+                    <span class="help-block">Maximum 255 characters</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Symbol <span class="mandatory-ProjSymbol" style="color:#F00">*</span></td>
+                <td>
+                    <input id="ProjSymbol" type="text" value="{{ project['ProjSymbol'] }}" name="ProjSymbol" maxlength="10">
+                    <span class="help-block">Maximum 10 characters</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Description <span class="mandatory-ProjDesc" style="color:#F00">*</span></td>
+                <td>
+                    <textarea id="ProjDesc" name="ProjDesc">{{ project['ProjDesc'] }}</textarea>
+                    <span class="help-block">Maximum 256 characters</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Logo (16x16) <span class="mandatory-ProjImage" style="color:#F00">*</span></td>
+                <td>
+                    <div style="vertical-align: middle;display:inline-block;">
+                        <img id="img-ProjImage" src="data:image/png;base64,{{ project['ProjImage'] }}">
+                    </div>
+                    <div style="display:inline-block;margin-left: 20px;">
+                        <input id="ProjImage" type="file" name="ProjImage">
+                        <input type="hidden" name="ProjImage">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Logo (48x48) <span class="mandatory-ProjImageLarge" style="color:#F00">*</span></td>
+                <td>
+                    <div style="vertical-align: middle;display:inline-block;">
+                        <img id="img-ProjImageLarge" src="data:image/png;base64,{{ project['ProjImageLarge'] }}">
+                    </div>
+                    <div style="display:inline-block;margin-left: 20px;">
+                        <input id="ProjImageLarge" type="file" name="ProjImageLarge">
+                        <input type="hidden" name="ProjImageLarge">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td><input id="ProjLocation" type="text" value="{{ project['ProjLocation'] }}" name="ProjLocation"></td>
+            </tr>
+            <tr>
+                <td>Total Supply <span class="mandatory-ProjTotalSupp" style="color:#F00">*</span></td>
+                <td>
+                    <input id="ProjTotalSupp" type="text" value="{{ project['ProjTotalSupp'] }}" name="ProjTotalSupp">
+                    <span class="help-block">e.g.: 100000000.99</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Pre-mined</td>
+                <td><input id="ProjPreMined" type="text" value="{{ project['ProjPreMined'] }}" name="ProjPreMined"></td>
+            </tr>
+            <tr>
+                <td>Pre-mined Note</td>
+                <td><textarea id="ProjPreMinedNote" name="ProjPreMinedNote">{{ project['ProjPreMinedNote'] }}</textarea></td>
+            </tr>
+            <tr>
+                <td>Event Name <span class="mandatory-EventName" style="color:#F00">*</span></td>
+                <td>
+                    <input id="EventName" type="text" value="{{ project['EventName'] }}" name="EventName" disabled>
+                    <span class="help-block">E.g. MyCompany ICO (One project can have many events)</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-left">Dates not defined yet - TBA </td>
+                <td><input id="dates_defined" type="checkbox" name="dates_defined" {{ dates_defined }}></td>
+            </tr>
+            <tr>
+                <td>Event Start Date</td>
+                <td>
+                    <div class="datefield">
+                        <input id="EventStartDate" data-input="" name="EventStartDate" type="text" value="{{ project['EventStartDate'] }}" class="flatpickr-input" readonly="readonly">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Event End Date</td>
+                <td>
+                    <div class="datefield">
+                        <input id="EventEndDate" data-input="" name="EventEndDate" type="text" value="{{ project['EventEndDate'] }}" class="flatpickr-input" readonly="readonly">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Event Soft Cap</td>
+                <td>
+                    <input id="EventSoftCap" type="text" value="{{ project['EventSoftCap'] }}" name="EventSoftCap">
+                    <span class="help-block"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Event Hard Cap</td>
+                <td>
+                    <input id="EventHardCap" type="text" value="{{ project['EventHardCap'] }}" name="EventHardCap">
+                    <span class="help-block"></span>
+                </td>
+            </tr>
+                <td>Event Details</td>
+                <td>
+                    <textarea disabled id="EventDesc" name="EventDesc">{{ project['EventDesc'] }}</textarea>
+                    <span class="help-block">This information is shown under the heading 'Details' in your project page (available for Gold and Platinum projects only)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>YouTube Video</td>
+                <td>
+                    <input id="ProjYouTubeVid" type="text" value="{{ project['ProjYouTubeVid'] }}" name="ProjYouTubeVid">
+                    <span class="help-block">On your YouTube video's page click on 'SHARE' and then copy and paste the url (e.g. https://youtu.be/2YBtspm8j8M)</span>
+                </td>
+            </tr>
+
+            <input type="hidden" id="ProjID" name="ProjID" value="{{ project['ProjID'] }}">
+            <input type="hidden" id="hdplatforms" name="hdplatformsID" value="{{ platform }}">
+            <input type="hidden" id="hdalgo" name="hdalgoID" value="{{ algo }}">
+            </tbody>
+        </table>
+        <a style="display: none" type="submit" class="btn btn-primary btn-primary-old" id="save_project">Save Project</a>
+    </form>
+</div>

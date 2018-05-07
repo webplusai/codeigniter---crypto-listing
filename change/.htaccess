@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "coinschedulechage"
+require valid-user
+AuthUserFile "/home/coinschedule/.htpasswds/public_html/change/passwd"

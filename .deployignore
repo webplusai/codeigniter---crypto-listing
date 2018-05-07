@@ -1,0 +1,10 @@
+## Directories to ignore
+blog/**
+ads/**
+adserver_new/**
+widget/**
+node_modules/**
+
+## Files to ignore
+cookie.txt
+robots.txt

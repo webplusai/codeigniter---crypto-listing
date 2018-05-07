@@ -1,0 +1,46 @@
+.socials-menu-container {
+  margin: 0 40px;
+}
+.socials-menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0;
+
+  li {
+    display: inline-block;
+    margin: 0 23px 0 0;
+
+    a {
+      display: flex;
+      width: 18px;
+      height: 18px;
+
+      svg {
+        margin: auto;
+        fill: $color-4;
+        @include ak-transition();
+      }
+
+      &:hover {
+
+        svg {
+          fill: $color-1;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .socials-menu-container {
+    box-shadow: 0 -1px 1px $color-3;
+  }
+  .socials-menu {
+    display: flex;
+
+    li {
+      margin: 21px auto;
+    }
+  }
+}

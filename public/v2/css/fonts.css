@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Conv_Graphik-Regular';
+    src: url('/public/v2/fonts/Graphik-Regular.eot');
+    src: local('☺'), url('/public/v2/fonts/Graphik-Regular.woff') format('woff'), url('/public/v2/fonts/Graphik-Regular.ttf') format('truetype'), url('/public/v2/fonts/Graphik-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Conv_Graphik-Medium';
+    src: url('/public/v2/fonts/Graphik-Medium.eot');
+    src: local('☺'), url('/public/v2/fonts/Graphik-Medium.woff') format('woff'), url('/public/v2/fonts/Graphik-Medium.ttf') format('truetype'), url('/public/v2/fonts/Graphik-Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Conv_Graphik-Semibold';
+    src: url('/public/v2/fonts/Graphik-Semibold.eot');
+    src: local('☺'), url('/public/v2/fonts/Graphik-Semibold.woff') format('woff'), url('/public/v2/fonts/Graphik-Semibold.ttf') format('truetype'), url('/public/v2/fonts/Graphik-Semibold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

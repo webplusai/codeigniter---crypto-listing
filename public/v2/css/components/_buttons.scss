@@ -1,0 +1,143 @@
+.btn {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 16px 18px;
+  @include ak-transition();
+
+  span {
+    display: inline-block;
+    margin-left: 8px;
+    @include ak-transition();
+  }
+
+  .btn-icon {
+
+    .btn-icon-path {
+      fill-rule: evenodd;
+      @include ak-transition();
+    }
+  }
+
+  &.btn-like {
+    border: $base-border;
+    border-radius: 3px;
+    background-color: transparent;
+
+    span {
+      font: 13px/1 $font-family-r;
+      color: $color-1;
+    }
+
+    .btn-icon {
+      .btn-icon-path {
+        fill: $color-1;
+      }
+    }
+
+    &:hover {
+      background-color: $color-4;
+    }
+    &:focus {
+      background-color: $color-1;
+
+      span {
+        color: $color-7;
+      }
+      .btn-icon {
+        .btn-icon-path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+  &.btn-primary {
+    padding: 18px 24px;
+    border-radius: 25px;
+    background-color: $color-8;
+
+    span {
+      color: $color-7;
+      font: 13px/1 $font-family-sb;
+    }
+
+    .btn-icon {
+      .btn-icon-path {
+        fill: #fff;
+      }
+    }
+
+    &:hover {
+      background-color: $color-9;
+    }
+  }
+  &.btn-secondary {
+    border-radius: 25px;
+    border: $base-border;
+
+    span {
+      color: $color-1;
+      font: 13px/1 $font-family-sb;
+    }
+
+    .btn-icon {
+      .btn-icon-path {
+        fill: $color-1;
+      }
+    }
+
+    &:hover {
+      background-color: $color-4;
+    }
+  }
+}
+.btn-mobile-menu {
+  display: none;
+
+  svg {
+    margin: auto;
+
+    path {
+      margin: 0 auto;
+    }
+  }
+
+  .icon-burger {
+    fill: $color-1;
+    fill-rule: evenodd;
+    visibility: visible;
+    opacity: 1;
+  }
+  .icon-close {
+    visibility: hidden;
+    opacity: 0;
+    fill: $color-1;
+    fill-rule: evenodd;
+  }
+  .icon-burger,
+  .icon-close {
+    @include ak-transition();
+  }
+
+  &.open {
+    .icon-burger {
+      visibility: hidden;
+      opacity: 0;
+    }
+    .icon-close {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1199px) {
+  .btn-mobile-menu {
+    &.btn-tablet {
+      display: flex;
+    }
+  }
+}
+@media all and (max-width: 767px) {
+
+}

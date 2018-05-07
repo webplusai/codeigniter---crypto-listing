@@ -1,0 +1,163 @@
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var dataArray = [{{ drawChartArray | raw }}];
+
+        var total = getTotal(dataArray);
+
+        // Adding tooltip column
+        for (var i = 0; i < dataArray.length; i++) {
+            dataArray[i].push(customTooltip(dataArray[i][0], dataArray[i][1], total));
+        }
+
+
+        // Changing legend
+        for (var i = 0; i < dataArray.length; i++) {
+            dataArray[i][0] = dataArray[i][0] + " " + ((dataArray[i][1] / total) * 100).toFixed(1) + "%" + " ($" +
+                    addCommas(dataArray[i][1]) +')';
+        }
+
+        // Column names
+        dataArray.unshift(['Category', 'Total', 'Tooltip']);
+
+        var data = google.visualization.arrayToDataTable(dataArray);
+
+        // Setting role tooltip
+        data.setColumnProperty(2, 'role', 'tooltip');
+        data.setColumnProperty(2, 'html', true);
+
+        var formatter = new google.visualization.NumberFormat({ prefix: '$',fractionDigits:0});
+        formatter.format(data, 1);
+
+        var options = {
+            is3D: false,
+            pieHole: 0.4,
+            pieStartAngle: 180,
+            sliceVisibilityThreshold: 0,
+            chartArea:{left:0,top:10,width:'75%',height:'90%'},
+            pieSliceTextStyle:{fontName:'Open Sans',fontSize:13},
+            legend:{ {{ legend | raw }}textStyle: {fontName:'Open Sans',fontSize:13}},
+            tooltip:{isHtml: true,textStyle: {fontName:'Open Sans',fontSize:13}}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+
+    function customTooltip(name, value, total) {
+        return '<div style="padding: 5px">' + name + '<br><b>' + ((value/total) * 100).toFixed(1) + '%</b>&nbsp;($' + addCommas(value) + ')</div>';
+    }
+
+    function getTotal(dataArray) {
+        var total = 0;
+        for (var i = 0; i < dataArray.length; i++) {
+            total += dataArray[i][1];
+        }
+        return total;
+    }
+
+    function addCommas(nStr) {
+        nStr += '';
+        var x = nStr.split('.');
+        var x1 = x[0];
+        var x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        }
+        return x1 + x2;
+    }
+
+
+</script>
+
+<div class="header"></div>
+<div class="main">
+    <section>
+        <h1 style="line-height: 35px;margin:0;padding:0;font-size: 24px;">Cryptocurrency ICO Stats {{ year }}<div style="font-size: 0.5em;float: right;margin-top: 0px;">Year: <select onChange="location='stats.html?year=' + this.options[this.selectedIndex].value;">{{ selectYear | raw }}</select></div></h1>
+
+        <div class="raisedchart inline top">
+            <div id="chart1" class="barchart"></div>
+            <div style="padding: 10px 10px 0px 0px;font-size: 0.8em;">
+                <i>
+                {% if year == 2016 %}
+                <b>Note: Figures do not include "The DAO" that raised $168M but was refunded after the smart contract was hacked</b><br>
+                {% endif %}
+                Totals raised are grouped by the ICO closing date and are valued using BTC exchange rate at that time. {{ StatsLastUpdatedOn }}
+                </i>
+            </div>
+        </div>
+        <div class="inline">
+            <table>
+                <tr style="font-weight: bold;font-size: 2em;">
+                    <td>Total:</td>
+                    <td width="5"></td>
+                    <td>${{ yeartotal }}</td>
+                </tr>
+                <tr style="font-weight: bold;font-size: 1em;">
+                    <td style="padding-top: 10px;" colspan="3">Total Number of ICOs: {{ numOfICO }}</td>
+                </tr>
+            </table>
+
+            <h3>Top Ten ICOs of {{ year }}</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Position</th>
+                    <th width="10"></th>
+                    <th width="150">Project</th>
+                    <th align="right">Total Raised</th>
+                </tr>
+                </thead>
+                {{ topTen | raw }}
+            </table>
+        </div>
+        <hr>
+        <h2 style="font-weight: bold;padding-bottom: 10px;">ICOs by Category {{ year }}</h2>
+        <div id="piechart_3d" style="width: 100%; height: 450px;"></div>
+
+    </section>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $.jqplot.config.enablePlugins = true;
+        var s1 = [{{ monthFig | raw }}];
+        var ticks = ['Jan', 'Feb', 'Mar', 'Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+        plot1 = $.jqplot('chart1', [s1], {
+            // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+
+            animate: !$.jqplot.use_excanvas,
+            seriesDefaults:{
+                renderer:$.jqplot.BarRenderer,
+                pointLabels: { show: false }
+            },
+            axes: {
+                xaxis: {
+                    renderer: $.jqplot.CategoryAxisRenderer,
+                    ticks: ticks
+                },
+                yaxis:{
+                    {% if not isMobile %}
+                    label:'Total Raised',
+                    {% endif %}
+                    labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+                    {% if isMobile %}
+                    tickOptions: { formatter: function(format, value) { return '$'+(value/1000000)+'M'; } }
+                    {% else %}
+                    tickOptions: { formatString:"$%'d "}
+                    {% endif %}
+                }
+            },
+            highlighter: { show: false }
+        });
+
+        $('#chart1').bind('jqplotDataClick',
+                function (ev, seriesIndex, pointIndex, data) {
+                    $('#info1').html('series: '+seriesIndex+', point: '+pointIndex+', data: '+data);
+                }
+        );
+    });
+</script>

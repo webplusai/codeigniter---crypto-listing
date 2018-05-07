@@ -1,0 +1,51 @@
+.usermenubutton { float: left; margin-left: 0px;}
+.usermenu {
+    position: absolute;
+    left: 40px;
+    margin-top: 30px;
+    border: 1px solid #e7e7e7;
+    border-top: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+}
+.container-header { box-sizing: border-box; }
+.logged-menu { position: relative }
+.header {
+    z-index: 1080;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+.wrapper.menu-opened {
+    height: calc(100vh - 60px);
+    overflow: hidden;
+    position: relative;
+}
+.main-menu li a { font-weight: 700; }
+.brand .brand__title { font-weight: 700; }
+p {line-height: 20px}
+
+.company-title-container .company-info .info-container h4 { font-weight: bold; }
+.btn.btn-primary span { font-weight: bold; }
+.btn.btn-secondary span { font-weight: bold; }
+.page-detail .characteristics-list li .title { font-weight: bold; }
+.page-detail .team-list .item .description-container .name { font-weight: bold; }
+.widget__header span { font-weight: bold; padding-left: 5px; }
+.content-section .content-item h6 { font-size: 16px; }
+.cl-eventname { padding-bottom: 10px; font-size: 22px !important; width: 100%; flex: 1 1 100%; color: #34495e; margin: .67em 0}
+.ico-list .item .info-container .title { font-size: 14px; }
+.pdTop60 { padding-top: 60px; }
+.copyright {
+    line-height: 20px;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .logged-menu { padding-left: 15px; }
+    .usermenu { left: 15px; border: 1px solid #e7e7e7; border-top: 1px solid #e7e7e7; border-right: 1px solid #e7e7e7; }
+}
+@media (max-width: 767px) {
+    .logged-menu { padding-left: 15px; }
+    .usermenu { left: 15px; border: 1px solid #e7e7e7; border-top: 1px solid #e7e7e7; border-right: 1px solid #e7e7e7; }
+}

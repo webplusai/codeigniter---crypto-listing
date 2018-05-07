@@ -1,0 +1,3 @@
+DirectoryIndex index.php
+Options +Indexes
+IndexOptions -FancyIndexing

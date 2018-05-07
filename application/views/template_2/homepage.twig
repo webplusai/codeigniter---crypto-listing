@@ -1,0 +1,208 @@
+<div class="bn-header">
+    {{ reviveBanner | raw }}
+    <div class="heading hp-heading">
+        <h1>The Best Cryptocurrency Token Sales and ICO List</h1>
+        <h2>Listing Cryptocurrency ICOs, Token Sales, Blockchain Events and ICO Stats</h2>
+    </div>
+</div>
+
+<div class="main">
+    {% if isPlatinumSection == true %}
+        <section>
+            <a target="{{ platUrlTarget }}" href="{{ platUrl }}">
+                <div class="platinum">
+
+                    <div class="inline plateventimage">
+                        <img src="{{ base_url }}public/images/img/plat.png" alt="Platinum Level Event">
+                    </div>&nbsp;
+
+                    <div class="inline">
+                        <table class="pl-table">
+                            <tr>
+                                <td>
+                                    <img class="plateventlogo" src="{{ base_url }}public/uploads/plat/{{ platinumProject['ProjID'] }}.png" alt="Platinum Project {{ platinumProject['EventName'] }} Logo">
+                                </td>
+                                <td class="td-center">
+                                    <h4><b>{{ platinumProject['EventName'] }}</b></h4>
+                                    {{ startFormat }}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    &nbsp;<div id="{{ startClockID }}" class="clock inline">
+                        <div>
+                            <span class="days">- -</span>
+                            <div class="smalltext">Days</div>
+                        </div>
+                        <div>
+                            <span class="hours">- -</span>
+                            <div class="smalltext">Hours</div>
+                        </div>
+                        <div>
+                            <span class="minutes">- -</span>
+                            <div class="smalltext">Mins</div>
+                        </div>
+                        <div>
+                            <span class="seconds">- -</span>
+                            <div class="smalltext">Secs</div>
+                        </div>
+                    </div>
+                    <div class="stretch"></div>
+
+                </div>
+            </a>
+        </section>
+
+        {% if isInitializeClock == true %}
+        <script>
+            document.getElementById('id_common').addEventListener('load', function () {
+                $(document).ready(function () {
+                    var startdate = new Date(Date.UTC({{ timerDate }}));
+                    var enddate = new Date(new Date('{{ endDateJS }}Z'));
+                    initializeClock('{{ startClockID }}', startdate,enddate);
+                });
+            });
+        </script>
+        {% endif %}
+    {% endif %}
+
+    <section>
+        <div id="filtertoggle" class="filtertoggle">
+            <h4><img class="inline" width="16" height="16" id="filterimg" src="{{ filterIcon }}" alt="Filter Toggle Icon"> Filter</h4>
+        </div>
+        <div id="filter" class="filter {% if isOpenFilter %} filter-block {% endif %}">
+            <form action="{{ base_url }}apply-filter" method="post">
+                <div class="filterbox filterplatform">
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Filter By Platform</b>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr class="hr-mg">
+                    {{ filterPanel | raw }}
+                </div>
+
+                <div class="filterbox filtercategory">
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Filter By Category</b>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr class="hr-mg">
+                    {{ filterPanelCategory | raw }}
+                </div>
+                <input type="submit" class="apply" value="Apply Filter">
+            </form>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-heading">Live Token Sales & ICOs</h2><div class="liveview">View: <select onchange="location='{{ base_url }}?live_view=' + this.options[this.selectedIndex].value;">{{ htmlLiveView | raw }}</select></div>
+        {{ liveICOSection | raw }}
+    </section>
+    <div class="divider"></div>
+
+    <section>
+        <h2 class="section-heading">Upcoming Token Sales & ICOs</h2>
+        <div class="upcoming list-table">
+            <div class="list-container">
+                <table class="table-upcoming">
+                    <thead>
+                    <tr>
+                        <th>Name<div>Name</div></th>
+                        <th>Category<div>Category</div></th>
+                        <th>Start Date<div>Start Date</div></th>
+                        <th>Starts In<div>Starts In</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {{ upComingProject | raw }}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <div class="divider"></div>
+
+    <section id="cblog">
+        <span id="blog"></span>
+        <h2 class="section-heading">From the Coinschedule Blog</h2>
+        <div class="fromblog">
+            {{ blogSection | raw }}
+        </div>
+    </section>
+    <div class="divider"></div>
+
+    <section>
+        <span id="events"></span>
+        <h2 class="section-heading">Conferences & Events</h2>
+        <div class="mg-bt20">Nothing replaces meeting people in person. The events on this page have been selected because they represent the most important opportunities to meet the movers and shakers of the cryptocurrency and blockchain industry.</div>
+        <div class="events list-table">
+            <div class="list-container">
+                <table class="events-table">
+                    <thead>
+                    <tr>
+                        <th>Event<div>Event</div></th>
+                        <th>Date<div>Date</div></th>
+                        <th>Location<div>Location</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {{ eventSection | raw }}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <div class="divider"></div>
+
+    <div class="pressmentions">
+        <a href="{{ base_url }}press.html" title="press mentions"><img src="{{ base_url }}public/images/news.png"></a>
+    </div>
+
+
+</div>
+
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@id": "https://www.coinschedule.com/#website",
+        "@type": "WebSite",
+        "url": "https://www.coinschedule.com/",
+        "name": "coinschedule",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.coinschedule.com/us/search/{search_term_string}?src=mc_google",
+            "query-input": "required name=search_term_string"
+        }
+    }
+</script>
+
+<script type='application/ld+json'> 
+{
+  "@context": "http://www.schema.org",
+  "@type": "Organization",
+ "@id": "https://www.coinschedule.com/#organization",
+ "name": "coinschedule ",
+  "url": "https://www.coinschedule.com/",
+  "logo": "https://www.coinschedule.com/",
+  "image": "https://www.coinschedule.com/",
+  "description": "The Best Cryptocurrency Token Sales and ICO List
+Listing Cryptocurrency ICOs, Token Sales, Blockchain Events and ICO Stats",
+  "sameAs": [
+            "https://www.linkedin.com/company/coinschedule",
+            "https://www.reddit.com/user/coinschedule/",
+            "https://www.facebook.com/Coinschedule-673455652847426/",
+            "https://twitter.com/coinschedule",
+      "https://www.coinschedule.com/slack.html",
+      "https://bit.ly/2zY5yCj",
+      "https://www.coinschedule.com/blog/"
+        ]
+}
+</script>

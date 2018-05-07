@@ -1,0 +1,99 @@
+.responstable {
+  margin: 1em 0;
+  width: 100%;
+  overflow: hidden;
+  background: #FFF;
+  color: #024457;
+  border: 1px solid #167F92;  
+  border-collapse: collapse;   
+  font-size: 1em; 
+}
+.responstable tr {
+  border: 1px solid #D9E4E6;
+}
+.responstable tr:nth-child(odd) {
+  background-color: #EAF3F3;
+}
+.responstable tr:hover {
+  background-color: #D9E4E6;
+  cursor: pointer;
+}
+
+.nohover tr:hover {
+  cursor: default;
+}
+
+.responstable th {
+  display: none;
+  border: 1px solid #FFF;
+  background-color: #167F92;
+  color: #FFF;
+  padding: 1em;
+  cursor: default;
+  text-align: left;
+}
+
+.responstable th:nth-child(2) span {
+  display: none;
+}
+.responstable th:nth-child(2):after {
+  content: attr(data-th);
+}
+@media (min-width: 480px) {
+  .responstable th:nth-child(2) span {
+    display: block;
+  }
+  .responstable th:nth-child(2):after {
+    display: none;
+  }
+}
+.responstable td {
+  display: block;
+  word-wrap: break-word;
+  max-width: 7em;
+  vertical-align: text-top;
+}
+
+@media (min-width: 480px) {
+  .responstable td {
+    border: 1px solid #D9E4E6;
+  }
+}
+.responstable th, .responstable td {
+  margin: .5em 1em;
+}
+@media (min-width: 480px) {
+  .responstable th, .responstable td {
+    display: table-cell;
+    padding: .5em;
+  }
+}
+
+body {
+  padding: 0 .5em;
+  font-family: Arial, sans-serif;
+  color: #024457;
+  background: #f2f2f2;
+  font-size: 14px;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  color: #024457;   
+}
+h1 span {
+  color: #167F92;
+}
+
+input
+{
+  width: 100%;
+  font-size: 1em;
+}
+
+select
+{
+  font-size: 1em;
+}  
+

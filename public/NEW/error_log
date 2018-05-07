@@ -1,0 +1,2 @@
+[05-Dec-2017 21:56:36 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection refused in /home/coinschedule/public_html/lib/bd.php on line 13
+[05-Dec-2017 22:04:46 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection refused in /home/coinschedule/public_html/lib/bd.php on line 13

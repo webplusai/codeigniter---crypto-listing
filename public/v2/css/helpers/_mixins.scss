@@ -1,0 +1,100 @@
+// General
+@mixin ak-font($family, $size, $weight: $base-font-weight){
+  font: {
+    family: $family;
+    weight: $weight;
+    size: $size;
+  };
+}
+
+// Background
+@mixin ak-background($image, $position: center, $repeat: no-repeat, $size: cover, $color: transparent){
+  background: {
+    image: url($images-path + $image);
+    position: $position;
+    repeat: $repeat;
+    size: $size;
+    color: $color;
+  };
+}
+@mixin ak-gradient-background($color-1: #fff, $color-2: #fff){
+  background: $color-1;
+  background: -moz-linear-gradient(45deg, $color-1 0%, $color-2 100%);
+  background: -webkit-linear-gradient(45deg, $color-1 0%, $color-2 100%);
+  background: linear-gradient(45deg, $color-1 0%, $color-2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color-1, endColorstr=$color-2,GradientType=1 );
+}
+
+// Position
+@mixin ak-position-abs-t-l($top: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+@mixin ak-position-abs-t-r($top: 0, $right: 0) {
+  position: absolute;
+  top: $top;
+  right: $right;
+}
+@mixin ak-position-abs-b-l($bottom: 0, $left: 0) {
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin ak-position-abs-b-r($bottom: 0, $right: 0) {
+  position: absolute;
+  bottom: $bottom;
+  right: $right;
+}
+@mixin ak-position-abs-v-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin ak-position-abs-h-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin ak-position-abs-vh-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Sizing
+@mixin ak-fullsize-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// Texts
+@mixin ak-cropLongText($padding-right: 0) {
+  padding-right: $padding-right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Colors
+@mixin grayscale_element($value) {
+  -webkit-filter: #{"grayscale(#{$value})"};
+  -moz-filter: #{"grayscale(#{$value})"};
+  filter:#{"grayscale(#{$value})"};
+}
+
+// Transitions
+@mixin ak-transition($property: all, $duration: .3s, $delay: 0s){
+  transition: $property $duration $delay;
+}
+
+// Animation
+@mixin ak-animation($name, $duration: 1s, $delay: 0s, $timing: linear, $iteration: 1){
+  -webkit-animation: $name $duration $delay $timing $iteration;
+  -moz-animation: $name $duration $delay $timing $iteration;
+  animation: $name $duration $delay $timing $iteration;
+}

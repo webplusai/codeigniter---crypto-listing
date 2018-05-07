@@ -1,0 +1,369 @@
+<div class="loading">Loading&#8230;</div>
+<div class="header"></div>
+<div class="main">
+    <section id="submission-form">
+        <h1>Submission Entry</h1>
+
+        {% if not isValid %}
+            <div class="form-group">
+                <div class="alert alert-danger">
+                    {{ formError | raw }}
+                    {{ errorUpload | raw }}
+                    {{ errorUploadTeam | raw }}
+                </div>
+            </div>
+        {% endif %}
+
+        <form id="submitform" method="post" enctype="multipart/form-data">
+
+            <table class="table">
+                <tr>
+                    <td class="td-left">Your Name</td>
+                    <td>{{ submission['SubName'] }}</td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Your E-mail</td>
+                    <td>{{ submission['SubEmail'] }}</td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Event Name</td>
+                    <td>{{ submission['SubEventName'] }}</td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Project Website <span class="span-required">*</span></td>
+                    <td>
+                        <input type="text" id="txt_website" name="txt_website" value="{{ formData['txt_website'] }}">
+                        <span class="help-block">e.g.: http://www.google.com (please include http:// or https://)</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Dates not defined yet - TBA </td>
+                    <td><input id="dates_defined" type="checkbox" name="dates_defined" {{ formData['dates_defined'] }}></td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Start <span class="start_date_required span-required">*</span></td>
+                    <td>
+                        <div class="datefield">
+                            <input style="max-width: 300px" id="start_date" name="start_date" type="text" placeholder="Select Date.." data-input value="{{ formData['start_date'] }}">
+                            {% if not isMobile %}
+                                <a class="input-button" title="clear" data-clear>
+                                    <img style="border: 1px solid #A9A9A9; border-left: 0px;padding: 3px 3px 3px 3px; margin: 0px 0px 3px 0px;" src="{{ config['icon_date_select'] }}">
+                                </a>
+                            {% endif %}
+                            <i>Please set time in UTC</i>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">End <span class="end_date_required span-required">*</span></td>
+                    <td>
+                        <div class="datefield">
+                            <input style="max-width: 300px" id="end_date" name="end_date" type="text" placeholder="Select Date.." data-input value="{{ formData['end_date'] }}">
+                            {% if not isMobile %}
+                                <a class="input-button" title="clear" data-clear>
+                                    <img style="border: 1px solid #A9A9A9; border-left: 0px;padding: 3px 3px 3px 3px; margin: 0px 0px 3px 0px;" src="{{ config['icon_date_select'] }}">
+                                </a>
+                            {% endif %}
+                            <i>Please set time in UTC</i>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Project Category <span class="span-required">*</span></td>
+                    <td>
+                        <select name="project_category" id="project_category">
+                            {{ htmlProjectCategory | raw }}
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Project Type <span class="span-required">*</span></td>
+                    <td>
+                        <select name="project_type" id="project_type">
+                            {{ htmlProjectType | raw }}
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="bound-platform">
+                    <td class="td-left">Platform <span class="flatform_required span-required" style="display: none;">*</span></td>
+                    <td>
+                        <select name="platform" id="platform" multiple="multiple">
+                            {{ htmlPlatform | raw }}
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Token/Coin Name <span class="span-required">*</span></td>
+                    <td>
+                        <input maxlength="255" id="txt_coinname" type="text" name="txt_coinname" value="{{ formData['txt_coinname'] }}">
+                        <span class="help-block">Maximum 255 characters</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Symbol <span class="span-required">*</span></td>
+                    <td>
+                        <input id="txt_symbol" type="text" name="txt_symbol" maxlength="10" style="width: 100px;" value="{{ formData['txt_symbol'] }}">
+                        <span class="help-block-right">Maximum 10 characters</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Total Supply <span class="span-required">*</span></td>
+                    <td>
+                        <input id="txt_supply" type="text" name="txt_supply" style="width: 150px;" value="{{ formData['txt_supply'] }}">
+                        <span class="help-block-right">e.g.: 100000000.99</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Link to Logo <span class="span-required">*</span></td>
+                    <td>
+                        <input id="txt_logo" type="text" name="txt_logo" value="{{ formData['txt_logo'] }}">
+                        <span class="help-block" style="margin-bottom:3px;">e.g.: http://www.google.com/logo/48x48.png (please include http:// or https://)</span>
+                        <input type="file" name="logo_file" id="logo_file">
+                        {% if logoLink %}
+                            <a target="_blank" class="teamlink" href="{{ logoLink }}"><strong>{{ submission['SubLogo'] }}</strong></a>
+                        {% endif %}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Link to Whitepaper</td>
+                    <td>
+                        <input id="txt_whitepaper" type="text" name="txt_whitepaper" value="{{ formData['txt_whitepaper'] }}">
+                        <span class="help-block">e.g.: http://www.google.com/paper (please include http:// or https://)</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Twitter</td>
+                    <td>
+                        <input id="txt_twitter" type="text" name="txt_twitter" value="{{ formData['txt_twitter'] }}">
+                        <span class="help-block">e.g.: https://twitter.com/your-name</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Reddit</td>
+                    <td>
+                        <input id="txt_reddit" type="text" name="txt_reddit" value="{{ formData['txt_reddit'] }}">
+                        <span class="help-block">e.g.: https://reddit.com/r/your-name</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-left">Slack</td>
+                    <td>
+                        <input id="txt_slack" type="text" name="txt_slack" value="{{ formData['txt_slack'] }}">
+                        <span class="help-block">e.g.: https://your-team.slack.com</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-left td-end">Bitcointalk Announcement Thread</td>
+                    <td class="td-end">
+                        <input id="txt_bctann" type="text" name="txt_bctann" value="{{ formData['txt_bctann'] }}">
+                        <span class="help-block">e.g.: https://bitcointalk.org/your-topic</span>
+                    </td>
+                </tr>
+            </table>
+
+            <input type="hidden" id="platforms" name="platforms" value="{{ formData['platforms'] }}">
+            <input type="hidden" name="hashcode" value="{{ hash }}">
+            <input type="hidden" id="selected-text">
+
+            <h2>Team</h2>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                {{ htmlTeamPanel | raw }}
+
+                <input type="hidden" id="currentMember" value="{{ currentMember }}">
+                <a style="margin-top: 20px;{% if not isAddMoreTeam %} display: none; {% endif %}" id="add_member" class="btn btn-info">Add Team Member</a>
+            </div>
+
+            <button class="btn btn-back">BACK</button>
+            <button id="btn_update" class="btn btn-primary">NEXT - Payment</button>
+        </form>
+    </section>
+</div>
+
+<script>
+    var subHash = '{{ hash }}';
+    $(document).ready(function () {
+        {{ inlineScript | raw }}
+
+        // init form
+        flatpickr(".datefield", {enableTime: true, time_24hr: true, minuteIncrement: 30, wrap: true});
+
+        $('#submitform').on('keyup keypress', function(e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        $( ".btn-back" ).click(function() {
+            $("#submitform").submit(function(e) {
+                e.preventDefault();
+            });
+            window.location.href = baseUrl + "/submit_entry?h=" + subHash;
+        });
+
+        // platforms
+        $('#platform').multiselect({
+            numberDisplayed: 10
+        });
+        $('#platform').multiselect('select', [{{ formData['platforms'] }}]);
+
+        if ($("#platforms").hasClass('input-error')) {
+            $(".bound-platform button.multiselect").addClass('input-error');
+        }
+
+        $( "#platform" ).change(function() {
+            var selected = $("#platform option:selected");
+            var platforms = "";
+            selected.each(function () {
+                platforms = platforms + $(this).val()+ ',';
+            });
+            $("#platforms").val(platforms.substring(0, platforms.length - 1));
+        });
+
+
+        // date defined
+        if($("#dates_defined").is(':checked')) {
+            $("#start_date").prop('disabled', true);
+            $("#end_date").prop('disabled', true);
+            $("#start_date").val('');
+            $("#end_date").val('');
+            $(".start_date_required").hide();
+            $(".end_date_required").hide();
+        } else {
+            $("#start_date").prop('disabled', false);
+            $("#end_date").prop('disabled', false);
+            $(".start_date_required").show();
+            $(".end_date_required").show();
+        }
+
+        $('#dates_defined').change(function() {
+            if($(this).is(":checked")) {
+                $("#start_date").prop('disabled', true);
+                $("#end_date").prop('disabled', true);
+                $("#start_date").val('');
+                $("#end_date").val('');
+                $(".start_date_required").hide();
+                $(".end_date_required").hide();
+            } else {
+                $("#start_date").prop('disabled', false);
+                $("#end_date").prop('disabled', false);
+                $(".start_date_required").show();
+                $(".end_date_required").show();
+            }
+        });
+
+        // project type
+        if (parseInt($('#project_type').val()) == 2) {
+            $(".flatform_required").show();
+            $(".multiselect").removeClass("disabled");
+        } else {
+            $(".flatform_required").hide();
+            $(".multiselect").addClass("disabled");
+            $("#platforms").val("");
+        }
+        $('#project_type').change(function() {
+            if (parseInt($(this).val()) == 2) {
+                $(".flatform_required").show();
+                $(".multiselect").removeClass("disabled");
+
+                var selected_text = $("#selected-text").val();
+                if (!selected_text) {
+                    selected_text = 'None selected';
+                }
+                $(".multiselect-selected-text").text(selected_text);
+            } else {
+                $(".flatform_required").hide();
+                $(".multiselect").addClass("disabled");
+                $("#selected-text").val($(".multiselect-selected-text").text());
+                $(".multiselect-selected-text").text("None selected");
+                $("#platforms").val("");
+            }
+        });
+
+        // detele member
+        $( ".deleteMember" ).click(function() {
+            $( ".loading" ).show();
+            var team_member = $(this).attr('data-id');
+            var data = {
+                hashcode: subHash,
+                team_member: team_member
+            };
+            $.ajax({
+                url: baseUrl + "ajax/delete_team_member",
+                type: "POST",
+                data: data,
+                dataType:'json',
+                success: function(data) {
+                    $( ".loading" ).hide();
+                    if (data.status ==1 ) {
+                        $("#panelTeamMember"+team_member).hide();
+                        var currentMember = parseInt($("#currentMember").val());
+                        currentMember -= 1;
+                        $("#currentMember").val(currentMember);
+
+                        $("#panelTeamMember"+team_member).find(':input').each(function() {
+                            $(this).val('');
+                        });
+                        $("#panelTeamMember"+team_member).find('.teamlink').each(function() {
+                            $(this).empty();
+                        });
+                        $("#collapse"+team_member).removeClass('in');
+
+                        if (currentMember < 5) {
+                            $("#add_member").show();
+                        }
+
+                    } else {
+                        alert('Something went wrong!');
+                    }
+                }
+            });
+        });
+
+        $( "#add_member" ).click(function() {
+            var currentMember = parseInt($("#currentMember").val());
+            var isShow = 0;
+            for (var i = 1; i < currentMember; i ++) {
+                if (!$("#collapse"+i).hasClass("in")) {
+                    isShow = 1;
+                    $("#collapse"+i).addClass('in');
+                    $("#panelTeamMember"+i).show();
+                    currentMember += 1;
+                    $("#currentMember").val(currentMember);
+                    break;
+                }
+            }
+
+            if (isShow == 0) {
+                $("#collapse"+currentMember).addClass('in');
+                $("#panelTeamMember"+currentMember).show();
+                currentMember += 1;
+                $("#currentMember").val(currentMember);
+            }
+
+            if (currentMember > 5) {
+                $("#add_member").hide();
+            }
+
+        });
+
+    });
+</script>

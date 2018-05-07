@@ -1,0 +1,66 @@
+.comments-container {
+
+  .comments-privacy {
+    background-color: $color-5;
+    padding: 45px 50px;
+
+    .title {
+      display: inline-block;
+      width: 100%;
+      font: {
+        family: $font-family-m;
+        size: 15px;
+      };
+      color: $color-7;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font: {
+        family: $font-family-r;
+        size: 13px;
+      };
+      color: $color-7;
+      margin: 0;
+
+      a {
+        position: relative;
+        text-decoration: none;
+        color: $color-7;
+
+        &:after {
+          display: block;
+          content: '';
+          width: 100%;
+          height: 1px;
+          background-color: $color-7;
+          opacity: .5;
+          @include ak-transition();
+          @include ak-position-abs-b-l(-1px, 0);
+        }
+        &:hover {
+          color: $color-7;
+
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .comments-block {
+    margin-top: 30px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .comments-container {
+    .comments-privacy {
+      padding: 30px 20px;
+
+      .title {
+        margin-bottom: 7px;
+      }
+    }
+  }
+}

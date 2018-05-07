@@ -1,0 +1,22 @@
+p {
+  margin: 0;
+  font: {
+    family: $font-family-r;
+    size: 14px;
+  };
+  color: $color-1;
+  line-height: 18px;
+  margin-bottom: 25px;
+}
+a {
+  font: {
+    family: $font-family-r;
+    size: 13px;
+  };
+  color: $color-5;
+  @include ak-transition();
+
+  &:hover {
+    color: $color-8;
+  }
+}

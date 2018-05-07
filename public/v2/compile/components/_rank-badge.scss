@@ -1,0 +1,38 @@
+.rank-badge {
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+
+  span {
+    height: 20px;
+    vertical-align: top;
+
+    &.title {
+      font: 13px/18px $font-family-m;
+      color: $color-7;
+      background-color: $color-6;
+      border-radius: 2px 0 0 2px;
+      padding: 0 9px;
+    }
+    &.counter {
+      background-color: $color-5;
+      font: 13px/20px $font-family-sb;
+      color: $color-7;
+      border-radius: 0 2px 2px 0;
+      padding: 0 6px;
+    }
+  }
+}
+
+@media all and (max-width: 575px) {
+  .rank-badge {
+    span {
+      &.title {
+        font-size: 12px;
+      }
+      &.counter {
+        font-size: 12px;
+      }
+    }
+  }
+}

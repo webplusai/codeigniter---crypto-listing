@@ -1,0 +1,17 @@
+/*.dataTables_length a .paginate_button*/
+/*{*/
+    /*background-color: rgb(23,157,186); !important;*/
+/*}*/
+.dataTables_length .select-wrapper
+{
+    float: left;
+}
+.dataTables_paginate a
+{
+    background-color: white!important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: rgb(23,157,186) !important;linear-gradient(to bottom, #fff 0%, #dcdcdc 100%) repeat scroll 0 0;
+    border: 1px solid #979797;
+    color: white !important;
+}

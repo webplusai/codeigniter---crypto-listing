@@ -1,0 +1,70 @@
+.posts-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  .item {
+    width: 50%;
+    flex: 1 1 50%;
+    padding-right: 60px;
+
+    .date {
+      display: inline-block;
+      width: 100%;
+      font: {
+        family: $font-family-r;
+        size: 10px;
+      };
+      color: $color-1;
+      margin-bottom: 15px;
+    }
+    .title {
+      display: inline-block;
+      font: {
+        family: $font-family-m;
+        size: 13px;
+      };
+      color: $color-1;
+      line-height: 18px;
+      margin-bottom: 15px;
+    }
+    .link {
+      .icon {
+        .icon-path {
+          fill: $color-1;
+          @include ak-transition();
+        }
+      }
+      &:hover {
+        .icon {
+          .icon-path {
+            fill: $color-8;
+          }
+        }
+      }
+    }
+
+    p {
+      font: {
+        family: $font-family-r;
+        size: 13px;
+      };
+      color: $color-1;
+      margin: 0 0 25px;
+    }
+  }
+}
+
+@media all and (max-width: 1040px) {
+  .posts-list {
+    .item {
+      width: 100%;
+      flex: 1 1 100%;
+      margin-top: 30px;
+      padding-right: 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

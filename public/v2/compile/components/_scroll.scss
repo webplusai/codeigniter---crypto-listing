@@ -1,0 +1,22 @@
+.scroll {
+  max-height: 820px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(#d2d0d5, .5);
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba($color-1, .1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($color-1, .1);
+    @include ak-transition();
+
+    &:hover {
+      background-color: rgba($color-1, .2);
+    }
+  }
+}

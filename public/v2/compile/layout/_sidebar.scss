@@ -1,0 +1,10 @@
+.sidebar {
+  width: 300px;
+  flex: 0 0 300px;
+}
+
+@media all and (max-width: 991px) {
+  .sidebar {
+    display: none;
+  }
+}

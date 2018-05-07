@@ -1,0 +1,11 @@
+<div id="Links" class="tabcontent" style="margin-bottom: 20px;">
+    <div style="display: none; margin-bottom: 0px; margin-top: 15px;" class="alert alert-link" role="alert"></div>
+    <form method="post" id="listing_link">
+        <table class="tbl" style="table-layout: fixed;"><th width="150">Link Type</th><th>Link</th></tr>
+            {{ htmlLink | raw }}
+        </table>
+
+        <input type="hidden" id="scrape-lastid" value="{{ lastLinkID }}">
+        <a style="display: none" type="submit" class="btn btn-primary btn-primary-old" id="save_link">Save Link</a>
+    </form>
+</div>

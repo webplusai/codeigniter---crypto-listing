@@ -1,0 +1,73 @@
+<div class="header"></div>
+<div class="main">
+    <section>
+        <h1 class="inline">User Profile</h1>
+
+        <div class="form-group">
+            <label for="tx_name">User Name </label>
+            <input type="text" maxlength="50" class="form-control" id="tx_username" name="tx_username" placeholder="User Name" value="{{ userInfo['tx_username'] }}">
+        </div>
+        <div class="form-group">
+            <label for="tx_email">Email Address</label> &nbsp;(requires password to change)
+            <label for="tx_name2"> </label>
+            <input type="email" class="form-control" id="tx_email" name="tx_email" placeholder="Email Address" value="{{ userInfo['tx_email'] }}">
+        </div>
+        <div class="form-group">
+            <label for="tx_link">Change Password</label>
+            <input type="password" data-toggle="password" class="form-control" id="tx_pass" name="tx_pass" placeholder="Current Password" value="">
+        </div>
+        <div class="form-group">
+            <input type="password" data-toggle="password" class="form-control" id="tx_newpass" name="tx_newpass" placeholder="New Password" value="">
+        </div>
+        <div class="form-group">
+            <button onClick="saveprofile();" id="btn_update" class="btn btn-primary btn-primary-old inline">Update</button>
+        </div>
+        <div class="form-group">
+            Forgot password? <a href="{{ base_url }}forgot_password.html">Send a password reset link</a>
+        </div>
+
+    </section>
+</div>
+
+
+<script>
+
+    function saveprofile()
+    {
+        err_message = "";
+        if ($('#tx_username').val()=="") {
+            err_message = "Missing User Name";
+        }
+
+        if ($('#tx_email').val()=="") {
+            if (err_message!='') {
+                err_message = err_message + " and Email";
+            } else {
+                err_message = "Missing Email Address";
+            }
+        }
+
+        if (err_message != "") {
+            $("#btn_update").notify(err_message, {className: "error",arrowShow: false,position:"right",showDuration: 200});
+        } else {
+            $.ajax({
+                url: baseUrl + "ajax/update_profile",
+                type: "POST",
+                dataType:'json',
+                data: $(".container :input").serialize(),
+                success: function(data) {
+                    if (data.status == 1) {
+                        $("#btn_update").notify("Your profile has been updated", {className: "success",arrowShow: false,position:"right",showDuration: 200});
+                        $('.username').html($('#tx_username').val());
+                        $('.userinitial').html($('#tx_username').val().charAt(0));
+                        $('#tx_pass').val("");
+                        $('#tx_newpass').val("");
+                    } else {
+                        $("#btn_update").notify(data.error, {className: "error",arrowShow: false,position:"right",showDuration: 200});
+                    }
+                }
+            });
+        }
+    }
+
+</script>

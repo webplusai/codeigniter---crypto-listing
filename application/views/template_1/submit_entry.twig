@@ -1,0 +1,73 @@
+<script async src='https://www.google.com/recaptcha/api.js'></script>
+
+<div class="loading">Loading&#8230;</div>
+<div class="header"></div>
+<div class="main">
+    <section>
+        <h1>Submit a New Entry</h1>
+        <p style="color:#34495e;font-size:1.1em;"><b>We charge a small fee of {{ listingFee }} BTC to activate your basic listing in order to prevent spam and make sure you are submitting a serious project.</b></p>
+        <p style="color:#6a6c6f">You will be able to make changes to the information added here once your listing is live.</p>
+        <p style="margin-top: 5px; padding: 5px; border: 1px solid #34495e">PLEASE NOTE: There have been a few phishing attempts reported by our customers. Please take care when negotiating upgrades with Coinschedule, we only use the email <a href="mailto:moon@coinschedule.com">moon@coinschedule.com</a> to close deals. Be careful with misspellings and similarly looking domains.</p>
+        <br>
+
+        {% if not isValid %}
+            <div class="form-group">
+                <div class="alert alert-danger">
+                    {{ formError | raw }}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if isSuccess %}
+            <div class="form-group">
+                <div class="alert alert-success">
+                    Entry submitted successfully!
+                </div>
+            </div>
+        {% endif %}
+
+        <form method="post">
+            <div class="form-group">
+                <label for="tx_name">Your Name</label>
+                <span class="span-required">*</span>
+                <input type="text" class="form-control" id="tx_name" name="tx_name" placeholder="Your Name" value="{{ formData['tx_name'] }}">
+            </div>
+            <div class="form-group">
+                <label for="tx_email">Your E-mail</label>
+                <label for="tx_name2"> </label>
+                <span class="span-required">*</span>
+                <input type="email" class="form-control" id="tx_email" name="tx_email" placeholder="Email" value="{{ formData['tx_email'] }}">
+            </div>
+            <div class="form-group">
+                <label for="tx_link">Event Name</label>
+                <span class="span-required">*</span>
+                <input type="text" class="form-control" id="tx_eventname" name="tx_eventname" placeholder="Event Name" value="{{ formData['tx_eventname'] }}">
+                <span class="help-block">E.g. MyCompany ICO</span>
+            </div>
+            <div class="form-group">
+                <label for="tx_info">Tell us about your project (this will be shown in your listing)</label>
+                <textarea style="height: 200px;" rows="5" class="form-control" id="tx_info" name="tx_info" placeholder="More information" type="textarea">{{ formData['tx_info'] }}</textarea>
+                <span class="help-block">Maximum 256 characters</span>
+            </div>
+
+            <div class="checkbox" style="margin-bottom: 5px;">
+                <label>
+                    <input type="checkbox" id="nm_responsible" name="nm_responsible" {% if formData['nm_responsible'] == 'on' or formData['nm_responsible'] == 1 %} checked {% endif %}>
+                    I am a team member of this Crowdfund
+                </label>
+            </div>
+
+            <button type="submit" name="submit" value="1" class="btn btn-primary">NEXT - Advanced Information</button>
+        </form>
+
+
+    </section>
+</div>
+
+<script>
+    document.getElementById('id_common').addEventListener('load', function () {
+        $(document).ready(function () {
+            {{ inlineScript | raw }}
+        });
+    });
+</script>

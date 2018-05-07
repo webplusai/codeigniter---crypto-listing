@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  min-height: 100%;
+  height: auto;
+}
+body {
+  background-color: #f9f9f9;
+
+  &.menu-opened {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+.container {
+  max-width: 1372px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.padding-b-40 {
+  padding-bottom: 40px !important;
+}
+
+@media all and (max-width: 1040px) {
+  body {
+    padding-bottom: 60px;
+  }
+}

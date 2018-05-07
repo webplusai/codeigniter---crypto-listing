@@ -1,0 +1,55 @@
+<script async src='https://www.google.com/recaptcha/api.js'></script>
+<div class="header"></div>
+<div class="main">
+    <section>
+        <h1>Advertising</h1>
+        <b>Please note that in order to advertise with us, your project needs to be listed first.<br> To submit your project for listing, please go here <a href="https://www.coinschedule.com/submit_entry.html" style="color:#0357FF">https://www.coinschedule.com/submit_entry.html</a> (you may need to create a Coinschedule account first).</b>
+        <br><br>
+        Our sponsorship packages help increase your brand and project awareness. We have millions of monthly visitors, that come to Coinschedule looking for the best crypto crowdfunding projects to follow and join.<br>
+        <br>
+        Advertisement spaces in Coinschedule are limited and prices are driven by demand. We recommend submitting your project and selecting a marketing package as soon as possible to avoid disappointment. <br>
+        <br>
+        Fill the form below to register your interest and learn more:
+        <br><br>
+
+        {% if not isValid %}
+            <div class="form-group">
+                <div class="alert alert-danger">
+                    {{ formError | raw }}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if isSuccess %}
+            <div class="form-group">
+                <div class="alert alert-success">
+                    Information sent, please check your e-mail (it may be in your SPAM folder)
+                </div>
+            </div>
+
+        {% else %}
+        <form method="post" action="{{ base_url }}advertise.html">
+            <div class="form-group">
+                <label class="label-input" for="tx_name">Your Name</label>
+                <span class="span-required">*</span>
+                <input type="text" class="form-control" id="tx_name" name="tx_name" placeholder="Your Name" value="{{ formData['tx_name'] }}">
+            </div>
+            <div class="form-group">
+                <label class="label-input" for="tx_email">Your E-mail</label>
+                <span class="span-required">*</span>
+                <input type="email" class="form-control" id="tx_email" name="tx_email" placeholder="Email" value="{{ formData['tx_email'] }}">
+            </div>
+            <div class="form-group"></div>
+            <div class="form-group">
+                <label class="label-input" for="tx_info">Any additional comments?</label>
+                <textarea style="height: 200px;" rows="5" class="form-control" id="tx_info" name="tx_info" placeholder="More information" type="textarea">{{ formData['tx_info'] }}</textarea>
+            </div>
+            <div class="form-group">
+                <div class="recaptcha g-recaptcha" data-sitekey="{{ config['recaptcha_site'] }}"></div>
+            </div>
+            <div class="form-group"></div>
+            <button name="submit" value="1" type="submit">Submit</button>
+        </form>
+        {% endif %}
+    </section>
+</div>

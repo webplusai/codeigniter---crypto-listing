@@ -1,0 +1,12 @@
+<div id="Team" class="tabcontent">
+    <div style="display: none; margin-bottom: 0px; margin-top: 15px;" class="alert alert-team" role="alert"></div>
+    <form method="post" id="listing_team">
+        <div style="margin-top: 10px;" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            {{ htmlTeamPanel | raw }}
+        </div>
+
+        <input type="hidden" id="currentMember" value="{{ currentMember }}">
+        <a style="margin-bottom: 20px;{% if not isAddMoreTeam %} display: none; {% endif %}" id="add_member" class="btn btn-info">Add Team Member</a>
+        <a style="margin-top: 20px; display: none" type="submit" class="btn btn-primary btn-primary-old" id="save_team">Save Team</a>
+    </form>
+</div>

@@ -1,0 +1,37 @@
+.widget {
+  background-color: $color-7;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba($color-1, .09);
+  margin-bottom: 30px;
+
+  &__header {
+    padding: 30px 40px;
+    border-bottom: 1px solid $color-3;
+
+    span {
+      font: {
+        family: $font-family-m;
+        size: 15px;
+      };
+      color: $color-1;
+    }
+    svg {
+      margin-right: 5px;
+
+      path {
+        fill: $color-1;
+      }
+    }
+  }
+  &__body {
+    padding: 30px 40px;
+
+    &.padding-0 {
+      padding: 0;
+    }
+
+    .feed-container {
+      padding: 20px 30px;
+    }
+  }
+}
